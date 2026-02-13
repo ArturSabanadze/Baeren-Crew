@@ -1,0 +1,37 @@
+/project-root
+│
+├── public/                ← WEB ROOT (only this is accessible)
+│   ├── index.php           ← Front controller
+│   ├── assets/
+│   │   ├── css/
+│   │   └── js/
+│   └── uploads/
+│
+├── app/
+│   ├── Controllers/        ← Controllers (request handlers)
+│   │   ├── UserController.php
+│   │   ├── AuthController.php
+│   │   └── ApiController.php
+│   │
+│   ├── Models/             ← Models (business logic + DB)
+│   │   ├── User.php
+│   │   ├── UserProfile.php
+│   │   └── UserAddress.php
+│   │
+│   ├── Views/              ← Templates / HTML
+│   │   ├── auth/
+│   │   ├── profile/
+│   │   └── layouts/
+│   │
+│   └── Traits/             ← Traits, helpers, interfaces
+│       ├── DB_Connection.php
+│       
+│
+├── config/
+│   ├── .env
+│   
+│
+├── routes/
+│   └── web.php             ← Route → controller mapping
+│
+└── vendor/                 ← Composer (optional)

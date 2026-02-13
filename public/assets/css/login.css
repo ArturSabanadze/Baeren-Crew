@@ -1,0 +1,220 @@
+/* ===============================
+   Login Container
+================================ */
+
+.main-container-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  margin: auto;
+  min-height: 80dvh;
+  min-width: 1000px;
+  max-width: 1500px;
+  background: #f4f6f8; /* soft neutral background */
+}
+
+/* Card */
+.login-container {
+  font-family: var(--font-main);
+  width: 360px;
+  margin: auto;
+  background: #ffffff;
+  border: 1px solid #d8dde3;
+  border-radius: 10px;
+  padding: 22px 28px;
+}
+
+/* Heading */
+.login-container h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+  color: #1f2933;
+}
+
+/* ===============================
+   Form
+================================ */
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+input {
+  width: 100%;
+  padding: 9px 10px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  border: 1px solid #c7ccd1;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111827;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3b82f6; /* muted blue */
+  background: #ffffff;
+}
+
+/* ===============================
+   Form Slider Animation
+================================ */
+
+.form-slider {
+  position: relative;
+  overflow: hidden;
+  height: 180px; /* enough for both forms */
+}
+
+.form-step {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition:
+    transform 1s cubic-bezier(0, 0.47, 0.25, 1),
+    opacity 0.4s cubic-bezier(0.27, 0.5, 0.25, 1);
+}
+
+.form-step.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.form-step.exit-left {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* ===============================
+   Buttons
+================================ */
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  background: #1f3a5f; /* deep slate blue */
+  border: 1px solid #1f3a5f;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  transition: background 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: #274b78;
+}
+
+.btn-secondary {
+  width: 360px;
+  padding: 10px;
+  background: #eef1f4;
+  border: 1px solid #cfd5db;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #1f2933;
+  transition: background 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background: #e4e8ec;
+}
+
+/* ===============================
+   Legal
+================================ */
+
+.legal {
+  font-size: 0.72rem;
+  margin-top: 16px;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+.legal a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Help
+================================ */
+
+.help {
+  margin-top: 16px;
+  font-size: 0.82rem;
+}
+
+.help summary {
+  cursor: pointer;
+  color: #2563eb;
+}
+
+.help a {
+  display: block;
+  margin-top: 6px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* ===============================
+   Divider
+================================ */
+
+.divider {
+  text-align: center;
+  margin: 28px 0; /* vertical spacing only */
+  width: 100%; /* take full container width */
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  background: #d1d5db;
+  width: 40%; /* line length relative to container */
+  position: absolute;
+  top: 50%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+.divider span {
+  font-size: 0.78rem;
+  color: #6b7280;
+  background: #ffffff; /* match container background */
+  padding: 0 8px;
+}
+
+/* ===============================
+   Register
+================================ */
+
+.register {
+  text-align: center;
+  margin-top: 12px; /* small spacing from divider */
+}
+
+.register .btn-secondary {
+  width: 100%; /* full container width */
+}

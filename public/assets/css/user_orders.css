@@ -1,0 +1,98 @@
+/* Wrapper */
+.orders-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.orders-wrapper h2 {
+    font-size: 22px;
+}
+
+/* Container states */
+#orders-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#orders-container p {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Table */
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+    vertical-align: top;
+}
+
+.orders-table th {
+    background: #f7f7f7;
+    font-weight: bold;
+}
+
+.orders-table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+.orders-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Items column */
+.items-cell {
+    min-width: 220px;
+}
+
+/* Individual product row */
+.order-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.order-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Product image */
+.item-thumb {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #orders-container {
+        overflow-x: auto;
+    }
+
+    .orders-table th,
+    .orders-table td {
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+}

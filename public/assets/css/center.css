@@ -1,0 +1,154 @@
+/* =====================================================
+   ABOUT COMPANY SECTION
+===================================================== */
+
+#about-company {
+  width: 100%;
+  padding: var(--space-lg) var(--space-md);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  max-width: var(--container-width);
+  margin: 10px auto;
+  flex-wrap: wrap;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  max-width: var(--container-width);
+  margin: 10px auto;
+  flex-wrap: wrap;
+}
+
+/* LEFT TEXT SIDE */
+
+.about-text {
+  flex: 1 1 480px;
+  padding: var(--space-md);
+}
+
+.about-text h2 {
+  font-size: var(--font-size-lg);
+  color: var(--color-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.about-text p {
+  font-size: var(--font-size-base);
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+}
+
+.about-benefits {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-md);
+}
+
+.about-benefits li {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-xs);
+  color: var(--color-text);
+}
+
+/* CTA Button */
+.about-text .btn {
+  display: inline-block;
+  margin-top: var(--space-md);
+}
+
+/* RIGHT IMAGE SIDE */
+
+.about-image {
+  flex: 1 1 480px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about-text, .about-image {
+    flex: 1 1 100%;
+    max-width: 700px;
+    max-width: 100%;
+    padding: var(--space-md);
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+
+  .about-text h2 {
+    font-size: var(--font-size-mobile);
+  }
+
+  .about-text p {
+    font-size: var(--font-size-mobile);
+    max-width: 100%;
+    word-wrap: break-word;
+    text-align: justify;
+  }
+
+  .about-benefits li {
+    font-size: var(--font-size-mobile);
+    max-width: 100%;
+    word-wrap: break-word;
+    text-align: justify;
+  }
+
+  /* Navigation Buttons */
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-lg);
+  }
+
+  .carousel-btn.prev {
+    left: var(--space-sm);
+  }
+
+  .carousel-btn.next {
+    right: var(--space-sm);
+  }
+
+  /* Thumbnails Anpassung */
+  .carousel-thumbnails {
+    bottom: var(--space-sm);
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .carousel-thumbnails img {
+    width: 70px;
+    height: 50px;
+  }
+}
+
+
+  
+
