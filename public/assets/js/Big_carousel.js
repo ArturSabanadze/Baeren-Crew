@@ -1,97 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const mainImage = document.getElementById("hero-main-image");
+    const thumbnails = document.querySelectorAll(".thumbnail");
+    const prevBtn = document.querySelector(".carousel-btn-prev");
+    const nextBtn = document.querySelector(".carousel-btn-next");
+    const wrapper = document.querySelector(".thumbnails-wrapper");
 
-  const images = [
-    { src: "/uploads/website_dummy_img/hero1.png", alt: "Auto Beladung Szene" },
-    { src: "/uploads/website_dummy_img/hero2.png", alt: "Umzugszene im Wohnzimmer" },
-    { src: "/uploads/website_dummy_img/hero3.png", alt: "Umzugszene auf der Straße" },
-    { src: "/uploads/website_dummy_img/hero4.png", alt: "Umzugszene auf der Straße" },
-    { src: "/uploads/website_dummy_img/hero5.png", alt: "Umzugszene auf der Straße" },
-    { src: "/uploads/website_dummy_img/hero6.png", alt: "Umzugszene auf der Straße" }
-  ];
+    let currentIndex = 0;
 
-  const mainImage = document.getElementById("carousel-image");
-  const thumbnailsContainer = document.querySelector(".carousel-thumbnails");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
+    function showImage(index) {
+        // Update main image
+        mainImage.src = thumbnails[index].src;
+        mainImage.alt = thumbnails[index].alt;
 
-  let currentIndex = 0;
-  let interval;
+        // Update active thumbnail
+        thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle("active", i === index);
+        });
 
-  /* -----------------------------
-     Set Main Image and Active Thumbnail
-  ----------------------------- */
-  function updateCarousel(index) {
-    currentIndex = index;
+        currentIndex = index;
+    }
 
-    mainImage.src = images[index].src;
-    mainImage.alt = images[index].alt;
-
-    // Update active thumbnail
-    document.querySelectorAll(".carousel-thumbnails img").forEach((thumb, i) => {
-      thumb.classList.toggle("active", i === index);
+    // Click on thumbnails
+    thumbnails.forEach((thumb, index) => {
+        thumb.addEventListener("click", () => showImage(index));
     });
-  }
 
- // -----------------------------
-// Create Thumbnails Dynamically
-// -----------------------------
-images.forEach((img, index) => {
-  const thumb = document.createElement("img");
-  thumb.src = img.src;
-  thumb.alt = img.alt;
+    // Carousel buttons
+    nextBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollNext();
+    });
 
-  if (index === 0) {
-    thumb.classList.add("active"); // nur für den ersten Thumbnail
-  }
+    prevBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollPrev();
+    });
 
-  thumb.addEventListener("click", () => {
-    updateCarousel(index);
-    resetInterval();
-  });
+    function scrollNext() {
+        let nextIndex = (currentIndex + 1) % thumbnails.length;
+        showImage(nextIndex);
+        wrapper.scrollBy({ left: thumbnails[nextIndex].offsetWidth + 8, behavior: "smooth" });
+    }
 
-  thumbnailsContainer.appendChild(thumb);
-});
+    function scrollPrev() {
+        let prevIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+        showImage(prevIndex);
+        wrapper.scrollBy({ left: -(thumbnails[prevIndex].offsetWidth + 8), behavior: "smooth" });
+    }
 
+    // Auto-scroll every 3 seconds
+    setInterval(scrollNext, 3000);
 
-  /* -----------------------------
-     Navigation Functions
-  ----------------------------- */
-  function nextSlide() {
-    const newIndex = (currentIndex + 1) % images.length;
-    updateCarousel(newIndex);
-  }
-
-  function prevSlide() {
-    const newIndex = (currentIndex - 1 + images.length) % images.length;
-    updateCarousel(newIndex);
-  }
-
-  nextBtn.addEventListener("click", () => {
-    nextSlide();
-    resetInterval();
-  });
-
-  prevBtn.addEventListener("click", () => {
-    prevSlide();
-    resetInterval();
-  });
-
-  /* -----------------------------
-     Auto Slide
-  ----------------------------- */
-  function startInterval() {
-    interval = setInterval(nextSlide, 5000); // 5 Sekunden
-  }
-
-  function resetInterval() {
-    clearInterval(interval);
-    startInterval();
-  }
-
-  /* -----------------------------
-     Init Carousel
-  ----------------------------- */
-  updateCarousel(0);
-  startInterval();
-
+    // Initialize
+    showImage(currentIndex);
 });

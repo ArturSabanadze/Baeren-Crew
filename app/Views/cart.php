@@ -1,1 +1,0 @@
-<?php include_once 'partials/cart_container.php'; ?>

@@ -1,1 +1,0 @@
-<?php include_once 'partials/single_product.php'; ?>

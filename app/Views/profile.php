@@ -1,1 +1,0 @@
-<?php include_once 'profile/user_account.php'; ?>

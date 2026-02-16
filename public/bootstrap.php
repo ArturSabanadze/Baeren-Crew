@@ -10,3 +10,5 @@ spl_autoload_register(function ($class) {
         }
     }
 });
+
+$env = parse_ini_file(__DIR__ . '/../config/.env');

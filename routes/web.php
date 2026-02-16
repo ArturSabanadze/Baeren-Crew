@@ -18,18 +18,6 @@ switch ($page) {
         (new AuthController())->logout();
         break;
 
-    case 'cart':
-        (new PageController())->cart();
-        break;
-    
-    case 'my-account':
-        (new PageController())->account();
-        break;
-
-    case 'single-product':
-        (new PageController())->singleProduct();
-        break;
-
     default:
         (new PageController())->home();
 }

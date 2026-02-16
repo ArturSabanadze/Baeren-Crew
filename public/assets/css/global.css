@@ -1,271 +1,459 @@
-/* =====================================================
-   GLOBAL DESIGN SYSTEM
-   Änderbar an einer Stelle für gesamte Website
-===================================================== */
-
-/* ========================
-   ROOT VARIABLES
-======================== */
+/* =========================================================
+   GLOBAL VARIABLES
+========================================================= */
 
 :root {
+  --color-navigation-bar: #1E1E1E;
+  --color-navigation-links: #fff;
+  --color-navigation-links-hover: #a8a8a8;
+  --color-primary: #384150;
+  --color-secondary: #c19a6b;
+  --color-bg: #ebebeb;
+  --color-surface: #ebebeb;
+  --color-text: #222;
+  --color-muted: #777;
 
-  /* ========= COLORS ========= */
+  --font-main: 'Inter', sans-serif;
+  --font-size-base: 18px;
+  --font-size-lg: 2.5rem;
+  --font-size-md: 1.2rem;
 
-  --color-primary: #0077ff;
-  --color-primary-hover: #005edc;
+  --container-width: 1400px;
+  --section-padding: 8rem;
+  --nav-height: 80px;
 
-  --color-dark: #111111;
-  --color-text: #333333;
-  --color-text-light: #666666;
+  --transition-fast: 0.55s ease;
+  --transition-smooth: 0.6s cubic-bezier(.4,0,.2,1);
 
-  --color-white: #ffffff;
-  --color-light-bg: #f9fafc;
-  --color-border: #e5e7eb;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
 
-  --color-success: #16a34a;
-  --color-danger: #dc2626;
+  --z-header: 1000;
+  --z-footer: 900;
 
-  /* ========= TYPOGRAPHY ========= */
-
-  --font-main: "Amazon Ember", sans-serif;
-
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 20px;
-  --font-size-xl: 28px;
-  --font-size-xxl: 36px;
-  --font-size-mobile: 2rem;
-
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-
-  /* ========= SPACING ========= */
-
-  --space-xs: 6px;
-  --space-sm: 12px;
-  --space-md: 20px;
-  --space-lg: 40px;
-  --space-xl: 80px;
-
-  /* ========= BORDER RADIUS ========= */
-
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 30px;
-
-  /* ========= SHADOWS ========= */
-
-  --shadow-sm: 0 5px 15px rgba(0,0,0,0.05);
-  --shadow-md: 0 10px 25px rgba(0,0,0,0.08);
-  --shadow-lg: 0 20px 40px rgba(0,0,0,0.12);
-
-  /* ========= TRANSITIONS ========= */
-
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
-
-  /* ========= CONTAINER WIDTH ========= */
-
-  --container-width: 1200px;
+  --min-body-width: 1000px;
 }
 
-
-@font-face {
-  font-family: "Amazon Ember";
-  src: url("../fonts/amazon-ember/Amazon_Ember.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Amazon Ember V2";
-  src: url("../fonts/amazon-ember/Amazon_Ember_V2.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-
-/* =====================================================
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
+html, body {
+  scroll-behavior: smooth;
   font-family: var(--font-main);
   font-size: var(--font-size-base);
+  background: var(--color-bg);
   color: var(--color-text);
-  background: var(--color-white);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  min-width: var(--min-body-width);
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-/* =====================================================
-   GLOBAL LAYOUT HELPERS
-===================================================== */
+/* =========================================================
+   LAYOUT
+========================================================= */
 
 .container {
+  max-width: var(--container-width);
+  margin: 0 20px 0 20px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  z-index: var(--z-header);
+  background: var(--color-navigation-bar);
+  backdrop-filter: blur(10px);
+  transition: transform var(--transition-smooth),
+              opacity var(--transition-smooth);
+}
+
+.nav {
   width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.section {
-  padding: var(--space-xl) var(--space-md);
+.nav__logo {
+  display: flex;
+  align-items: center;
 }
 
-.section-light {
-  background: var(--color-light-bg);
+.nav__logo img {
+  height: 55px;
+  display: block;
 }
 
-.text-center {
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  height: 100%;
+}
+
+.nav__links a,
+.nav__dropdown-btn {
+  text-decoration: none;
+  color: var(--color-navigation-links);
+  font-weight: 500;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition: color var(--transition-fast);
+}
+
+.nav__links a:hover,
+.nav__dropdown-btn:hover {
+  color: var(--color-secondary);
+}
+
+.nav__dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-navigation-bar);
+  box-shadow: var(--shadow-soft);
+  padding: 1.2rem 0;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity var(--transition-fast),
+              transform var(--transition-fast);
+  border-radius: 6px;
+}
+
+.nav__dropdown-menu a {
+  padding: 0.7rem 1.5rem;
+  width: 100%;
+  height: auto;
+}
+
+.nav__dropdown-menu a:hover {
+  color: #1E1E1E;
+  background: var(--color-navigation-links-hover);
+}
+
+.nav__dropdown:hover .nav__dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.app-section {
+  position: relative;
+  top: auto;
+  padding: var(--section-padding) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+  scroll-margin-top: var(--nav-height);
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+}
+
+/* Section backgrounds */
+.section-hero { background: var(--color-surface); z-index: 1; }
+.section-services { background:var(--color-surface); z-index: 2; }
+.section-pricing { background:var(--color-surface); z-index: 3; }
+.section-contact { background: var(--color-surface); z-index: 4; }
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* left: carousel, right: form */
+  gap: 2rem;
+  align-items: start;
+}
+
+.hero-main {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.section-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.hero-checkboard {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-item span img {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.hero-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Thumbnail carousel */
+.hero-thumbnails {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.thumbnails-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 0.5rem;
+    flex: 1; /* allow to take available space */
+}
+
+.thumbnails-wrapper::-webkit-scrollbar {
+    display: none; /* optional: hide scrollbar */
+}
+
+.thumbnail {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.3s, border 0.3s;
+  flex-shrink: 0;
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border-color: var(--color-secondary);
+}
+
+/* Carousel buttons for thumbnails */
+.hero-thumbnails .carousel-btn-prev, .hero-thumbnails .carousel-btn-next {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.hero-thumbnails .carousel-btn-prev:hover, .hero-thumbnails .carousel-btn-next:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+/* Form styling */
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-form .form-input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* =========================================================
+   SECTION CONTENT (Grid Layout)
+========================================================= */
+
+.section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-media {
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Centered sections (e.g., contact) */
+.section-center {
+  grid-column: 1 / -1;
   text-align: center;
 }
 
-.text-muted {
-  color: var(--color-text-light);
+/* Headings & text */
+.heading-lg {
+  font-size: var(--font-size-lg);
+  margin-bottom: 1.5rem;
 }
 
+.text-base {
+  font-size: var(--font-size-md);
+  color: #2d2d2d;
+  line-height: 1.6;
+}
 
-/* =====================================================
-   BUTTON SYSTEM
-===================================================== */
+/* =========================================================
+   COMPONENTS
+========================================================= */
+
+.benefits-list {
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.benefits-list li {
+  margin-bottom: 0.8rem;
+}
+
+.media-image {
+  width: 100%;
+  box-shadow: var(--shadow-soft);
+}
+
+.pricing-card {
+  background: white;
+  padding: 3rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================================================
+   FORMS
+========================================================= */
+
+.form-input {
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
 
 .btn {
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: var(--radius-md);
-  font-weight: var(--font-weight-medium);
-  cursor: pointer;
-  transition: var(--transition-normal);
+  padding: 1rem 2rem;
   border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition-fast);
 }
 
 .btn-primary {
   background: var(--color-primary);
-  color: var(--color-white);
+  color: white;
 }
 
 .btn-primary:hover {
-  background: var(--color-primary-hover);
-  transform: translateY(-2px);
+  background: var(--color-secondary);
 }
 
-.btn-outline {
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-  background: transparent;
-}
+/* =========================================================
+   FOOTER
+========================================================= */
 
-.btn-outline:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
-}
-
-
-/* =====================================================
-   FORM SYSTEM
-===================================================== */
-
-input,
-textarea,
-select {
-  font-family: inherit;
-  font-size: var(--font-size-sm);
-  padding: 14px 16px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-  outline: none;
-  transition: var(--transition-normal);
+.app-footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
+  background: var(--color-primary);
+  color: white;
+  padding: 2rem 0;
+  transform: translateY(100%);
+  transition: transform var(--transition-smooth);
+  z-index: var(--z-footer);
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0,119,255,0.15);
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-/* =====================================================
-   HEADINGS
-===================================================== */
-
-h1 {
-  font-size: var(--font-size-xxl);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-md);
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
 }
 
-h2 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--space-md);
+.app-footer.visible {
+  transform: translateY(0);
 }
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
-h3 {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
-  margin-bottom: var(--space-sm);
-}
-
-
-/* =====================================================
-   CARD SYSTEM
-===================================================== */
-
-.card {
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-lg);
-  transition: var(--transition-normal);
-}
-
-.card:hover {
-  box-shadow: var(--shadow-md);
-}
-
-
-/* =====================================================
-   RESPONSIVE TYPOGRAPHY
-===================================================== */
-
-@media (max-width: 992px) {
-
-  h1 {
-    font-size: 28px;
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
   }
 
-  h2 {
-    font-size: 22px;
+  .hero-thumbnails {
+    justify-content: center;
   }
 
-  .section {
-    padding: var(--space-lg) var(--space-md);
+  .container {
+    grid-template-columns: 1fr;
   }
-
 }
