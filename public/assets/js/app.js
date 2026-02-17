@@ -36,25 +36,23 @@ function handleScroll() {
     /* -------------------------------
        SECTION OVERLAP FADE
     -------------------------------- */
+sections.forEach(section => {
 
-    sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
 
-        const rect = section.getBoundingClientRect();
+    const isVisible =
+        rect.top < window.innerHeight &&
+        rect.bottom > 0;
 
-        if (rect.top <= 0 && rect.bottom >= windowHeight / 2) {
-            section.style.opacity = 1;
-            section.style.transform = "scale(1)";
-        }
-        else if (rect.bottom < windowHeight / 2) {
-            section.style.opacity = 0;
-            section.style.transform = "scale(0.98)";
-        }
-        else {
-            section.style.opacity = 1;
-            section.style.transform = "scale(1)";
-        }
+    if (isVisible) {
+        section.style.opacity = 1;
+        section.style.transform = "scale(1)";
+    } else {
+        section.style.opacity = 0;
+        section.style.transform = "scale(0.98)";
+    }
 
-    });
+});
 
     /* -------------------------------
        FOOTER REVEAL

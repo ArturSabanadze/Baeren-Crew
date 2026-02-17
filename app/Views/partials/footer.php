@@ -18,6 +18,7 @@
             <ul>
                 <li><a href="index.php?page=agb">AGB</a></li>
                 <li><a href="index.php?page=dsgvo">Datenschutz</a></li>
+                <li><a href="#" onclick="document.getElementById('cookieModal').classList.add('show')">Cookie-Einstellungen</a></li>
                 <li><a href="index.php?page=impressum">Impressum</a></li>
             </ul>
         </div>

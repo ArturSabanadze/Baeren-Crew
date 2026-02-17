@@ -53,9 +53,16 @@ html, body {
   min-width: var(--min-body-width);
 }
 
+
 /* =========================================================
    LAYOUT
 ========================================================= */
+.app-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .container {
   max-width: var(--container-width);
@@ -64,6 +71,20 @@ html, body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  width: 90dvw;
+  margin: 2rem auto;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    #454444,
+    transparent
+  );
 }
 
 /* =========================================================
@@ -83,6 +104,11 @@ html, body {
   backdrop-filter: blur(10px);
   transition: transform var(--transition-smooth),
               opacity var(--transition-smooth);
+}
+
+.app-header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 .nav {
@@ -189,6 +215,7 @@ html, body {
   gap: 2rem;
   align-items: center;
   justify-items: center;
+
   scroll-margin-top: var(--nav-height);
   transition: opacity var(--transition-smooth), transform var(--transition-smooth);
 }
@@ -225,6 +252,8 @@ html, body {
 
 .hero-checkboard {
   width: 100%;
+  max-width: 1200px;
+  min-width: var(--min-body-width);
   display: flex;
   justify-content: space-around;
   gap: 0.5rem;
@@ -447,11 +476,15 @@ html, body {
   margin-bottom: 0.5rem;
 }
 
+.footer-links li
+  {
+    gap: 2rem;
+  }
 .footer-links a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 20px;
   color: white;
   text-decoration: none;
   font-size: var(--font-size-small);
@@ -736,6 +769,118 @@ html, body {
   background: var(--color-secondary);
 }
 
+/* =========================================================
+   COOKIE SYSTEM
+========================================================= */
+
+.cookie-banner {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: var(--color-primary);
+  color: white;
+  padding: 10px;
+  z-index: 9999;
+  transition: bottom 0.5s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+}
+
+.cookie-banner.show {
+  bottom: 0;
+}
+
+.cookie-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cookie-text h3 {
+  margin-bottom: 10px;
+}
+
+.cookie-text p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.cookie-text a {
+  color: var(--color-secondary);
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+ 
+}
+
+.cookie-banner button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+   font-size: 14px;
+  transition: background var(--transition-fast);
+}
+
+.btn-light {
+  background: white;
+  color: var(--color-primary);
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+/* ===================== MODAL ===================== */
+
+.cookie-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.cookie-modal.show {
+  display: flex;
+}
+
+.cookie-modal-content {
+  background: white;
+  width: 500px;
+  max-width: 95%;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.cookie-option {
+  margin-bottom: 1.5rem;
+}
+
+.cookie-option p {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 0.3rem;
+}
+
+.cookie-modal-actions {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .cookie-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 /* =========================================================
    RESPONSIVE

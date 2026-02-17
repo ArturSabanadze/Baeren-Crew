@@ -20,14 +20,14 @@
     <!-- HERO -->
     <section class="app-section section-hero" id="section-hero">
         <div class="container hero-grid">
-        <div>
-            <!-- Main Image Preview -->
-            <div class="hero-main">
-                <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero1.webp" alt="Umzugsteam" class="hero-image active" id="hero-main-image">
-            </div>
+            <!-- Main Hero Carousel start-->
+            <div>
+                <div class="hero-main">
+                    <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero1.webp" alt="Umzugsteam" class="hero-image active" id="hero-main-image">
+                </div>
 
-            <!-- Thumbnail Carousel -->
-            <div class="hero-thumbnails">
+                <!-- Thumbnail Carousel -->
+                <div class="hero-thumbnails">
                 <button type="button" class="carousel-btn-prev">Prev</button>
                 <div class="thumbnails-wrapper">
                     <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero1.webp" alt="Umzugsteam" class="thumbnail active">
@@ -38,23 +38,14 @@
                     <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero6.webp" alt="Umzugsteam" class="thumbnail">
                 </div>
                 <button type="button" class="carousel-btn-next">Next</button>
+                </div>
             </div>
-        </div>
+            <!-- Main Hero Carousel end-->
 
-        <!-- Form -->
-        <div class="hero-form">
-            <form id="quick-request-form" action="anfrage" method="POST" enctype="multipart/form-data" class="form">
-                <input type="text" name="from_address" placeholder="Auszugsadresse" class="form-input" autocomplete="street-address" required>
-                <input type="text" name="to_address" placeholder="Einzugsadresse" class="form-input" autocomplete="address-line3" required>
-                <input type="text" name="move_date" placeholder="Umzugsdatum" class="form-input date-input" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
-                <input type="email" name="email" placeholder="E-Mail" class="form-input" autocomplete="email" required>
-                <input type="tel" name="phone" placeholder="Telefonnummer" class="form-input" autocomplete="tel" required>
-                <input type="file" name="files[]" class="form-input" multiple>
-                <button type="submit" class="btn btn-primary btn-full">
-                    Rückruf anfordern
-                </button>
-            </form>
-        </div>
+            <!-- Form Start-->
+            <?php include_once __DIR__ . '/../partials/contact_form.php'; ?>
+            <!-- Form End -->
+             
         </div>
         <div class="hero-checkboard">
             <div class="check-item">
@@ -73,7 +64,7 @@
         </div>
     </section>
 
-
+    <hr>
     <!-- SERVICES -->
     <section class="app-section section-services" id="section-services">
         <div class="container section-grid">
@@ -104,7 +95,7 @@
 
         </div>
     </section>
-
+    <hr>
     <!-- PRICING -->
     <section class="app-section section-pricing" id="section-pricing">
         <div class="container section-grid">
@@ -149,7 +140,7 @@
 
         </div>
     </section>
-
+    <hr>
     <!-- TEAM -->
     <section class="app-section section-team" id="team">
         <div class="container section-grid">
@@ -164,25 +155,25 @@
                 <div class="team-grid">
                     <div class="team-member">
                         <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.jpg" alt="Geschäftsführer">
-                        <h4>Max Mustermann</h4>
+                        <p>Max Mustermann</p>
                         <span>Geschäftsführer</span>
                     </div>
 
                     <div class="team-member">
                         <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.jpg" alt="Head of Management">
-                        <h4>Anna Beispiel</h4>
+                        <p>Anna Beispiel</p>
                         <span>Head of Management</span>
                     </div>
 
                     <div class="team-member">
                         <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.jpg" alt="Teamleiter">
-                        <h4>David Muster</h4>
+                        <p>David Muster</p>
                         <span>Teamleiter Umzug</span>
                     </div>
 
                     <div class="team-member">
                         <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.jpg" alt="Disposition">
-                        <h4>Sophie Test</h4>
+                        <p>Sophie Test</p>
                         <span>Disposition & Planung</span>
                     </div>
              </div>
@@ -191,7 +182,7 @@
 
         </div>
     </section>
-
+    <hr>    
     <!-- MISSION -->
     <section class="app-section section-mission" id="mission">
         <div class="container section-grid">
@@ -217,7 +208,7 @@
 
         </div>
     </section>
-
+    <hr>
     <!-- BEWERTUNGEN -->
     <section class="app-section section-reviews" id="reviews">
         <div class="container section-grid">
@@ -275,9 +266,7 @@
 
         </div>
     </section>
-
-
-
+    <hr>
     <!-- CONTACT -->
     <section class="app-section section-contact" id="section-contact">
         <div class="container section-center">
@@ -292,6 +281,7 @@
 </main>
 
 <?php include_once __DIR__ . '/../partials/footer.php'; ?>
-
+<?php include_once __DIR__ . '/../partials/cookie_banner.php'; ?>
+<?php include_once __DIR__ . '/../partials/cookie_modal.php'; ?>
 </body>
 </html>
