@@ -14,6 +14,7 @@
   --color-muted: #777;
 
   --font-main: 'Inter', sans-serif;
+  --font-size-small: 0.9rem;
   --font-size-base: 18px;
   --font-size-lg: 2.5rem;
   --font-size-md: 1.2rem;
@@ -318,6 +319,16 @@ html, body {
   box-sizing: border-box;
 }
 
+.date-input:invalid::before {
+    content: "Umzugsdatum";
+    color: #999;
+}
+
+.date-input:focus::before,
+.date-input:valid::before {
+    content: "";
+}
+
 .btn-full {
   width: 100%;
 }
@@ -419,7 +430,7 @@ html, body {
   width: 100%;
   background: var(--color-primary);
   color: white;
-  padding: 2rem 0;
+  padding: 10px !important;
   transform: translateY(100%);
   transition: transform var(--transition-smooth);
   z-index: var(--z-footer);
@@ -431,15 +442,301 @@ html, body {
   align-items: center;
 }
 
+.footer-grid h3 {
+  font-size: var(--font-size-small);
+  margin-bottom: 0.5rem;
+}
+
 .footer-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
   color: white;
   text-decoration: none;
-  margin-left: 1.5rem;
+  font-size: var(--font-size-small);
+  margin-left: 5px;
+}
+
+.footer-links a:hover {
+  color: var(--color-secondary);
 }
 
 .app-footer.visible {
   transform: translateY(0);
 }
+
+/* =========================================================
+   AGB STYLES
+========================================================= */
+
+.agb-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: block;
+}
+
+.agb-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.agb-meta {
+  color: var(--color-muted);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.agb-section {
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: white;
+}
+
+.agb-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  background: var(--color-primary);
+  color: white;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.agb-toggle:hover {
+  background: var(--color-secondary);
+}
+
+.agb-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  background: white;
+}
+
+.agb-content p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.agb-section.active .agb-content {
+  max-height: 1000px;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* =========================================================
+   IMPRESSUM (Design angepasst an Layout)
+========================================================= */
+
+.impressum-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: white;
+  box-shadow: var(--shadow-soft);
+  border-radius: 8px;
+  display: block;
+}
+
+/* Main Title */
+.impressum-container h1 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 0.8rem;
+}
+
+/* Section Headings */
+.impressum-container h2 {
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.impressum-container h3 {
+  font-size: 1.1rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* Paragraphs */
+.impressum-container p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+/* Lists */
+.impressum-container ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.impressum-container li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+/* Links */
+.impressum-container a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.impressum-container a:hover {
+  color: var(--color-secondary);
+}
+
+/* Subtle Section Separation */
+.impressum-container h2:not(:first-of-type) {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .impressum-container {
+    padding: 2rem;
+  }
+
+  .impressum-container h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* =========================================================
+   TEAM SECTION
+========================================================= */
+
+.section-team {
+  background: var(--color-surface);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.team-member img:hover {
+  transform: scale(1.05);
+}
+
+.team-member h4 {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.team-member span {
+  font-size: var(--font-size-small);
+  color: var(--color-muted);
+}
+
+/* =========================================================
+   MISSION SECTION
+========================================================= */
+
+.section-mission {
+  background: white;
+}
+
+.mission-text {
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* =========================================================
+   REVIEWS SECTION
+========================================================= */
+
+.section-reviews {
+  background: var(--color-surface);
+}
+
+.review-carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+  overflow: hidden;
+}
+
+.review-track {
+  display: flex;
+  transition: transform var(--transition-smooth);
+}
+
+.review-card {
+  min-width: 100%;
+  background: white;
+  padding: 3rem;
+  box-shadow: var(--shadow-soft);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.review-card p {
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.review-card span {
+  font-size: var(--font-size-small);
+  color: var(--color-muted);
+}
+
+.stars {
+  font-size: 1.5rem;
+  color: var(--color-secondary);
+}
+
+.review-controls {
+  margin-top: 1rem;
+}
+
+.review-controls button {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.review-controls button:hover {
+  background: var(--color-secondary);
+}
+
+
 /* =========================================================
    RESPONSIVE
 ========================================================= */

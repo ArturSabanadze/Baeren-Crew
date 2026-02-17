@@ -1,0 +1,25 @@
+<footer class="app-footer" id="appFooter">
+    <div class="container footer-grid">
+        <div class="footer-links">
+            <h3>Social Links</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">TikTok</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section company-info">
+            <p>© <?= date('Y') ?> Bären Crew</p>
+        </div>
+
+        <div class="footer-section footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.php?page=agb">AGB</a></li>
+                <li><a href="index.php?page=dsgvo">Datenschutz</a></li>
+                <li><a href="index.php?page=impressum">Impressum</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>

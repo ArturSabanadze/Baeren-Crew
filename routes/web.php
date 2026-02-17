@@ -1,21 +1,23 @@
 <?php
 
 use App\Controllers\PageController;
-use App\Controllers\AuthController;
 
 $page = $_GET['page'] ?? 'home';
 
 switch ($page) {
-    case 'login':
-        (new AuthController())->login();
+    case 'home':
+        (new PageController())->home();
         break;
 
-    case 'register':
-        (new AuthController())->register();
+    case 'agb':
+        (new PageController())->agb();
         break;
 
-    case 'logout':
-        (new AuthController())->logout();
+    case 'dsgvo':
+        (new PageController())->dsgvo();
+        break;
+    case 'impressum':
+        (new PageController())->impressum();
         break;
 
     default:
