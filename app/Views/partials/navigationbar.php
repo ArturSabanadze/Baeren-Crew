@@ -1,7 +1,7 @@
 <nav class="nav">
         <div class="nav__logo">
             <a href="index.php?page=home">
-                <img src="<?= $env['DIR_PATH'] ?>assets/images/Logo/Logo.png" alt="Logo">
+                <img src="<?= $env['DIR_PATH'] ?>/assets/images/Logo/Logo.webp" alt="Logo">
             </a>
         </div>
 

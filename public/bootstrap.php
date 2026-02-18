@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 spl_autoload_register(function ($class) {
     if (str_starts_with($class, 'App\\')) {

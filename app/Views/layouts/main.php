@@ -21,7 +21,7 @@
     <section class="app-section section-hero" id="section-hero">
         <div class="container hero-grid">
             <!-- Main Hero Carousel start-->
-            <div>
+            <div class="hero-carousel">
                 <div class="hero-main">
                     <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero1.webp" alt="Umzugsteam" class="hero-image active" id="hero-main-image">
                 </div>
@@ -45,19 +45,19 @@
             <!-- Form Start-->
             <?php include_once __DIR__ . '/../partials/contact_form.php'; ?>
             <!-- Form End -->
-             
+
         </div>
         <div class="hero-checkboard">
             <div class="check-item">
-                <span><img src="<?= $env['DIR_PATH'] ?>assets/icons/checkbox.png" alt="Unkompliziert" /></span>
+                <span><img src="<?= $env['DIR_PATH'] ?>assets/icons/checkbox.webp" alt="Unkompliziert" /></span>
                 <p>Unkompliziert</p>
             </div>
             <div class="check-item">
-                <span><img src="<?= $env['DIR_PATH'] ?>assets/icons/checkbox.png" alt="Zuverlässig" /></span>
+                <span><img src="<?= $env['DIR_PATH'] ?>assets/icons/checkbox.webp" alt="Zuverlässig" /></span>
                 <p>Zuverlässig</p>
             </div>
             <div class="check-item">
-                <span><img src="<?= $env['DIR_PATH'] ?>assets/icons/checkbox.png" alt="Engagiert" /></span>
+                <span><img src="<?= $env['DIR_PATH'] ?>assets/icons/checkbox.webp" alt="Engagiert" /></span>
                 <p>Engagiert</p>
             </div>
 
@@ -154,25 +154,25 @@
 
                 <div class="team-grid">
                     <div class="team-member">
-                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.jpg" alt="Geschäftsführer">
+                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.webp" alt="Geschäftsführer">
                         <p>Max Mustermann</p>
                         <span>Geschäftsführer</span>
                     </div>
 
                     <div class="team-member">
-                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.jpg" alt="Head of Management">
+                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.webp" alt="Head of Management">
                         <p>Anna Beispiel</p>
                         <span>Head of Management</span>
                     </div>
 
                     <div class="team-member">
-                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.jpg" alt="Teamleiter">
+                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.webp" alt="Teamleiter">
                         <p>David Muster</p>
                         <span>Teamleiter Umzug</span>
                     </div>
 
                     <div class="team-member">
-                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.jpg" alt="Disposition">
+                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/Team/test_user.webp" alt="Disposition">
                         <p>Sophie Test</p>
                         <span>Disposition & Planung</span>
                     </div>

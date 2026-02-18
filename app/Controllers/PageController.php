@@ -8,6 +8,8 @@ class PageController
     public function home()
     {
          $env = parse_ini_file(__DIR__ . '/../../config/.env');
+         
+        include_once __DIR__ . '/../Helpers/API_Handler.php';
         
         View::render('home', [
             'title' => 'Home',
