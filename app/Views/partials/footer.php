@@ -1,5 +1,5 @@
 <footer class="app-footer" id="appFooter">
-    <div class="container footer-grid">
+    <div class="footer-grid">
         <div class="footer-links">
             <h3>Social Links</h3>
             <ul>
@@ -18,7 +18,9 @@
             <ul>
                 <li><a href="index.php?page=agb">AGB</a></li>
                 <li><a href="index.php?page=dsgvo">Datenschutz</a></li>
-                <li><a href="#" onclick="document.getElementById('cookieModal').classList.add('show')">Cookie-Einstellungen</a></li>
+                <li><a href="#"
+                        onclick="document.getElementById('cookieModal').classList.add('show')">Cookie-Einstellungen</a>
+                </li>
                 <li><a href="index.php?page=impressum">Impressum</a></li>
             </ul>
         </div>

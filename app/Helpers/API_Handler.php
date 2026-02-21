@@ -15,11 +15,11 @@ use PHPMailer\PHPMailer\Exception;
    CONFIG
 ========================= */
 
-$uploadDir   = __DIR__ . '/../uploads/';
-$archiveDir  = __DIR__ . '/../archive/';
+$uploadDir = __DIR__ . '/../uploads/';
+$archiveDir = __DIR__ . '/../archive/';
 $maxFileSize = 2 * 1024 * 1024; // 2MB
-$maxFiles    = 10;
-$allowedMimeTypes = ['image/jpeg','image/png','application/pdf'];
+$maxFiles = 10;
+$allowedMimeTypes = ['image/jpeg', 'image/png', 'application/pdf'];
 
 /* =========================
    HONEYPOT
@@ -69,18 +69,21 @@ if (
        HELPER FUNCTIONS
     ========================= */
 
-    function clean_string($value, $max = 255) {
+    function clean_string($value, $max = 255)
+    {
         $value = trim($value);
         $value = strip_tags($value);
         $value = preg_replace('/\s+/', ' ', $value);
         return mb_substr($value, 0, $max);
     }
 
-    function clean_phone($value) {
+    function clean_phone($value)
+    {
         return preg_replace('/[^0-9+\-\s()]/', '', $value);
     }
 
-    function getUserIP() {
+    function getUserIP()
+    {
         if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             return trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]);
         }
@@ -93,11 +96,11 @@ if (
     ========================= */
 
     $from_address = clean_string($_POST['from_address'] ?? '');
-    $to_address   = clean_string($_POST['to_address'] ?? '');
-    $move_date    = clean_string($_POST['move_date'] ?? '', 20);
-    $email_raw    = trim($_POST['email'] ?? '');
-    $phone        = clean_phone($_POST['phone'] ?? '');
-    $consent      = isset($_POST['privacy_consent']);
+    $to_address = clean_string($_POST['to_address'] ?? '');
+    $move_date = clean_string($_POST['move_date'] ?? '', 20);
+    $email_raw = trim($_POST['email'] ?? '');
+    $phone = clean_phone($_POST['phone'] ?? '');
+    $consent = isset($_POST['privacy_consent']);
 
     $email = filter_var($email_raw, FILTER_VALIDATE_EMAIL);
 
@@ -147,14 +150,15 @@ if (
 
         foreach ($_FILES['files']['tmp_name'] as $key => $tmpName) {
 
-            if ($_FILES['files']['error'][$key] !== UPLOAD_ERR_OK) continue;
+            if ($_FILES['files']['error'][$key] !== UPLOAD_ERR_OK)
+                continue;
 
             if ($_FILES['files']['size'][$key] > $maxFileSize) {
                 exit("Datei größer als 2MB.");
             }
 
             $finfo = finfo_open(FILEINFO_MIME_TYPE);
-            $mime  = finfo_file($finfo, $tmpName);
+            $mime = finfo_file($finfo, $tmpName);
             finfo_close($finfo);
 
             if (!in_array($mime, $allowedMimeTypes)) {
@@ -165,6 +169,7 @@ if (
                 preg_replace("/[^a-zA-Z0-9.\-_]/", "", $_FILES['files']['name'][$key]);
 
             if (!move_uploaded_file($tmpName, $uploadDir . $safeName)) {
+                echo $uploadDir . $safeName;
                 exit("Datei konnte nicht gespeichert werden.");
             }
 
@@ -178,7 +183,7 @@ if (
     ========================= */
 
     $timestamp = date("Y-m-d H:i:s");
-    $ip        = getUserIP();
+    $ip = getUserIP();
 
     $data = [
         'timestamp' => $timestamp,
@@ -203,10 +208,10 @@ if (
 
 
     /* =========================
-       SMTP FUNCTION
+    SMTP FUNCTION WITH ATTACHMENTS
     ========================= */
 
-    function sendMailSMTP($to, $subject, $body, $replyTo = null)
+    function sendMailSMTP($to, $subject, $body, $replyTo = null, $attachments = [])
     {
         global $env;
 
@@ -214,13 +219,13 @@ if (
 
         try {
             $mail->isSMTP();
-            $mail->Host       = 'smtp.gmail.com';
-            $mail->SMTPAuth   = true;
-            $mail->Username   = 'anietakaraman.transfer@gmail.com';
-            $mail->Password   = $env['EMAIL_APP_PASSWORD'];
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'anietakaraman.transfer@gmail.com';
+            $mail->Password = $env['EMAIL_APP_PASSWORD'];
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port       = 465;
-            $mail->CharSet    = 'UTF-8';
+            $mail->Port = 465;
+            $mail->CharSet = 'UTF-8';
 
             $mail->setFrom('anietakaraman.transfer@gmail.com', 'Bären-Crew Umzüge');
             $mail->addAddress($to);
@@ -229,9 +234,17 @@ if (
                 $mail->addReplyTo($replyTo);
             }
 
+            // Attach files if any
+            foreach ($attachments as $file) {
+                $filePath = __DIR__ . '/../uploads/' . $file;
+                if (file_exists($filePath)) {
+                    $mail->addAttachment($filePath);
+                }
+            }
+
             $mail->isHTML(false);
             $mail->Subject = $subject;
-            $mail->Body    = $body;
+            $mail->Body = $body;
 
             return $mail->send();
 
@@ -247,38 +260,39 @@ if (
     ========================= */
 
     $companyMessage = "
-Neue Umzugsanfrage
+    Neue Umzugsanfrage
 
-Zeit: $timestamp
-IP: $ip
+    Zeit: $timestamp
+    IP: $ip
 
-Auszug: $from_address
-Einzug: $to_address
-Datum: $move_date
-E-Mail: $email
-Telefon: $phone
-";
+    Auszug: $from_address
+    Einzug: $to_address
+    Datum: $move_date
+    E-Mail: $email
+    Telefon: $phone
+    ";
 
     $userMessage = "
-Vielen Dank für Ihre Anfrage.
+    Vielen Dank für Ihre Anfrage.
 
-Wir melden uns zeitnah bei Ihnen.
+    Wir melden uns zeitnah bei Ihnen.
 
-Ihre Angaben:
-Auszug: $from_address
-Einzug: $to_address
-Datum: $move_date
-Telefon: $phone
+    Ihre Angaben:
+    Auszug: $from_address
+    Einzug: $to_address
+    Datum: $move_date
+    Telefon: $phone
 
-Mit freundlichen Grüßen
-Ihr Bären-Crew Team
-";
+    Mit freundlichen Grüßen
+    Ihr Bären-Crew Team
+    ";
 
     $mailCompany = sendMailSMTP(
         "diakosmisi26@hotmail.com",
         "Neue Umzugsanfrage",
         $companyMessage,
-        $email
+        $email,
+        $uploadedFiles
     );
 
     $mailUser = sendMailSMTP(
@@ -298,7 +312,6 @@ Ihr Bären-Crew Team
 
         header("Location: /index.php?page=home&success=1");
         exit;
-
     } else {
 
         header("Location: /index.php?page=home&error=mail");
