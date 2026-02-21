@@ -22,53 +22,42 @@ $maxFiles = 10;
 $allowedMimeTypes = ['image/jpeg', 'image/png', 'application/pdf'];
 
 /* =========================
-   HONEYPOT
+   INITIALIZE ERRORS
 ========================= */
-if (!empty($_POST['company_name'])) {
-    exit("Spam erkannt.");
-}
+
+$errors = [];
 
 /* =========================
    ACTION CHECK
 ========================= */
 if (
     $_SERVER['REQUEST_METHOD'] === 'POST' &&
-    isset($_POST['action']) &&
-    $_POST['action'] === 'save_contact_message'
+    ($_POST['action'] ?? '') === 'save_contact_message'
 ) {
 
     /* =========================
-       RATE LIMIT (10 sec)
-    ========================= */
-    if (isset($_SESSION['last_submit'])) {
-        if (time() - $_SESSION['last_submit'] < 10) {
-            http_response_code(429);
-            exit("Bitte warten Sie einige Sekunden.");
-        }
+       HONEYPOT
+    ========================== */
+    if (!empty($_POST['company_name'])) {
+        $errors[] = "Spam erkannt.";
     }
-    $_SESSION['last_submit'] = time();
-
 
     /* =========================
        CSRF VALIDATION
-    ========================= */
+    ========================== */
     if (
-        empty($_POST['csrf_token']) ||
-        empty($_SESSION['csrf_token']) ||
+        empty($_POST['csrf_token']) || empty($_SESSION['csrf_token']) ||
         !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])
     ) {
-        http_response_code(403);
-        exit("Ungültiges CSRF Token.");
+        $errors[] = "Ungültiges CSRF Token.";
     }
 
     // Invalidate token (double submit protection)
     unset($_SESSION['csrf_token']);
 
-
     /* =========================
        HELPER FUNCTIONS
-    ========================= */
-
+    ========================== */
     function clean_string($value, $max = 255)
     {
         $value = trim($value);
@@ -90,11 +79,9 @@ if (
         return $_SERVER['REMOTE_ADDR'] ?? 'UNKNOWN';
     }
 
-
     /* =========================
        FETCH INPUT
-    ========================= */
-
+    ========================== */
     $from_address = clean_string($_POST['from_address'] ?? '');
     $to_address = clean_string($_POST['to_address'] ?? '');
     $move_date = clean_string($_POST['move_date'] ?? '', 20);
@@ -106,42 +93,34 @@ if (
 
     /* =========================
        VALIDATION
-    ========================= */
-
+    ========================== */
     if (!$email || preg_match("/[\r\n]/", $email)) {
-        exit("Ungültige E-Mail.");
+        $errors[] = "Ungültige E-Mail.";
     }
-
     if (strlen($from_address) < 5 || strlen($to_address) < 5) {
-        exit("Adresse ungültig.");
+        $errors[] = "Adresse ungültig.";
     }
-
     if (strlen($phone) < 6) {
-        exit("Telefonnummer ungültig.");
+        $errors[] = "Telefonnummer ungültig.";
     }
-
     if (!$consent) {
-        exit("Datenschutzbestimmungen erforderlich.");
+        $errors[] = "Datenschutzbestimmungen erforderlich.";
     }
-
     if (!empty($move_date)) {
         $d = DateTime::createFromFormat('Y-m-d', $move_date);
         if (!$d || $d->format('Y-m-d') !== $move_date) {
-            exit("Ungültiges Datum.");
+            $errors[] = "Ungültiges Datum.";
         }
     }
 
-
     /* =========================
        FILE HANDLING
-    ========================= */
-
+    ========================== */
     $uploadedFiles = [];
-
     if (!empty($_FILES['files']['name'][0])) {
 
         if (count($_FILES['files']['name']) > $maxFiles) {
-            exit("Maximal 10 Dateien erlaubt.");
+            $errors[] = "Maximal 10 Dateien erlaubt.";
         }
 
         if (!is_dir($uploadDir)) {
@@ -154,7 +133,8 @@ if (
                 continue;
 
             if ($_FILES['files']['size'][$key] > $maxFileSize) {
-                exit("Datei größer als 2MB.");
+                $errors[] = "Datei größer als 2MB: " . $_FILES['files']['name'][$key];
+                continue;
             }
 
             $finfo = finfo_open(FILEINFO_MIME_TYPE);
@@ -162,26 +142,25 @@ if (
             finfo_close($finfo);
 
             if (!in_array($mime, $allowedMimeTypes)) {
-                exit("Ungültiger Dateityp.");
+                $errors[] = "Ungültiger Dateityp: " . $_FILES['files']['name'][$key];
+                continue;
             }
 
             $safeName = bin2hex(random_bytes(16)) . '_' .
                 preg_replace("/[^a-zA-Z0-9.\-_]/", "", $_FILES['files']['name'][$key]);
 
             if (!move_uploaded_file($tmpName, $uploadDir . $safeName)) {
-                echo $uploadDir . $safeName;
-                exit("Datei konnte nicht gespeichert werden.");
+                $errors[] = "Datei konnte nicht gespeichert werden: " . $_FILES['files']['name'][$key];
+                continue;
             }
 
             $uploadedFiles[] = $safeName;
         }
     }
 
-
     /* =========================
        STORE DATA
-    ========================= */
-
+    ========================== */
     $timestamp = date("Y-m-d H:i:s");
     $ip = getUserIP();
 
@@ -206,11 +185,9 @@ if (
         LOCK_EX
     );
 
-
     /* =========================
-    SMTP FUNCTION WITH ATTACHMENTS
-    ========================= */
-
+       SMTP FUNCTION WITH ATTACHMENTS
+    ========================== */
     function sendMailSMTP($to, $subject, $body, $replyTo = null, $attachments = [])
     {
         global $env;
@@ -234,7 +211,6 @@ if (
                 $mail->addReplyTo($replyTo);
             }
 
-            // Attach files if any
             foreach ($attachments as $file) {
                 $filePath = __DIR__ . '/../uploads/' . $file;
                 if (file_exists($filePath)) {
@@ -254,67 +230,67 @@ if (
         }
     }
 
-
     /* =========================
-       SEND EMAILS
-    ========================= */
+       SEND EMAILS IF NO ERRORS
+    ========================== */
+    if (empty($errors)) {
+        $companyMessage = "
+Neue Umzugsanfrage
 
-    $companyMessage = "
-    Neue Umzugsanfrage
+Zeit: $timestamp
+IP: $ip
 
-    Zeit: $timestamp
-    IP: $ip
+Auszug: $from_address
+Einzug: $to_address
+Datum: $move_date
+E-Mail: $email
+Telefon: $phone
+";
 
-    Auszug: $from_address
-    Einzug: $to_address
-    Datum: $move_date
-    E-Mail: $email
-    Telefon: $phone
-    ";
+        $userMessage = "
+Vielen Dank für Ihre Anfrage.
 
-    $userMessage = "
-    Vielen Dank für Ihre Anfrage.
+Wir melden uns zeitnah bei Ihnen.
 
-    Wir melden uns zeitnah bei Ihnen.
+Ihre Angaben:
+Auszug: $from_address
+Einzug: $to_address
+Datum: $move_date
+Telefon: $phone
 
-    Ihre Angaben:
-    Auszug: $from_address
-    Einzug: $to_address
-    Datum: $move_date
-    Telefon: $phone
+Mit freundlichen Grüßen
+Ihr Bären-Crew Team
+";
 
-    Mit freundlichen Grüßen
-    Ihr Bären-Crew Team
-    ";
+        $mailCompany = sendMailSMTP(
+            "diakosmisi26@hotmail.com",
+            "Neue Umzugsanfrage",
+            $companyMessage,
+            $email,
+            $uploadedFiles
+        );
 
-    $mailCompany = sendMailSMTP(
-        "diakosmisi26@hotmail.com",
-        "Neue Umzugsanfrage",
-        $companyMessage,
-        $email,
-        $uploadedFiles
-    );
+        $mailUser = sendMailSMTP($email, "Bestätigung Ihrer Anfrage", $userMessage);
 
-    $mailUser = sendMailSMTP(
-        $email,
-        "Bestätigung Ihrer Anfrage",
-        $userMessage
-    );
-
-
-    /* =========================
-       POST-REDIRECT-GET
-    ========================= */
-
-    if ($mailCompany && $mailUser) {
-
-        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-
-        header("Location: /index.php?page=home&success=1");
-        exit;
-    } else {
-
-        header("Location: /index.php?page=home&error=mail");
-        exit;
+        if (!$mailCompany || !$mailUser) {
+            $errors[] = "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es später.";
+        }
     }
+
+    /* =========================
+       STORE ERRORS / SUCCESS IN SESSION
+    ========================== */
+    if (!empty($errors)) {
+        $_SESSION['form_errors'] = $errors;
+        $_SESSION['form_success'] = false;
+    } else {
+        $_SESSION['form_errors'] = [];
+        $_SESSION['form_success'] = true;
+    }
+
+    /* =========================
+       REDIRECT BACK TO FORM
+    ========================== */
+    header("Location: /index.php?page=home"); // adjust page URL as needed
+    exit;
 }
