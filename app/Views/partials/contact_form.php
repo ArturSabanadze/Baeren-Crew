@@ -31,8 +31,7 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
             </div>
         <?php endif; ?>
     </div>
-    <form id="quick-request-form" action="/path/to/API_Handler.php" method="POST" enctype="multipart/form-data"
-        autocomplete="off">
+    <form id="quick-request-form" action="/" method="POST" enctype="multipart/form-data" autocomplete="off">
 
         <input type="hidden" name="csrf_token"
             value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8'); ?>">
