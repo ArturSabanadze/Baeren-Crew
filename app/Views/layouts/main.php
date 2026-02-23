@@ -11,12 +11,15 @@
 
 <body class="app">
     <script> const env = <?= json_encode($env) ?>;</script>
+
     <header class="app-header" id="appHeader">
         <?php include_once __DIR__ . '/../partials/navigationbar-home.php'; ?>
         <section class="mobile-nav-section">
             <?php include_once __DIR__ . '/../partials/mobile_menu.php'; ?>
         </section>
     </header>
+    <div class="app-header-distancer"></div>
+    </div>
 
 
     <main class="app-main">
