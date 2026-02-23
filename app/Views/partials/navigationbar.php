@@ -2,8 +2,8 @@
     <div class="nav__logo">
         <a href="index.php?page=home">
             <img src="<?= $env['DIR_PATH'] ?>/assets/images/Logo/Logo4.webp" alt="Logo">
-            <h1>Bären-Crew</h1>
         </a>
+        <h1>BÄREN - CREW</h1>
     </div>
 
     <div class="nav__links">

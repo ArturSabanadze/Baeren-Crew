@@ -1,12 +1,12 @@
 <nav class="nav">
     <div class="nav__logo">
-        <a href="index.php?page=home">
+        <a href="/">
             <img src="<?= $env['DIR_PATH'] ?>/assets/images/Logo/Logo4.webp" alt="Logo">
-
         </a>
         <h1>BÄREN - CREW</h1>
     </div>
 
+    <!-- Desktop links -->
     <div class="nav__links">
         <a href="#section-hero">Start</a>
         <a href="#section-services">Leistungen</a>
@@ -23,4 +23,13 @@
 
         <a href="?page=jobs">Karriere</a>
     </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="nav__hamburger" id="mobileHamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
 </nav>

@@ -18,9 +18,10 @@ use PHPMailer\PHPMailer\Exception;
 $uploadDir = __DIR__ . '/../uploads/';
 $archiveDir = __DIR__ . '/../archive/';
 $maxFileSize = 2 * 1024 * 1024; // 2MB
-$maxFiles = 10;
+$maxFiles = 5;
 $allowedMimeTypes = ['image/jpeg', 'image/png', 'application/pdf'];
 
+var_dump($uploadDir);
 /* =========================
    INITIALIZE ERRORS
 ========================= */
@@ -120,7 +121,7 @@ if (
     if (!empty($_FILES['files']['name'][0])) {
 
         if (count($_FILES['files']['name']) > $maxFiles) {
-            $errors[] = "Maximal 10 Dateien erlaubt.";
+            $errors[] = "Maximal 5 Dateien erlaubt.";
         }
 
         if (!is_dir($uploadDir)) {
@@ -151,6 +152,7 @@ if (
 
             if (!move_uploaded_file($tmpName, $uploadDir . $safeName)) {
                 $errors[] = "Datei konnte nicht gespeichert werden: " . $_FILES['files']['name'][$key];
+                $errors[] = $uploadDir . $safeName;
                 continue;
             }
 
@@ -188,7 +190,7 @@ if (
     /* =========================
        SMTP FUNCTION WITH ATTACHMENTS
     ========================== */
-    function sendMailSMTP($to, $subject, $body, $replyTo = null, $attachments = [])
+    function sendMailSMTP($to, $subject, $body, $replyTo = null, $attachments = [], $includeLogo = false)
     {
         global $env;
 
@@ -196,15 +198,17 @@ if (
 
         try {
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = $env['SMTP_HOST'];
             $mail->SMTPAuth = true;
-            $mail->Username = 'anietakaraman.transfer@gmail.com';
-            $mail->Password = $env['EMAIL_APP_PASSWORD'];
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port = 465;
+            $mail->Username = $env['SMTP_USER'];
+            $mail->Password = $env['SMTP_PASS'];
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = $env['SMTP_PORT'];
             $mail->CharSet = 'UTF-8';
+            $mail->SMTPDebug = 0;
+            $mail->Debugoutput = 'error_log';
 
-            $mail->setFrom('anietakaraman.transfer@gmail.com', 'Bären-Crew Umzüge');
+            $mail->setFrom($env['SMTP_USER'], 'Bären-Crew Umzüge');
             $mail->addAddress($to);
 
             if ($replyTo) {
@@ -218,7 +222,14 @@ if (
                 }
             }
 
-            $mail->isHTML(false);
+            if ($includeLogo) {
+                $mail->addEmbeddedImage(
+                    __DIR__ . '/../uploads/Logo.webp',
+                    'logo_cid'
+                );
+            }
+
+            $mail->isHTML(true);
             $mail->Subject = $subject;
             $mail->Body = $body;
 
@@ -235,42 +246,67 @@ if (
     ========================== */
     if (empty($errors)) {
         $companyMessage = "
-Neue Umzugsanfrage
+<p>Sie haben eine neue Umzugsanfrage.</p>
 
-Zeit: $timestamp
-IP: $ip
+<p>Melden Sie sich bitte zeitnah bei dem Kunden.</p>
 
-Auszug: $from_address
-Einzug: $to_address
-Datum: $move_date
-E-Mail: $email
+<p><strong>Kunden Angaben:</strong><br>
+Auszug: $from_address<br>
+Einzug: $to_address<br>
+Umzugsdatum: $move_date<br>
+Email: $email<br>
 Telefon: $phone
+</p>
+
+<p>
+Sollten Sie Fragen haben bezüglich der Kontakt Formular, melden Sie sich bitte bei unserem Support Team:<br>
+Email: ArturSabanadze@gmail.com</p>
 ";
 
         $userMessage = "
-Vielen Dank für Ihre Anfrage.
+<p>Vielen Dank für Ihre Anfrage.</p>
 
-Wir melden uns zeitnah bei Ihnen.
+<p>Wir melden uns zeitnah bei Ihnen.</p>
 
-Ihre Angaben:
-Auszug: $from_address
-Einzug: $to_address
-Datum: $move_date
+<p><strong>Ihre Angaben:</strong><br>
+Auszug: $from_address<br>
+Einzug: $to_address<br>
+Datum: $move_date<br>
 Telefon: $phone
+</p>
 
-Mit freundlichen Grüßen
-Ihr Bären-Crew Team
+<p>Mit freundlichen Grüßen<br>
+Ihr Bären-Crew Team</p>
+
+<p>
+Webseite: <a href='https://www.baeren-crew.de'>www.baeren-crew.de</a><br>
+Kundensupport-Email: support@baeren-crew.de<br>
+Kunden-Hotline: +49 1556 1231466
+</p>
+
+<p style='margin-top:30px;'>
+    <img src='cid:logo_cid' alt='Bären-Crew Logo' width='180'>
+</p>
 ";
 
         $mailCompany = sendMailSMTP(
-            "diakosmisi26@hotmail.com",
+            "auftraege@baeren-crew.de",
             "Neue Umzugsanfrage",
             $companyMessage,
             $email,
-            $uploadedFiles
+            $uploadedFiles,
+            false // no logo
         );
 
-        $mailUser = sendMailSMTP($email, "Bestätigung Ihrer Anfrage", $userMessage);
+        // User email — include logo
+        $mailUser = sendMailSMTP(
+            $email,
+            "Bestätigung Ihrer Anfrage",
+            $userMessage,
+            null,
+            [],
+            true // include logo
+        );
 
         if (!$mailCompany || !$mailUser) {
             $errors[] = "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es später.";

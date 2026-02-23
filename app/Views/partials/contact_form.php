@@ -2,6 +2,9 @@
 if (session_status() === PHP_SESSION_NONE)
     session_start();
 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
@@ -9,9 +12,8 @@ if (empty($_SESSION['csrf_token'])) {
 $errors = $_SESSION['form_errors'] ?? [];
 $success = $_SESSION['form_success'] ?? false;
 unset($_SESSION['form_errors'], $_SESSION['form_success']);
+
 ?>
-
-
 
 <div class="hero-form">
     <div class="error-message">
@@ -27,7 +29,7 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
             </div>
         <?php elseif ($success): ?>
             <div class="alert alert-success">
-                Vielen Dank! Ihre Anfrage wurde erfolgreich versendet.
+                Vielen Dank! Ihre Anfrage wurde erfolgreich versendet. Wir melden uns schnellstmöglich bei Ihnen.
             </div>
         <?php endif; ?>
     </div>
@@ -55,8 +57,8 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
 
         <div class="form-group">
             <label for="move_date">Umzugsdatum</label>
-            <input type="date" id="move_date" name="move_date" class="form-input date-input"
-                value="<?= htmlspecialchars($_POST['move_date'] ?? '') ?>">
+            <input type="date" id="move_date" name="move_date" class="form-input date-input" placeholder="TT.MM.JJJJ"
+                maxlength="255" value="<?= htmlspecialchars($_POST['move_date'] ?? '') ?>">
         </div>
 
         <div class="form-group">
@@ -72,7 +74,7 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
         </div>
 
         <div class="form-group">
-            <label for="files">Dateien (max. 10 Dateien, je 2MB)</label>
+            <label for="files">Dateien (max. 5 Dateien, je 2MB)</label>
             <input type="file" id="files" name="files[]" class="form-input" multiple accept=".jpg,.jpeg,.png,.pdf">
         </div>
 
@@ -83,6 +85,18 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
             </label>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-full">Rückruf anfordern</button>
+        <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+            <span class="btn-text">Rückruf anfordern</span>
+            <span class="spinner" style="display:none;"></span>
+        </button>
+        <script>
+            document.getElementById("quick-request-form").addEventListener("submit", function () {
+                const btn = document.getElementById("submit-btn");
+                btn.disabled = true;
+
+                btn.querySelector(".btn-text").innerText = "Wird gesendet...";
+                btn.querySelector(".spinner").style.display = "inline-block";
+            });
+        </script>
     </form>
 </div>
