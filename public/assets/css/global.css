@@ -1063,6 +1063,11 @@ hr {
     max-width: 100%;
   }
 
+  .check-item span img {
+    width: 30px;
+    height: 30px;
+  }
+
   /* NAVIGATION BAR */
   .nav {
     max-width: 100%;
@@ -1198,8 +1203,12 @@ hr {
   .hero-checkboard {
     margin: 0;
     padding: 0;
-    flex-direction: column;
+    flex-direction: row;
     align-items: start;
+  }
+
+  .hero-checkboard p {
+    font-size: 0.8rem;
   }
 
   .hero-thumbnails {

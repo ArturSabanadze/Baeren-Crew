@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+if (!isMobileDevice()) {
+  document.addEventListener("DOMContentLoaded", () => {
     const mainImage = document.getElementById("hero-main-image");
     const thumbnails = document.querySelectorAll(".thumbnail");
     const prevBtn = document.querySelector(".carousel-btn-prev");
@@ -8,44 +9,51 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
     function showImage(index) {
-        // Update main image
-        mainImage.src = thumbnails[index].src;
-        mainImage.alt = thumbnails[index].alt;
+      // Update main image
+      mainImage.src = thumbnails[index].src;
+      mainImage.alt = thumbnails[index].alt;
 
-        // Update active thumbnail
-        thumbnails.forEach((thumb, i) => {
-            thumb.classList.toggle("active", i === index);
-        });
+      // Update active thumbnail
+      thumbnails.forEach((thumb, i) => {
+        thumb.classList.toggle("active", i === index);
+      });
 
-        currentIndex = index;
+      currentIndex = index;
     }
 
     // Click on thumbnails
     thumbnails.forEach((thumb, index) => {
-        thumb.addEventListener("click", () => showImage(index));
+      thumb.addEventListener("click", () => showImage(index));
     });
 
     // Carousel buttons
     nextBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        scrollNext();
+      e.preventDefault();
+      scrollNext();
     });
 
     prevBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        scrollPrev();
+      e.preventDefault();
+      scrollPrev();
     });
 
     function scrollNext() {
-        let nextIndex = (currentIndex + 1) % thumbnails.length;
-        showImage(nextIndex);
-        wrapper.scrollBy({ left: thumbnails[nextIndex].offsetWidth + 8, behavior: "smooth" });
+      let nextIndex = (currentIndex + 1) % thumbnails.length;
+      showImage(nextIndex);
+      wrapper.scrollBy({
+        left: thumbnails[nextIndex].offsetWidth + 8,
+        behavior: "smooth",
+      });
     }
 
     function scrollPrev() {
-        let prevIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-        showImage(prevIndex);
-        wrapper.scrollBy({ left: -(thumbnails[prevIndex].offsetWidth + 8), behavior: "smooth" });
+      let prevIndex =
+        (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+      showImage(prevIndex);
+      wrapper.scrollBy({
+        left: -(thumbnails[prevIndex].offsetWidth + 8),
+        behavior: "smooth",
+      });
     }
 
     // Auto-scroll every 3 seconds
@@ -53,4 +61,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize
     showImage(currentIndex);
-});
+  });
+}
+
+function isMobileDevice() {
+  return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
+    navigator.userAgent,
+  );
+}
+
+if (isMobileDevice()) {
+  console.log("User is on a mobile device");
+} else {
+  console.log("User is on desktop");
+}
