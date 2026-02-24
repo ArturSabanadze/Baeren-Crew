@@ -15,9 +15,10 @@ class PageController
 
 
         View::render('home', [
-            'title' => 'Professionelle Umzugsdienstleistungen – Stressfrei & Effizient | Bären-Crew Umzüge',
-            'meta_description' => ['Unsere Firma bietet professionelle Umzugsdienstleistungen, die Ihren Umzug stressfrei und effizient gestalten. Mit unserem erfahrenen Team und maßgeschneiderten Lösungen kümmern wir uns um alle Aspekte Ihres Umzugs, von der Planung bis zur Durchführung. Vertrauen Sie auf unsere Expertise, um Ihren Umzug reibungslos zu gestalten.'],
-            'description' => 'Unsere Firma bietet professionelle Umzugsdienstleistungen, die Ihren Umzug stressfrei und effizient gestalten. Mit unserem erfahrenen Team und maßgeschneiderten Lösungen kümmern wir uns um alle Aspekte Ihres Umzugs, von der Planung bis zur Durchführung. Vertrauen Sie auf unsere Expertise, um Ihren Umzug reibungslos zu gestalten.',
+            'title' => 'Umzugsfirma Bären-Crew – Professionelle Umzüge stressfrei & effizient',
+            'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
+            'canonical' => $env['APP_URL'] . '/',
+            'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
             'styles' => ['global'],
             'scripts' => ['app', 'Big_carousel', 'rates_carousel', 'cookies'],
             'env' => $env

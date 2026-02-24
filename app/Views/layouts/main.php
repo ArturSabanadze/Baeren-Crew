@@ -3,10 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title><?= htmlspecialchars($title ?? 'My App') ?></title>
-    <?php include_once __DIR__ . '/../helpers/styles_loader.php'; ?>
+
+    <title><?= htmlspecialchars($title ?? 'Bären-Crew Umzüge') ?></title>
+
     <?php include_once __DIR__ . '/../helpers/meta_loader.php'; ?>
+    <?php include_once __DIR__ . '/../helpers/styles_loader.php'; ?>
+    <link rel="icon" href="/favicon.ico">
 </head>
 
 <body class="app">
