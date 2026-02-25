@@ -19,6 +19,9 @@ switch ($page) {
     case 'impressum':
         (new PageController())->impressum();
         break;
+    case 'jobs':
+        (new PageController())->jobs();
+        break;
 
     default:
         (new PageController())->home();
