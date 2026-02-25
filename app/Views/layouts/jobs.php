@@ -10,7 +10,8 @@
     </title>
     <?php include_once __DIR__ . '/../helpers/meta_loader.php'; ?>
     <?php include_once __DIR__ . '/../helpers/styles_loader.php'; ?>
-    <?php include_once __DIR__ . '/../helpers/scripts_loader.php'; ?>
+
+    <link rel="icon" href="/favicon.ico">
     <script> const env = <?= json_encode($env) ?>;</script>
 </head>
 
@@ -142,5 +143,6 @@
     <?php include_once __DIR__ . '/../partials/cookie_banner.php'; ?>
     <?php include_once __DIR__ . '/../partials/cookie_modal.php'; ?>
 </body>
+<?php include_once __DIR__ . '/../helpers/scripts_loader.php'; ?>
 
 </html>
