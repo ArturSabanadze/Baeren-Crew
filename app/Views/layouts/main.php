@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
+    <?php include_once __DIR__ . '/../helpers/meta_loader.php'; ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
     <title><?= htmlspecialchars($title ?? 'Bären-Crew Umzüge') ?></title>
 
-    <?php include_once __DIR__ . '/../helpers/meta_loader.php'; ?>
+
     <?php include_once __DIR__ . '/../helpers/styles_loader.php'; ?>
     <link rel="icon" href="/favicon.ico">
 </head>
 
 <body class="app">
-    <script> const env = <?= json_encode($env) ?>;</script>
 
     <header class="app-header" id="appHeader">
         <?php include_once __DIR__ . '/../partials/navigationbar-home.php'; ?>
@@ -24,7 +24,6 @@
     </header>
     <div class="app-header-distancer"></div>
     </div>
-
 
     <main class="app-main">
 
@@ -82,7 +81,7 @@
             </div>
         </section>
 
-        <hr>
+        <!--<hr>-->
         <!-- SERVICES -->
         <section class="app-section section-services" id="section-services">
             <div class="container section-grid">
@@ -110,7 +109,7 @@
 
             </div>
         </section>
-        <hr>
+        <!--<hr>-->
         <!-- PRICING -->
         <section class="app-section section-pricing" id="section-pricing">
             <div class="container section-grid">
@@ -122,9 +121,7 @@
                         Wir stehen für klare Absprachen ohne versteckte Kosten.
                         Damit Sie volle Planungssicherheit haben, erstellen wir Ihr Angebot
                         erst nach einer persönlichen Objektbesichtigung.
-                    </p>
 
-                    <p class="text-base">
                         So können wir alle Gegenstände erfassen, die Lage bewerten
                         und den tatsächlichen Aufwand realistisch einschätzen.
                         Nur so erhalten Sie ein faires und exakt kalkuliertes Angebot.
@@ -132,9 +129,7 @@
 
                     <p class="text-base">
                         Nach unserer Besichtigung erhalten Sie ein verbindliches Angebot.
-                    </p>
 
-                    <p class="text-base">
                         Was wir vereinbaren, gilt.
                         Keine nachträglichen Preisänderungen –
                         keine Überraschungen am Umzugstag.
@@ -149,7 +144,7 @@
 
             </div>
         </section>
-        <hr>
+        <!--<hr>-->
         <!-- TEAM -->
         <section class="app-section section-team" id="team">
             <div class="container section-grid">
@@ -192,7 +187,7 @@
 
             </div>
         </section>
-        <hr>
+        <!--<hr>-->
         <!-- MISSION -->
         <section class="app-section section-mission" id="mission">
             <div class="container section-grid">
@@ -218,67 +213,10 @@
 
             </div>
         </section>
-        <hr class="reviews">
+        <!-- <hr class="reviews"> -->
         <!-- BEWERTUNGEN -->
-        <section class="app-section section-reviews" id="reviews">
-            <div class="container section-grid">
-
-                <div class="section-content section-center">
-                    <h2 class="heading-lg">Kundenbewertungen</h2>
-
-                    <div class="review-carousel">
-                        <div class="review-track">
-
-                            <div class="review-card">
-                                <div class="stars">★★★★★</div>
-                                <p>
-                                    „Absolut professionell! Pünktlich, freundlich und
-                                    sehr sorgfältig mit unseren Möbeln.“
-                                </p>
-                                <span>– Familie Schneider</span>
-                            </div>
-
-                            <div class="review-card">
-                                <div class="stars">★★★★★</div>
-                                <p>
-                                    „Very satisfied with the service! They were punctual, professional, and handled
-                                    our
-                                    belongings with great care.“
-                                </p>
-                                <span>– John Maxwell</span>
-                            </div>
-
-                            <div class="review-card">
-                                <div class="stars">★★★★★</div>
-                                <p>
-                                    „Faire Preise und keine Überraschungen.
-                                    Genau wie versprochen.“
-                                </p>
-                                <span>– Herr Meier</span>
-                            </div>
-
-                            <div class="review-card">
-                                <div class="stars">★★★★☆</div>
-                                <p>
-                                    „Sehr gut organisiert und zuverlässig.
-                                    Gerne wieder!“
-                                </p>
-                                <span>– Frau Becker</span>
-                            </div>
-
-                        </div>
-
-                        <div class="review-controls">
-                            <button class="review-prev">‹</button>
-                            <button class="review-next">›</button>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <hr>
+        <?php include_once __DIR__ . '/../partials/reviews.php'; ?>
+        <!--<hr>-->
         <!-- CONTACT -->
         <section class="app-section section-contact" id="section-contact-wrapper">
             <div class="container section-center" id="section-contact">

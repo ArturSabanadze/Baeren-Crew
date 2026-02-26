@@ -105,6 +105,7 @@ hr {
   z-index: var(--z-header);
   background: var(--color-navigation-bar);
   backdrop-filter: blur(10px);
+  box-shadow: #666666 0px 3px 20px 9px;
   transition:
     transform var(--transition-smooth),
     opacity var(--transition-smooth);
@@ -171,7 +172,7 @@ hr {
   font-weight: 500;
   font-size: 1rem;
   background: none;
-  min-width: 100px;
+  min-width: 110px;
   text-align: center;
   justify-content: center;
   border: none;
@@ -360,6 +361,12 @@ hr {
   padding: 2rem 1rem;
 }
 
+.container.hero-grid {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+}
+
 .contact-option {
   display: flex;
   justify-content: center;
@@ -395,7 +402,11 @@ hr {
   aspect-ratio: 16/9;
   overflow: hidden;
   position: relative;
-  border-radius: 8px;
+  border-radius: 10px;
+}
+
+.hero-img {
+  border-radius: 10px;
 }
 
 .section-hero {
@@ -409,6 +420,7 @@ hr {
 }
 
 .hero-checkboard {
+  max-width: var(--container-width);
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -436,6 +448,9 @@ hr {
 }
 
 .hero-thumbnails {
+  padding: 15px;
+  border-radius: 16px;
+  background: rgb(221, 221, 221);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -449,6 +464,10 @@ hr {
   scroll-behavior: smooth;
   gap: 0.5rem;
   flex: 1;
+}
+
+.thumbnails-wrapper img {
+  border-radius: 10px;
 }
 
 .thumbnails-wrapper::-webkit-scrollbar {
@@ -480,7 +499,7 @@ hr {
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 10px;
   flex-shrink: 0;
   transition: background 0.3s;
 }
@@ -502,7 +521,6 @@ hr {
 .section-media {
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-soft);
 }
 
 .section-center {
@@ -519,6 +537,7 @@ hr {
   font-size: var(--font-size-md);
   color: #2d2d2d;
   line-height: 1.6;
+  text-align: start;
 }
 
 /* =========================================================
@@ -535,7 +554,6 @@ hr {
 
 .media-image {
   width: 100%;
-  box-shadow: var(--shadow-soft);
 }
 
 .pricing-card {
@@ -569,7 +587,8 @@ hr {
   gap: 1rem;
   background-color: #fff;
   padding: 15px;
-  border-radius: 8px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
   box-shadow: var(--shadow-soft);
 }
 
@@ -612,7 +631,7 @@ hr {
 
 .btn-primary.btn-full {
   width: 100%;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .spinner {
@@ -901,7 +920,7 @@ hr {
 }
 
 /* =========================================================
-   REVIEWS SECTION
+   REVIEWS SECTION – CLEAN VERSION
 ========================================================= */
 
 .section-reviews {
@@ -912,28 +931,25 @@ hr {
 }
 
 .review-carousel {
-  max-width: 100%;
   width: 100%;
+  max-width: 900px;
   margin: 0 auto;
-  overflow: hidden;
-  text-wrap: wrap;
+  overflow: hidden; /* wichtig */
+  position: relative;
 }
 
 .review-track {
   display: flex;
-  width: 100%;
-  max-width: 100%;
-  transition: transform var(--transition-smooth);
+  transition: transform 0.6s ease;
+  will-change: transform;
 }
 
 .review-card {
+  flex: 0 0 100%; /* Jede Karte exakt 100% */
   max-width: 100%;
-  flex: 0 0 100%; /* take full width of carousel */
-  background: white;
+  background: rgb(236, 236, 236);
   padding: 3rem;
   box-sizing: border-box;
-  margin: 0;
-  box-shadow: var(--shadow-soft);
   border-radius: 8px;
   text-align: center;
 }
@@ -953,7 +969,12 @@ hr {
   color: var(--color-secondary);
 }
 
+/* Controls */
+
 .review-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
   margin-top: 1rem;
 }
 
@@ -962,9 +983,8 @@ hr {
   color: white;
   border: none;
   padding: 0.6rem 1rem;
-  margin: 0 0.5rem;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: 0.3s ease;
 }
 
 .review-controls button:hover {
@@ -1245,11 +1265,6 @@ hr {
    MOBILE RESPONSIVE STYLES
 ========================================================= */
 @media (max-width: 768px) {
-  .app-section.section-reviews,
-  .reviews,
-  .app-header-distancer {
-    display: none;
-  }
   /* GENERAL SECTION ADJUSTMENTS */
   .app-section {
     grid-template-columns: 1fr;
@@ -1340,15 +1355,33 @@ hr {
   }
 
   /* REVIEW CAROUSEL */
+
+  .review-card p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of visible lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .app-section.section-reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
   .review-carousel {
-    max-width: 100%;
+    overflow-x: hidden; /* verhindert Überbreite */
   }
 
   .review-track {
     display: flex;
-    flex-wrap: nowrap; /* horizontal scroll */
-    overflow-x: auto;
-    gap: 0.5rem;
+    width: 100%;
   }
 
   .review-card {
@@ -1356,6 +1389,11 @@ hr {
     margin-right: 1rem;
     box-sizing: border-box;
     padding: 2rem;
+  }
+
+  .review-card {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .review-controls {
@@ -1387,6 +1425,7 @@ hr {
     flex-direction: column;
     justify-content: space-between;
     padding: 0;
+    box-shadow: none;
   }
 
   .hero-form {
