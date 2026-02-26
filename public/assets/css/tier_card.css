@@ -1,0 +1,80 @@
+.app-section.section-pkg {
+  padding: 60px 20px;
+  border: 1px solid #eee;
+  border-radius: 24px;
+  align-self: center;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+.pkg-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.pkg-card:hover {
+  transform: scale(1.05);
+}
+
+.pkg-card.promo {
+  transform: scale(1.1);
+}
+
+.pkg-card.promo:hover {
+  transform: scale(1.15);
+}
+
+.pkg-header {
+  margin-bottom: 12px;
+  background-color: rgb(43, 60, 63);
+  border-radius: 8px 8px 0 0;
+  padding: 15px;
+}
+
+.pkg-features {
+  padding: 0 20px;
+}
+
+.pkg-price {
+  position: relative;
+  padding: 15px;
+  margin-bottom: auto;
+  background-color: rgb(72, 99, 104);
+  color: #fff;
+  z-index: 10;
+  font-weight: 700;
+}
+
+.pkg-header.promo {
+  background-color: rgb(54, 92, 99);
+}
+
+.pkg-title,
+.pkg-subtitle {
+  color: #fff;
+  margin: 0;
+}
+
+.pkg-details {
+  color: #ffffff;
+  margin-top: 4px;
+  font-size: 0.8rem;
+}
+
+.pkg-details.small {
+  font-size: 0.7rem;
+  color: #dfdfdf;
+  font-style: italic;
+}
+
+.pkg-btn {
+  margin-top: auto;
+  padding: 10px 20px;
+  background-color: rgb(30, 38, 41);
+  color: #fff;
+  border: none;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+}

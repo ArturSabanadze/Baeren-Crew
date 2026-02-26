@@ -81,7 +81,9 @@
             </div>
         </section>
 
-        <!--<hr>-->
+        <!-- PACKAGES -->
+        <?php include_once __DIR__ . '/../partials/packages.php'; ?>
+
         <!-- SERVICES -->
         <section class="app-section section-services" id="section-services">
             <div class="container section-grid">
@@ -90,7 +92,7 @@
                     <h2 class="heading-lg">Unsere Leistungen</h2>
 
                     <p class="text-base">
-                        Wir bieten professionelle Lösungen für Privat- und Geschäftskunden.
+                        Wir bieten professionelle Lösungen für Privat und Geschäftskunden.
                     </p>
 
                     <ul class="benefits-list">
@@ -109,7 +111,7 @@
 
             </div>
         </section>
-        <!--<hr>-->
+
         <!-- PRICING -->
         <section class="app-section section-pricing" id="section-pricing">
             <div class="container section-grid">
@@ -144,7 +146,7 @@
 
             </div>
         </section>
-        <!--<hr>-->
+
         <!-- TEAM -->
         <section class="app-section section-team" id="team">
             <div class="container section-grid">
@@ -187,7 +189,7 @@
 
             </div>
         </section>
-        <!--<hr>-->
+
         <!-- MISSION -->
         <section class="app-section section-mission" id="mission">
             <div class="container section-grid">
@@ -213,10 +215,10 @@
 
             </div>
         </section>
-        <!-- <hr class="reviews"> -->
+
         <!-- BEWERTUNGEN -->
         <?php include_once __DIR__ . '/../partials/reviews.php'; ?>
-        <!--<hr>-->
+
         <!-- CONTACT -->
         <section class="app-section section-contact" id="section-contact-wrapper">
             <div class="container section-center" id="section-contact">

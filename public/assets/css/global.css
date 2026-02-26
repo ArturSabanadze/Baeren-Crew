@@ -1273,6 +1273,10 @@ hr {
     gap: 1rem;
   }
 
+  .app-header-distancer {
+    display: none;
+  }
+
   .section-content,
   .section-media {
     width: 100%;
