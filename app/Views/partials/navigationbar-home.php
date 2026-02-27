@@ -10,7 +10,7 @@
     <div class="nav__links">
         <a href="index.php?page=home#section-hero">Start</a>
         <a href="index.php?page=home#section-services">Leistungen</a>
-        <a href="index.php?page=home#section-pricing">Preise</a>
+        <a href="index.php?page=home#section-pkg">Preise</a>
 
         <div class="nav__dropdown">
             <button class="nav__dropdown-btn">Über Uns</button>

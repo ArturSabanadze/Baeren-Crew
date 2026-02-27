@@ -19,7 +19,7 @@ class PageController
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
             'styles' => ['global', 'tier_card'],
-            'scripts' => ['app', 'Big_carousel', 'rates_carousel', 'cookies'],
+            'scripts' => ['app', 'package_slider', 'Big_carousel', 'rates_carousel', 'cookies'],
             'env' => $env
         ]);
     }

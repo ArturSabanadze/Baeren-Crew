@@ -10,7 +10,8 @@
         </div>
 
         <div class="footer-section company-info">
-            <p>© <?= date('Y') ?> Bären Crew</p>
+            <p>Bären Crew Copyright © 2025 - <?= date('Y') ?> </p>
+            <p class="footer-credits">Website & Code by Artur Sabanadze</p>
         </div>
 
         <div class="footer-section footer-links">

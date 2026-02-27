@@ -1,0 +1,5 @@
+1. Erstellung der MVC
+2. SPA Page System + functional pages
+3. Contact Form.
+4. Email Einrichtung
+5. AWS 

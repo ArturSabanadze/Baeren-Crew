@@ -31,32 +31,7 @@
         <section class="app-section section-hero" id="section-hero">
             <div class="container hero-grid">
                 <!-- Main Hero Carousel start-->
-                <div class="hero-carousel">
-                    <div class="hero-main">
-                        <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero1.webp" alt="Umzugsteam"
-                            class="hero-image active" id="hero-main-image">
-                    </div>
-
-                    <!-- Thumbnail Carousel -->
-                    <div class="hero-thumbnails">
-                        <button type="button" class="carousel-btn-prev">Prev</button>
-                        <div class="thumbnails-wrapper">
-                            <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero1.webp"
-                                alt="Umzugsteam" class="thumbnail active">
-                            <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero2.webp"
-                                alt="Umzugsteam" class="thumbnail">
-                            <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero3.webp"
-                                alt="Umzugsteam" class="thumbnail">
-                            <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero4.webp"
-                                alt="Umzugsteam" class="thumbnail">
-                            <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero5.webp"
-                                alt="Umzugsteam" class="thumbnail">
-                            <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero6.webp"
-                                alt="Umzugsteam" class="thumbnail">
-                        </div>
-                        <button type="button" class="carousel-btn-next">Next</button>
-                    </div>
-                </div>
+                <?php include_once __DIR__ . '/../partials/hero_carousel.php'; ?>
                 <!-- Main Hero Carousel end-->
 
                 <!-- Form Start-->
@@ -81,12 +56,9 @@
             </div>
         </section>
 
-        <!-- PACKAGES -->
-        <?php include_once __DIR__ . '/../partials/packages.php'; ?>
-
         <!-- SERVICES -->
         <section class="app-section section-services" id="section-services">
-            <div class="container section-grid">
+            <div class="container section-grid section-services">
 
                 <div class="section-content">
                     <h2 class="heading-lg">Unsere Leistungen</h2>
@@ -103,14 +75,16 @@
                         <li>✔️ Allroundservice</li>
                     </ul>
                 </div>
-
                 <div class="section-media">
                     <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero2.webp" alt="Umzugsteam"
                         class="media-image">
                 </div>
-
             </div>
+
         </section>
+
+        <!-- PACKAGES -->
+        <?php include_once __DIR__ . '/../partials/packages.php'; ?>
 
         <!-- PRICING -->
         <section class="app-section section-pricing" id="section-pricing">

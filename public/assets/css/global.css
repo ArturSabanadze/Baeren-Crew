@@ -258,10 +258,10 @@ hr {
 
 .nav__mobile-menu {
   display: none;
-  position: absolute; /* position relative to the page */
-  top: var(--nav-height); /* right under the header */
-  right: 0; /* align to right */
-  width: 250px; /* or any desired width */
+  position: absolute;
+  top: var(--nav-height);
+  right: 0;
+  width: 100dvw;
   background: var(--color-navigation-bar);
   flex-direction: column;
   padding: 1rem;
@@ -273,10 +273,10 @@ hr {
 
 /* Mobile dropdown */
 .nav__mobile-dropdown .nav__dropdown-menu {
-  position: relative; /* relative to parent menu item */
+  position: relative;
   top: 0;
   left: 0;
-  width: 100%; /* full width of the mobile menu */
+  width: 100%;
   display: none;
   flex-direction: column;
   background: rgba(255, 255, 255, 0.05);
@@ -453,17 +453,17 @@ hr {
   background: rgb(221, 221, 221);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
   margin-top: 1rem;
 }
 
 .thumbnails-wrapper {
   display: flex;
-  justify-content: center;
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 0.5rem;
-  flex: 1;
+  max-width: calc(4 * 80px + 3 * 8px);
 }
 
 .thumbnails-wrapper img {
@@ -681,6 +681,12 @@ hr {
   margin-bottom: 0.5rem;
 }
 
+.footer-section.company-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .footer-links li {
   padding-top: 5px;
 }
@@ -701,6 +707,12 @@ hr {
 
 .app-footer.visible {
   transform: translateY(0);
+}
+
+.footer-credits {
+  font-size: 0.7rem;
+  color: #ccc;
+  margin-top: 5px;
 }
 
 /* =========================================================
@@ -1261,16 +1273,31 @@ hr {
 /* =========================================================
    MOBILE RESPONSIVE STYLES
 ========================================================= */
-/* =========================================================
-   MOBILE RESPONSIVE STYLES
-========================================================= */
+@media (max-width: 1350px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container.section-grid.section-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .container.section-grid.section-services {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   /* GENERAL SECTION ADJUSTMENTS */
   .app-section {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+  }
+
+  .app-section.section-pricing {
+    padding: 1rem 1rem;
   }
 
   .app-header-distancer {
@@ -1353,7 +1380,6 @@ hr {
   }
 
   .hero-checkboard {
-    flex-direction: column;
     gap: 0.5rem;
     align-items: center;
   }
@@ -1362,7 +1388,7 @@ hr {
 
   .review-card p {
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* number of visible lines */
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -1380,7 +1406,7 @@ hr {
   }
 
   .review-carousel {
-    overflow-x: hidden; /* verhindert Überbreite */
+    overflow-x: hidden;
   }
 
   .review-track {
@@ -1389,7 +1415,7 @@ hr {
   }
 
   .review-card {
-    flex: 0 0 90%; /* take 90% of viewport width */
+    flex: 0 0 90%;
     margin-right: 1rem;
     box-sizing: border-box;
     padding: 2rem;
@@ -1542,7 +1568,7 @@ hr {
   }
 
   .review-card {
-    flex: 0 0 95%; /* almost full width */
+    flex: 0 0 95%;
     padding: 1.5rem;
   }
 
@@ -1581,7 +1607,7 @@ hr {
   }
 
   .app-footer {
-    position: relative; /* not fixed on mobile */
+    position: relative;
     transform: translateY(0);
     padding: 2rem 1rem;
     width: 100%;
@@ -1622,9 +1648,18 @@ hr {
   .footer-mobile-section a:hover {
     color: var(--color-secondary);
   }
+  .footer-section.company-info {
+    width: 100%;
+    background-color: #181818;
+    padding: 3px;
+    border-radius: 4px;
+  }
 
   .company-info p {
     font-size: 0.9rem;
     margin: 0;
+  }
+  .footer-credits {
+    font-size: 0.7rem !important;
   }
 }
