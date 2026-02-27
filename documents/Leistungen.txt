@@ -1,5 +1,32 @@
-1. Erstellung der MVC
-2. SPA Page System + functional pages
-3. Contact Form.
-4. Email Einrichtung
-5. AWS 
+
+Kontos Einrichtung
+    1. Email
+    2. Domain Name
+    5. AWS Cloud
+
+Webseite Entwicklung
+    1.  Anforderung Analyse
+    2.  Model View Controller
+    3.  Responsive CSS Styling 
+    4.  Credentials Enviroment File
+    5.  Single Page Application 
+    6.  Image Carousel + JS
+    7.  Contact Form + Email API
+    8.  Product Tier Cards + JS
+    9.  DSGVO
+    10. AGB
+    11. Impressum
+    12. Sitemap
+ 
+Cloud Hosting Einrichtung
+    1. EC2
+    2. Elastic IP
+    3. SSL Certificates
+    4. SSH Keys
+    5. Apache server
+
+Google Dienste
+    1. Google Analytics
+    2. Google Tags
+    3. Google Search Engine
+    4. Google Business (info update)

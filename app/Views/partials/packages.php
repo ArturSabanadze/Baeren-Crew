@@ -1,7 +1,8 @@
 <!-- pkgS -->
 <section class="app-section section-pkg" id="section-pkg">
 
-    <h2 class="heading-lg">Umzugspakete</h2>
+    <h2 class="heading-lg-sub">Umzugspakete</h2>
+    <h3>Transparente & faire Preise</h3>
 
     <div class="container section-grid section-pkg">
         <div class="pkg-card first">
@@ -21,7 +22,7 @@
                 <li>Ab/Aufbau Ihrer Möbel</li>
             </ul>
             <div class="pkg-price">ab. 449€ <span class="pkg-details small">zzgl. MwSt.</span></div>
-            <button class="pkg-btn">Mehr erfahren</button>
+            <button class="pkg-btn" onclick="openPackageModal('klein')">Mehr erfahren</button>
         </div>
         <div class="pkg-card second promo">
             <div class="pkg-header promo">
@@ -41,7 +42,7 @@
                 <li>Ab/Aufbau Ihrer Möbel</li>
             </ul>
             <div class="pkg-price">ab. 699€ <span class="pkg-details small">zzgl. MwSt.</span></div>
-            <button class="pkg-btn">Mehr erfahren</button>
+            <button class="pkg-btn" onclick="openPackageModal('mittel')">Mehr erfahren</button>
         </div>
         <div class="pkg-card third">
             <div class="pkg-header">
@@ -60,8 +61,9 @@
                 <li>Ab/Aufbau Ihrer Möbel</li>
             </ul>
             <div class="pkg-price">ab. 999€ <span class="pkg-details small">zzgl. MwSt.</span></div>
-            <button class="pkg-btn">Mehr erfahren</button>
+            <button class="pkg-btn" onclick="openPackageModal('gross')">Mehr erfahren</button>
         </div>
     </div>
+    <?php include_once __DIR__ . '/pricing.php'; ?>
 
 </section>

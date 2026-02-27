@@ -361,6 +361,11 @@ hr {
   padding: 2rem 1rem;
 }
 
+.app-section.section-services {
+  display: flex;
+  flex-direction: column;
+}
+
 .container.hero-grid {
   padding: 20px;
   border: 1px solid #ddd;
@@ -533,6 +538,10 @@ hr {
   margin-bottom: 1.5rem;
 }
 
+.heading-lg-sub {
+  font-size: var(--font-size-lg);
+}
+
 .text-base {
   font-size: var(--font-size-md);
   color: #2d2d2d;
@@ -674,6 +683,7 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
 }
 
 .footer-grid h3 {

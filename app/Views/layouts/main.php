@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <?php include_once __DIR__ . '/../helpers/meta_loader.php'; ?>
@@ -37,89 +37,21 @@
                 <!-- Form Start-->
                 <?php include_once __DIR__ . '/../partials/contact_form.php'; ?>
                 <!-- Form End -->
-
             </div>
             <div class="hero-checkboard">
-                <div class="check-item">
-                    <span><img src="<?= $env['DIR_PATH'] ?>/assets/icons/checkbox.webp" alt="Unkompliziert" /></span>
-                    <p>Unkompliziert</p>
-                </div>
-                <div class="check-item">
-                    <span><img src="<?= $env['DIR_PATH'] ?>/assets/icons/checkbox.webp" alt="Zuverlässig" /></span>
-                    <p>Zuverlässig</p>
-                </div>
-                <div class="check-item">
-                    <span><img src="<?= $env['DIR_PATH'] ?>/assets/icons/checkbox.webp" alt="Engagiert" /></span>
-                    <p>Engagiert</p>
-                </div>
-
+                <!-- Checkboard Start -->
+                <?php include_once __DIR__ . '/../partials/checkboard.php'; ?>
+                <!-- Checkboard End -->
             </div>
         </section>
 
         <!-- SERVICES -->
         <section class="app-section section-services" id="section-services">
-            <div class="container section-grid section-services">
-
-                <div class="section-content">
-                    <h2 class="heading-lg">Unsere Leistungen</h2>
-
-                    <p class="text-base">
-                        Wir bieten professionelle Lösungen für Privat und Geschäftskunden.
-                    </p>
-
-                    <ul class="benefits-list">
-                        <li>✔️ Umzüge</li>
-                        <li>✔️ Entrümpelungen</li>
-                        <li>✔️ Kleintransporte</li>
-                        <li>✔️ Hausmeisterservice</li>
-                        <li>✔️ Allroundservice</li>
-                    </ul>
-                </div>
-                <div class="section-media">
-                    <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero2.webp" alt="Umzugsteam"
-                        class="media-image">
-                </div>
-            </div>
-
+            <?php include_once __DIR__ . '/../partials/services.php'; ?>
         </section>
 
-        <!-- PACKAGES -->
+        <!-- PACKAGES & Pricing  -->
         <?php include_once __DIR__ . '/../partials/packages.php'; ?>
-
-        <!-- PRICING -->
-        <section class="app-section section-pricing" id="section-pricing">
-            <div class="container section-grid">
-
-                <div class="section-content section-center">
-                    <h2 class="heading-lg">Transparente & faire Preise</h2>
-
-                    <p class="text-base">
-                        Wir stehen für klare Absprachen ohne versteckte Kosten.
-                        Damit Sie volle Planungssicherheit haben, erstellen wir Ihr Angebot
-                        erst nach einer persönlichen Objektbesichtigung.
-
-                        So können wir alle Gegenstände erfassen, die Lage bewerten
-                        und den tatsächlichen Aufwand realistisch einschätzen.
-                        Nur so erhalten Sie ein faires und exakt kalkuliertes Angebot.
-                    </p>
-
-                    <p class="text-base">
-                        Nach unserer Besichtigung erhalten Sie ein verbindliches Angebot.
-
-                        Was wir vereinbaren, gilt.
-                        Keine nachträglichen Preisänderungen –
-                        keine Überraschungen am Umzugstag.
-                    </p>
-
-                    <p class="text-base">
-                        Verlassen Sie sich auf Handschlagqualität und Transparenz.
-                    </p>
-                </div>
-
-
-
-            </div>
-        </section>
 
         <!-- TEAM -->
         <section class="app-section section-team" id="team">
@@ -229,6 +161,7 @@
     </div>
     <?php include_once __DIR__ . '/../partials/cookie_banner.php'; ?>
     <?php include_once __DIR__ . '/../partials/cookie_modal.php'; ?>
+    <?php include_once __DIR__ . '/../partials/product_modal.php'; ?>
 </body>
 <?php include_once __DIR__ . '/../helpers/scripts_loader.php'; ?>
 
