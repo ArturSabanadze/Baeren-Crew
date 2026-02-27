@@ -14,7 +14,7 @@ class PageController
         $env = parse_ini_file(__DIR__ . '/../../config/.env');
 
         View::render('home', [
-            'title' => 'Umzugsfirma Bären-Crew – Professionelle Umzüge stressfrei & effizient',
+            'title' => 'Bären-Crew – Professionelle Umzüge stressfrei & effizient',
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
@@ -29,7 +29,7 @@ class PageController
         $env = parse_ini_file(__DIR__ . '/../../config/.env');
 
         View::render('agb', [
-            'title' => 'AGB',
+            'title' => 'Bären-Crew – AGB',
             'meta_description' => ['Unsere Allgemeinen Geschäftsbedingungen (AGB) regeln die Vertragsbeziehung zwischen der Bären Crew und unseren Kunden. Hier finden Sie alle wichtigen Informationen zu unseren Dienstleistungen, Preisen, Haftung und Datenschutz. Bitte lesen Sie unsere AGB sorgfältig durch, um eine transparente und vertrauensvolle Zusammenarbeit zu gewährleisten.'],
             'description' => 'Unsere Allgemeinen Geschäftsbedingungen (AGB) regeln die Vertragsbeziehung zwischen der Bären Crew und unseren Kunden. Hier finden Sie alle wichtigen Informationen zu unseren Dienstleistungen, Preisen, Haftung und Datenschutz. Bitte lesen Sie unsere AGB sorgfältig durch, um eine transparente und vertrauensvolle Zusammenarbeit zu gewährleisten.',
             'styles' => ['global'],
@@ -43,7 +43,7 @@ class PageController
         $env = parse_ini_file(__DIR__ . '/../../config/.env');
 
         View::render('dsgvo', [
-            'title' => 'Datenschutz',
+            'title' => 'Bären-Crew – Datenschutz',
             'meta_description' => ['Unsere Datenschutzrichtlinien regeln den Umgang mit Ihren persönlichen Daten und informieren Sie über Ihre Rechte. Hier finden Sie alle wichtigen Informationen zum Datenschutz bei der Bären Crew.'],
             'description' => 'Unsere Datenschutzrichtlinien regeln den Umgang mit Ihren persönlichen Daten und informieren Sie über Ihre Rechte. Hier finden Sie alle wichtigen Informationen zum Datenschutz bei der Bären Crew.',
             'styles' => ['global'],
@@ -57,7 +57,7 @@ class PageController
         $env = parse_ini_file(__DIR__ . '/../../config/.env');
 
         View::render('impressum', [
-            'title' => 'Impressum',
+            'title' => 'Bären-Crew – Impressum',
             'meta_description' => ['Unser Impressum enthält alle rechtlich relevanten Informationen über die Bären Crew, einschließlich Unternehmensangaben, Kontaktinformationen und rechtlicher Hinweise.'],
             'description' => 'Unser Impressum enthält alle rechtlich relevanten Informationen über die Bären Crew, einschließlich Unternehmensangaben, Kontaktinformationen und rechtlicher Hinweise.',
             'styles' => ['global'],
@@ -75,7 +75,7 @@ class PageController
         $env = parse_ini_file(__DIR__ . '/../../config/.env');
 
         View::render('jobs', [
-            'title' => 'Umzugsfirma Bären-Crew – Professionelle Umzüge stressfrei & effizient',
+            'title' => 'Bären-Crew – Karriere & Jobs',
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/index?page=jobs',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
