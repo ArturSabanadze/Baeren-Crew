@@ -1,90 +1,77 @@
-/* =========================================================
-   PACKAGE CARD STYLES
-========================================================= */
 .app-section.section-pkg {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 0;
 }
-
+.pkg-card,
+.pkg-form {
+  flex-direction: column;
+}
 .container.section-grid.section-pkg {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 40px 20px;
 }
-
 .pkg-card {
-  background-color: white;
+  background-color: #fff;
   display: flex;
-  flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 8px;
   transition: transform 0.4s ease-in-out;
 }
-
 .pkg-card:hover {
   transform: scale(1.05);
   z-index: 6;
 }
-
 .pkg-card.promo {
-  background-color: white;
+  background-color: #fff;
   transform: scale(1.1);
   z-index: 5;
 }
-
 .pkg-card.promo:hover {
   transform: scale(1.15);
 }
-
 .pkg-header {
   margin-bottom: 12px;
-  background-color: rgb(43, 60, 63);
+  background-color: #2b3c3f;
   border-radius: 8px 8px 0 0;
   padding: 15px;
 }
-
 .pkg-features {
   padding: 0 20px;
 }
-
 .pkg-price {
   position: relative;
   padding: 15px;
   margin-bottom: auto;
-  background-color: rgb(72, 99, 104);
+  background-color: #486368;
   color: #fff;
   font-weight: 700;
 }
-
 .pkg-header.promo {
-  background-color: rgb(54, 92, 99);
+  background-color: #365c63;
 }
-
-.pkg-title,
-.pkg-subtitle {
+.pkg-subtitle,
+.pkg-title {
   color: #fff;
   margin: 0;
 }
-
 .pkg-details {
-  color: #ffffff;
+  color: #fff;
   margin-top: 4px;
   font-size: 0.8rem;
 }
-
 .pkg-details.small {
   font-size: 0.7rem;
   color: #dfdfdf;
   font-style: italic;
   font-weight: 400 !important;
 }
-
 .pkg-btn {
   margin-top: auto;
   padding: 10px 20px;
-  background-color: rgb(30, 38, 41);
+  background-color: #1e2629;
   color: #fff;
   font-size: 1rem;
   font-weight: 400 !important;
@@ -92,62 +79,23 @@
   border-radius: 0 0 8px 8px;
   cursor: pointer;
 }
-
-@media (max-width: 768px) {
-  .container.section-grid.section-pkg {
-    display: grid;
-    grid-template-columns: 1fr;
-    place-items: center; /* centers content */
-    width: 100%;
-  }
-  .pkg-card {
-    grid-area: 1 / 1;
-  }
-  .pkg-card.first {
-    transform: translateX(-20%);
-  }
-  .pkg-card.second {
-    transform: translateX(-15%);
-  }
-  .pkg-card.third {
-    transform: translateX(-10%);
-  }
-}
-
-/* =========================================================
-   MODAL WINDOW STYLES
-========================================================= */
-
 .pkg-modal {
   position: fixed;
   inset: 0;
   display: none;
   z-index: 9999;
 }
-
 .pkg-modal.active {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .pkg-modal-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.65);
 }
-
-.pkg-modal-content {
-  position: relative;
-  max-width: 600px;
-  margin: 5% auto;
-  background: #fff;
-  padding: 40px;
-  border-radius: 12px;
-  z-index: 10;
-  animation: fadeIn 0.3s ease;
-}
-
+.pkg-modal-content,
 .pkg-modal-form-container {
   position: relative;
   max-width: 600px;
@@ -156,60 +104,47 @@
   padding: 40px;
   border-radius: 12px;
   z-index: 10;
-  animation: fadeIn 0.3s ease;
+  animation: 0.3s fadeIn;
 }
-
 .pkg-modal-close {
   position: absolute;
   top: 15px;
   right: 20px;
-  background: none;
+  background: 0 0;
   border: none;
   font-size: 28px;
   cursor: pointer;
 }
-
 .modal-subtitle {
   font-weight: 500;
   margin-bottom: 10px;
   color: #777;
 }
-
 .modal-details {
   margin-bottom: 15px;
   font-weight: 600;
 }
-
-.modal-description {
-  margin-bottom: 20px;
-}
-
+.modal-description,
 .modal-features {
   margin-bottom: 20px;
 }
-
 .modal-features li {
   margin-bottom: 6px;
 }
-
 .modal-price {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 5px;
 }
-
 .modal-price-details {
   font-size: 16px;
   color: #777;
   margin-bottom: 20px;
   font-weight: 400;
 }
-
 .pkg-form {
   display: flex;
-  flex-direction: column;
 }
-
 .pkg-form-group {
   display: flex;
   flex-direction: column;
@@ -218,13 +153,11 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 .pkg-form-group input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -235,8 +168,25 @@
     transform: translateY(0);
   }
 }
-
 @media (max-width: 768px) {
+  .container.section-grid.section-pkg {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    width: 100%;
+  }
+  .pkg-card {
+    grid-area: 1/1;
+  }
+  .pkg-card.first {
+    transform: translateX(-20%);
+  }
+  .pkg-card.second {
+    transform: translateX(-15%);
+  }
+  .pkg-card.third {
+    transform: translateX(-10%);
+  }
   .pkg-modal-content {
     position: relative;
     max-width: 90dvw;
@@ -248,6 +198,6 @@
     padding: 20px;
     border-radius: 12px;
     z-index: 10;
-    animation: fadeIn 0.3s ease;
+    animation: 0.3s fadeIn;
   }
 }

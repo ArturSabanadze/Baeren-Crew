@@ -93,3 +93,7 @@ document.getElementById("pkgModalClose").addEventListener("click", () => {
 document.querySelector(".pkg-modal-overlay").addEventListener("click", () => {
   modal.classList.remove("active");
 });
+
+document.querySelector(".pkg-modal-close").addEventListener("click", () => {
+  formSection.classList.remove("active");
+});

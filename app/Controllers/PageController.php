@@ -18,7 +18,7 @@ class PageController
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
-            'styles' => ['global', 'tier_card'],
+            'styles' => ['minifiedGlobal', 'minified_tier_card'],
             'scripts' => ['app', 'package_slider', 'Big_carousel', 'rates_carousel', 'cookies', 'package_modal'],
             'env' => $env
         ]);
@@ -32,7 +32,7 @@ class PageController
             'title' => 'Bären-Crew – AGB',
             'meta_description' => ['Unsere Allgemeinen Geschäftsbedingungen (AGB) regeln die Vertragsbeziehung zwischen der Bären Crew und unseren Kunden. Hier finden Sie alle wichtigen Informationen zu unseren Dienstleistungen, Preisen, Haftung und Datenschutz. Bitte lesen Sie unsere AGB sorgfältig durch, um eine transparente und vertrauensvolle Zusammenarbeit zu gewährleisten.'],
             'description' => 'Unsere Allgemeinen Geschäftsbedingungen (AGB) regeln die Vertragsbeziehung zwischen der Bären Crew und unseren Kunden. Hier finden Sie alle wichtigen Informationen zu unseren Dienstleistungen, Preisen, Haftung und Datenschutz. Bitte lesen Sie unsere AGB sorgfältig durch, um eine transparente und vertrauensvolle Zusammenarbeit zu gewährleisten.',
-            'styles' => ['global'],
+            'styles' => ['minifiedagb'],
             'scripts' => ['app', 'agb', 'cookies'],
             'env' => $env
         ], 'layouts/agb');
@@ -46,7 +46,7 @@ class PageController
             'title' => 'Bären-Crew – Datenschutz',
             'meta_description' => ['Unsere Datenschutzrichtlinien regeln den Umgang mit Ihren persönlichen Daten und informieren Sie über Ihre Rechte. Hier finden Sie alle wichtigen Informationen zum Datenschutz bei der Bären Crew.'],
             'description' => 'Unsere Datenschutzrichtlinien regeln den Umgang mit Ihren persönlichen Daten und informieren Sie über Ihre Rechte. Hier finden Sie alle wichtigen Informationen zum Datenschutz bei der Bären Crew.',
-            'styles' => ['global'],
+            'styles' => ['minifiedagb'],
             'scripts' => ['app', 'agb', 'cookies'],
             'env' => $env
         ], 'layouts/dsgvo');
@@ -60,7 +60,7 @@ class PageController
             'title' => 'Bären-Crew – Impressum',
             'meta_description' => ['Unser Impressum enthält alle rechtlich relevanten Informationen über die Bären Crew, einschließlich Unternehmensangaben, Kontaktinformationen und rechtlicher Hinweise.'],
             'description' => 'Unser Impressum enthält alle rechtlich relevanten Informationen über die Bären Crew, einschließlich Unternehmensangaben, Kontaktinformationen und rechtlicher Hinweise.',
-            'styles' => ['global'],
+            'styles' => ['minifiedImpressum'],
             'scripts' => ['app', 'cookies'],
             'env' => $env
         ], 'layouts/impressum');
@@ -79,7 +79,7 @@ class PageController
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/index?page=jobs',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
-            'styles' => ['global'],
+            'styles' => ['minifiedJob'],
             'scripts' => ['app', 'cookies'],
             'env' => $env
         ], 'layouts/jobs');

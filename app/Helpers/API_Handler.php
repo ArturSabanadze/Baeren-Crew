@@ -83,6 +83,7 @@ if (
     /* =========================
        FETCH INPUT
     ========================== */
+    $package = clean_string($_POST['selected_package'] ?? 'Kein Umzugspaket ausgewählt', 100);
     $from_address = clean_string($_POST['from_address'] ?? '');
     $to_address = clean_string($_POST['to_address'] ?? '');
     $move_date = clean_string($_POST['move_date'] ?? '', 20);
@@ -169,6 +170,7 @@ if (
     $data = [
         'timestamp' => $timestamp,
         'ip' => $ip,
+        'package' => $package,
         'from_address' => $from_address,
         'to_address' => $to_address,
         'move_date' => $move_date,
@@ -205,7 +207,7 @@ if (
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = $env['SMTP_PORT'];
             $mail->CharSet = 'UTF-8';
-            $mail->SMTPDebug = 0;
+            $mail->SMTPDebug = 2;
             $mail->Debugoutput = 'error_log';
 
             $mail->setFrom($env['SMTP_USER'], 'Bären-Crew Umzüge');
@@ -251,6 +253,7 @@ if (
 <p>Melden Sie sich bitte zeitnah bei dem Kunden.</p>
 
 <p><strong>Kunden Angaben:</strong><br>
+Package: $package<br>
 Auszug: $from_address<br>
 Einzug: $to_address<br>
 Umzugsdatum: $move_date<br>
@@ -269,6 +272,8 @@ Email: ArturSabanadze@gmail.com</p>
 <p>Wir melden uns zeitnah bei Ihnen.</p>
 
 <p><strong>Ihre Angaben:</strong><br>
+Package: $package<br>
+<br>
 Auszug: $from_address<br>
 Einzug: $to_address<br>
 Datum: $move_date<br>

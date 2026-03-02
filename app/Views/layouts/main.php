@@ -12,6 +12,9 @@
 
     <?php include_once __DIR__ . '/../helpers/styles_loader.php'; ?>
     <link rel="icon" href="/favicon.ico">
+    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero1.webp">
+    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero2.webp">
+    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero3.webp">
 </head>
 
 <body class="app">
