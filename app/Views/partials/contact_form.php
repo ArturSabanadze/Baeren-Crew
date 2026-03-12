@@ -41,6 +41,14 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
 
         <input type="text" name="company_name" style="display:none" tabindex="-1" autocomplete="off">
 
+        <div class="form-group select">
+            <label for="hero-form-select">Privat/Firma</label>
+            <select id="hero-form-select">
+                <option value="privat">Privat</option>
+                <option value="firma">Firma </option>
+            </select>
+        </div>
+
         <div class="form-group">
             <label for="from_address">Auszugsadresse *</label>
             <input type="text" id="from_address" name="from_address" class="form-input"
@@ -78,7 +86,7 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
             <input type="file" id="files" name="files[]" class="form-input" multiple accept=".jpg,.jpeg,.png,.pdf">
         </div>
 
-        <div class="form-group">
+        <div class="form-group dsgvo">
             <label>
                 <input type="checkbox" name="privacy_consent" required <?= isset($_POST['privacy_consent']) ? 'checked' : '' ?>>
                 Ich habe die <a href="/index.php?page=dsgvo">Datenschutzerklärung</a> gelesen und akzeptiere diese. *

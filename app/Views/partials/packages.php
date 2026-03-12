@@ -10,7 +10,7 @@
                 <h2 class="pkg-title">Klein</h2>
                 <p class="pkg-subtitle">Für kleine Umzüge</p>
                 <p class="pkg-details"> bis 20m³ - 3 Stunden </p>
-                <span class="pkg-details small">(je weitere Stunde 65€)</span>
+                <span class="pkg-details small">(je weitere Stunde 65€ zzgl. Mwst)</span>
             </div>
             <ul class="pkg-features">
                 <li>Fahrzeug (inkl. Kraftstoff)</li>
@@ -30,7 +30,7 @@
                 <p class="pkg-subtitle">Für mittlere Umzüge</p>
                 <p class="pkg-details"> bis 40m³ - 6 Stunden </p>
                 <span class="pkg-details small">(je weitere Stunde
-                    65€)</span>
+                    65€ zzgl. Mwst)</span>
             </div>
             <ul class="pkg-features">
                 <li>Fahrzeug (inkl. Kraftstoff)</li>
@@ -49,7 +49,7 @@
                 <h2 class="pkg-title">Groß</h2>
                 <p class="pkg-subtitle">Für große Umzüge</p>
                 <p class="pkg-details"> bis 60m³ - 8 Stunden </p>
-                <span class="pkg-details small">(je weitere Stunde 65€)</span>
+                <span class="pkg-details small">(je weitere Stunde 65€ zzgl. Mwst)</span>
             </div>
             <ul class="pkg-features">
                 <li>Fahrzeug (inkl. Kraftstoff)</li>
@@ -64,6 +64,6 @@
             <button class="pkg-btn" onclick="openPackageModal('gross')">Mehr erfahren</button>
         </div>
     </div>
-    <?php include_once __DIR__ . '/pricing.php'; ?>
+    <?php include_once __DIR__ . '/pricing_text.php'; ?>
 
 </section>

@@ -84,6 +84,7 @@ if (
        FETCH INPUT
     ========================== */
     $package = clean_string($_POST['selected_package'] ?? 'Kein Umzugspaket ausgewählt', 100);
+    $contact_type = clean_string($POST['Person Form'] ?? '');
     $from_address = clean_string($_POST['from_address'] ?? '');
     $to_address = clean_string($_POST['to_address'] ?? '');
     $move_date = clean_string($_POST['move_date'] ?? '', 20);
@@ -171,6 +172,7 @@ if (
         'timestamp' => $timestamp,
         'ip' => $ip,
         'package' => $package,
+        'contact_type' => $contact_type,
         'from_address' => $from_address,
         'to_address' => $to_address,
         'move_date' => $move_date,
@@ -207,7 +209,7 @@ if (
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = $env['SMTP_PORT'];
             $mail->CharSet = 'UTF-8';
-            $mail->SMTPDebug = 2;
+            $mail->SMTPDebug = 0;
             $mail->Debugoutput = 'error_log';
 
             $mail->setFrom($env['SMTP_USER'], 'Bären-Crew Umzüge');
@@ -254,6 +256,7 @@ if (
 
 <p><strong>Kunden Angaben:</strong><br>
 Package: $package<br>
+Privat/Firma: $contact_type<br>
 Auszug: $from_address<br>
 Einzug: $to_address<br>
 Umzugsdatum: $move_date<br>
@@ -274,6 +277,7 @@ Email: ArturSabanadze@gmail.com</p>
 <p><strong>Ihre Angaben:</strong><br>
 Package: $package<br>
 <br>
+Form: $contact_type<br>
 Auszug: $from_address<br>
 Einzug: $to_address<br>
 Datum: $move_date<br>
@@ -287,6 +291,9 @@ Ihr Bären-Crew Team</p>
 Webseite: <a href='https://www.baeren-crew.de'>www.baeren-crew.de</a><br>
 Kundensupport-Email: support@baeren-crew.de<br>
 Kunden-Hotline: +49 1556 1231466
+Inhaber: Pogorelov Alexander
+UstID: DE359734620
+
 </p>
 
 <p style='margin-top:30px;'>
@@ -314,7 +321,7 @@ Kunden-Hotline: +49 1556 1231466
         );
 
         if (!$mailCompany || !$mailUser) {
-            $errors[] = "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es später.";
+            $errors[] = "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es später noch ein mal oder kontaktieren Sie uns direkt unter +49 (0155) 61231466.";
         }
     }
 
@@ -332,6 +339,6 @@ Kunden-Hotline: +49 1556 1231466
     /* =========================
        REDIRECT BACK TO FORM
     ========================== */
-    header("Location: /index.php?page=home"); // adjust page URL as needed
+    header("Location: /index.php?page=home"); 
     exit;
 }
