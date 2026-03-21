@@ -43,9 +43,9 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
 
         <div class="form-group select">
             <label for="hero-form-select">Privat/Firma</label>
-            <select id="hero-form-select">
-                <option value="privat">Privat</option>
-                <option value="firma">Firma </option>
+            <select id="hero-form-select" name="contact_type" class="form-input">
+                <option value="privat" <?= (($_POST['contact_type'] ?? '') === 'privat') ? 'selected' : '' ?>>Privat</option>
+                <option value="firma" <?= (($_POST['contact_type'] ?? '') === 'firma') ? 'selected' : '' ?>>Firma </option>
             </select>
         </div>
 

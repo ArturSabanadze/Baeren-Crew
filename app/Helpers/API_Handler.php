@@ -83,8 +83,9 @@ if (
     /* =========================
        FETCH INPUT
     ========================== */
+
     $package = clean_string($_POST['selected_package'] ?? 'Kein Umzugspaket ausgewählt', 100);
-    $contact_type = clean_string($POST['Person Form'] ?? '');
+    $contact_type = clean_string($_POST['contact_type'] ?? 'Privat');
     $from_address = clean_string($_POST['from_address'] ?? '');
     $to_address = clean_string($_POST['to_address'] ?? '');
     $move_date = clean_string($_POST['move_date'] ?? '', 20);
