@@ -185,6 +185,31 @@
                         <span>– Alina Schmidt</span>
                     </div>
 
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „War alles top, pünktlich, ordentlich, fleißig. Klare Empfehlung !“
+                        </p>
+                        <span>– Körg</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „Sehr guter Service, sehr zuverlässig und nette Jungs.“
+                        </p>
+                        <span>– Konrad</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „Den großen Umzug von Oberbayern nach Franken hat die Bären-Crew hervorragend hinbekommen. 
+                            Alle Mitarbeiter waren unglaublich freundlich und entgegenkommend. Die Möbel wurden sehr sorgfältig 
+                            behandelt.“
+                        </p>
+                        <span>– Rainer Maier</span>
+                    </div>
                 </div>
 
                 <div class="review-controls">
