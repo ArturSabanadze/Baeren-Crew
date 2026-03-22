@@ -92,11 +92,11 @@
                         <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung ist:<br>
                             Bären Crew<br>
                             Vertreten durch: Alexander Progorelov<br>
-                            [Adresse einfügen]<br>
-                            [PLZ Ort] Deutschland<br>
-                            Telefon: [Telefonnummer einfügen]<br>
-                            E-Mail: [E-Mail-Adresse einfügen]<br>
-                            Webseite: [Webadresse einfügen]</p>
+                            Isenstraße 15<br>
+                            84562 Mettenheim<br>
+                            Telefon: +49 (0155) 61231466<br>
+                            E-Mail: support@baeren-crew.de<br>
+                            Webseite: https://www.baeren-crew.de</p>
                     </div>
                 </div>
 
