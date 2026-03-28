@@ -13,9 +13,9 @@ const packages = {
       "Bereitstellung von Umzugsdecken und Schutzmaterial",
       "Transportsicherung gemäß gesetzlichen Vorgaben",
       "Grundversicherung Ihres Umzugsgutes",
-      "3 Std. Arbeitszeit inklusive (jede weitere Stunde 65€*)",
+      "3 Std. Arbeitszeit inklusive (jede weitere 30min 45€*)",
     ],
-    price: "ab 449€* ",
+    price: "ab 549€* ",
     priceDetails:
       "*Alle Preise enthalten keine MwSt. Für individuelle Angebote oder spezielle Anforderungen kontaktieren Sie uns bitte direkt.",
   },
@@ -34,9 +34,9 @@ const packages = {
       "Schutzmaterialien wie Umzugsdecken und Stretchfolie",
       "Fachgerechtes Be- und Entladen",
       "Versicherungsschutz für den gesamten Transport",
-      "6 Std. Arbeitszeit inklusive (jede weitere Stunde 65€*)",
+      "6 Std. Arbeitszeit inklusive (jede weitere 30min 45€*)",
     ],
-    price: "ab 699€* ",
+    price: "ab 749€* ",
     priceDetails:
       "*Alle Preise enthalten keine MwSt. Für individuelle Angebote oder spezielle Anforderungen kontaktieren Sie uns bitte direkt.",
   },
@@ -55,7 +55,7 @@ const packages = {
       "Sichere Verpackung und Transportschutz",
       "Professionelle Ladungssicherung",
       "Transportversicherung gemäß gesetzlichen Bestimmungen",
-      "8 Std. Arbeitszeit inklusive (jede weitere Stunde 65€*)",
+      "8 Std. Arbeitszeit inklusive (jede weitere 30min 45€*)",
     ],
     price: "ab 999€* ",
     priceDetails:

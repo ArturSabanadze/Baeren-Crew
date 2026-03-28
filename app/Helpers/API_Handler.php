@@ -86,6 +86,7 @@ if (
 
     $package = clean_string($_POST['selected_package'] ?? 'Kein Umzugspaket ausgewählt', 100);
     $contact_type = clean_string($_POST['contact_type'] ?? 'Privat');
+    $contact_person = clean_string($_POST['contact_person'] ?? 'Ansprechpartner nicht angegeben');
     $from_address = clean_string($_POST['from_address'] ?? '');
     $to_address = clean_string($_POST['to_address'] ?? '');
     $move_date = clean_string($_POST['move_date'] ?? '', 20);
@@ -174,6 +175,7 @@ if (
         'ip' => $ip,
         'package' => $package,
         'contact_type' => $contact_type,
+        'contact_person' => $contact_person,
         'from_address' => $from_address,
         'to_address' => $to_address,
         'move_date' => $move_date,
@@ -258,6 +260,7 @@ if (
 <p><strong>Kunden Angaben:</strong><br>
 Package: $package<br>
 Privat/Firma: $contact_type<br>
+Ansprechpartner: $contact_person<br>
 Auszug: $from_address<br>
 Einzug: $to_address<br>
 Umzugsdatum: $move_date<br>
@@ -277,7 +280,7 @@ Email: ArturSabanadze@gmail.com</p>
 
 <p><strong>Ihre Angaben:</strong><br>
 Package: $package<br>
-<br>
+Ansprechpartner: $contact_person<br>
 Form: $contact_type<br>
 Auszug: $from_address<br>
 Einzug: $to_address<br>
@@ -291,8 +294,8 @@ Ihr Bären-Crew Team</p>
 <p>
 Webseite: <a href='https://www.baeren-crew.de'>www.baeren-crew.de</a><br>
 Kundensupport-Email: support@baeren-crew.de<br>
-Kunden-Hotline: +49 1556 1231466
-Inhaber: Pogorelov Alexander
+Kunden-Hotline: +49 1556 1231466<br>
+Inhaber: Pogorelov Alexander<br>
 UstID: DE359734620
 
 </p>
@@ -340,6 +343,6 @@ UstID: DE359734620
     /* =========================
        REDIRECT BACK TO FORM
     ========================== */
-    header("Location: /index.php?page=home"); 
+    header("Location: /index.php?page=home");
     exit;
 }

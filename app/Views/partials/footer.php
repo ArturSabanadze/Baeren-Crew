@@ -3,7 +3,8 @@
         <div class="footer-links">
             <h3>Social Links</h3>
             <ul>
-                <li><a href="#">Facebook</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61580209245154" target="_blank"
+                        rel="noopener noreferrer">Facebook</a></li>
                 <li><a href="#">Instagram</a></li>
                 <li><a href="#">TikTok</a></li>
             </ul>

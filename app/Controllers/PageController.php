@@ -7,8 +7,12 @@ class PageController
 {
     public function home()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['offer_calculation'])) {
             require_once __DIR__ . '/../Helpers/API_Handler.php';
+            exit;
+        }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['offer_calculation'])) {
+            require_once __DIR__ . '/../Helpers/API_Offer.php';
             exit;
         }
         $env = parse_ini_file(__DIR__ . '/../../config/.env');
@@ -18,7 +22,7 @@ class PageController
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
-            'styles' => ['minifiedGlobal', 'minified_tier_card'],
+            'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator'],
             'scripts' => ['app', 'package_slider', 'Big_carousel', 'rates_carousel', 'cookies', 'package_modal'],
             'env' => $env
         ]);

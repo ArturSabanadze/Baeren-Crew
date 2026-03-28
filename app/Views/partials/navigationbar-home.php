@@ -15,7 +15,6 @@
         <div class="nav__dropdown">
             <button class="nav__dropdown-btn">Über Uns</button>
             <div class="nav__dropdown-menu">
-                <a href="index.php?page=home#team">Team</a>
                 <a href="index.php?page=home#mission">Mission</a>
                 <a href="index.php?page=home#reviews">Bewertungen</a>
             </div>

@@ -12,15 +12,9 @@
 
     <?php include_once __DIR__ . '/../helpers/styles_loader.php'; ?>
     <link rel="icon" href="/favicon.ico">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h1.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h2.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h3.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h4.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h5.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/flyer.webp">
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=<?= $env['GOOGLE_MAPS_API_KEY'] ?>&libraries=places&v=beta">
-        </script>
+    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero1.webp">
+    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero2.webp">
+    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/hero3.webp">
 </head>
 
 <body class="app">
@@ -32,7 +26,6 @@
         </section>
     </header>
     <div class="app-header-distancer"></div>
-    </div>
 
     <main class="app-main">
 
@@ -47,21 +40,12 @@
                 <?php include_once __DIR__ . '/../partials/contact_form.php'; ?>
                 <!-- Form End -->
             </div>
-        </section>
-
-        <section class="section-calculator" id="packages">
-            <div class="offer-calculator-wrapper" id="rechner">
-                <!-- Offer Calculator Start -->
-                <?php include_once __DIR__ . '/../partials/calculation_form.php'; ?>
-                <!-- Offer Calculator End -->
+            <div class="hero-checkboard">
+                <!-- Checkboard Start -->
+                <?php include_once __DIR__ . '/../partials/checkboard.php'; ?>
+                <!-- Checkboard End -->
             </div>
-        </section>
 
-
-        <section class="app-section section-services" id="packages">
-            <!-- PACKAGES & Pricing Start -->
-            <?php include_once __DIR__ . '/../partials/packages.php'; ?>
-            <!-- PACKAGES & Pricing End -->
         </section>
 
         <!-- SERVICES -->
@@ -69,35 +53,34 @@
             <?php include_once __DIR__ . '/../partials/services.php'; ?>
         </section>
 
-
+        <!-- PACKAGES & Pricing  -->
+        <?php include_once __DIR__ . '/../partials/packages.php'; ?>
 
         <!-- MISSION -->
         <section class="app-section section-mission" id="mission">
+            <div class="container section-grid">
 
-            <div class="section-content section-center">
-                <h2 class="heading-lg">Unsere Mission</h2>
+                <div class="section-content section-center">
+                    <h2 class="heading-lg">Unsere Mission</h2>
 
-                <p class="text-base mission-text">
-                    Ein Umzug ist mehr als nur der Transport von Möbeln.
-                    Es ist ein neuer Lebensabschnitt. Unsere Mission ist es,
-                    diesen Schritt für Sie so stressfrei, sicher und transparent
-                    wie möglich zu gestalten.
-                </p>
+                    <p class="text-base mission-text">
+                        Ein Umzug ist mehr als nur der Transport von Möbeln.
+                        Es ist ein neuer Lebensabschnitt. Unsere Mission ist es,
+                        diesen Schritt für Sie so stressfrei, sicher und transparent
+                        wie möglich zu gestalten.
+                    </p>
 
-                <p class="text-base mission-text">
-                    Mit klarer Kommunikation, fairen Preisen und einem
-                    eingespielten Team sorgen wir dafür,
-                    dass Sie sich vom ersten Gespräch bis zum letzten Karton
-                    gut aufgehoben fühlen.
-                </p>
+                    <p class="text-base mission-text">
+                        Mit klarer Kommunikation, fairen Preisen und einem
+                        eingespielten Team sorgen wir dafür,
+                        dass Sie sich vom ersten Gespräch bis zum letzten Karton
+                        gut aufgehoben fühlen.
+                    </p>
+
+                </div>
 
             </div>
         </section>
-        <div class="hero-checkboard">
-            <!-- Checkboard Start -->
-            <?php include_once __DIR__ . '/../partials/checkboard.php'; ?>
-            <!-- Checkboard End -->
-        </div>
 
         <!-- BEWERTUNGEN -->
         <?php include_once __DIR__ . '/../partials/reviews.php'; ?>
@@ -115,9 +98,7 @@
     <?php include_once __DIR__ . '/../partials/cookie_banner.php'; ?>
     <?php include_once __DIR__ . '/../partials/cookie_modal.php'; ?>
     <?php include_once __DIR__ . '/../partials/product_modal.php'; ?>
-
 </body>
-
 <?php include_once __DIR__ . '/../helpers/scripts_loader.php'; ?>
 
 </html>

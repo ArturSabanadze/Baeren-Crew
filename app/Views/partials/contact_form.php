@@ -44,9 +44,17 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
         <div class="form-group select">
             <label for="hero-form-select">Privat/Firma</label>
             <select id="hero-form-select" name="contact_type" class="form-input">
-                <option value="privat" <?= (($_POST['contact_type'] ?? '') === 'privat') ? 'selected' : '' ?>>Privat</option>
+                <option value="privat" <?= (($_POST['contact_type'] ?? '') === 'privat') ? 'selected' : '' ?>>Privat
+                </option>
                 <option value="firma" <?= (($_POST['contact_type'] ?? '') === 'firma') ? 'selected' : '' ?>>Firma </option>
             </select>
+        </div>
+
+        <div class="form-group">
+            <label for="contact_person">Ansprechpartner *</label>
+            <input type="text" id="contact_person" name="contact_person" class="form-input"
+                placeholder="Herr/Frau Mustermann" maxlength="255" required
+                value="<?= htmlspecialchars($_POST['contact_person'] ?? '') ?>">
         </div>
 
         <div class="form-group">

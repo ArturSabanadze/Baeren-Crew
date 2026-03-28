@@ -10,7 +10,7 @@
                 <h2 class="pkg-title">Klein</h2>
                 <p class="pkg-subtitle">Für kleine Umzüge</p>
                 <p class="pkg-details"> bis 20m³ - 3 Stunden </p>
-                <span class="pkg-details small">(je weitere Stunde 65€ zzgl. Mwst)</span>
+                <span class="pkg-details small">(je weitere 30min 45€ zzgl. Mwst)</span>
             </div>
             <ul class="pkg-features">
                 <li>Fahrzeug (inkl. Kraftstoff)</li>
@@ -21,7 +21,8 @@
                 <li>Be/Entladen</li>
                 <li>Ab/Aufbau Ihrer Möbel</li>
             </ul>
-            <div class="pkg-price">ab. 449€ <span class="pkg-details small">zzgl. MwSt.</span></div>
+            <div class="pkg-price">ab. 549€ <span class="pkg-details small">zzgl. MwSt.</span><br><span
+                    class="pkg-details small">Unverbindliches Angebot</span></div>
             <button class="pkg-btn" onclick="openPackageModal('klein')">Mehr erfahren</button>
         </div>
         <div class="pkg-card second promo">
@@ -29,8 +30,8 @@
                 <h2 class="pkg-title">Mittel</h2>
                 <p class="pkg-subtitle">Für mittlere Umzüge</p>
                 <p class="pkg-details"> bis 40m³ - 6 Stunden </p>
-                <span class="pkg-details small">(je weitere Stunde
-                    65€ zzgl. Mwst)</span>
+                <span class="pkg-details small">(je weitere 30min
+                    45€ zzgl. Mwst)</span>
             </div>
             <ul class="pkg-features">
                 <li>Fahrzeug (inkl. Kraftstoff)</li>
@@ -41,15 +42,16 @@
                 <li>Be/Entladen</li>
                 <li>Ab/Aufbau Ihrer Möbel</li>
             </ul>
-            <div class="pkg-price">ab. 699€ <span class="pkg-details small">zzgl. MwSt.</span></div>
+            <div class="pkg-price">ab. 749€ <span class="pkg-details small">zzgl. MwSt.<br><span
+                        class="pkg-details small">Unverbindliches Angebot</span></div>
             <button class="pkg-btn" onclick="openPackageModal('mittel')">Mehr erfahren</button>
         </div>
         <div class="pkg-card third">
             <div class="pkg-header">
                 <h2 class="pkg-title">Groß</h2>
                 <p class="pkg-subtitle">Für große Umzüge</p>
-                <p class="pkg-details"> bis 60m³ - 8 Stunden </p>
-                <span class="pkg-details small">(je weitere Stunde 65€ zzgl. Mwst)</span>
+                <p class="pkg-details"> bis 55m³ - 8 Stunden </p>
+                <span class="pkg-details small">(je weitere 30min 45€ zzgl. Mwst)</span>
             </div>
             <ul class="pkg-features">
                 <li>Fahrzeug (inkl. Kraftstoff)</li>
@@ -60,7 +62,8 @@
                 <li>Be/Entladen</li>
                 <li>Ab/Aufbau Ihrer Möbel</li>
             </ul>
-            <div class="pkg-price">ab. 999€ <span class="pkg-details small">zzgl. MwSt.</span></div>
+            <div class="pkg-price">ab. 999€ <span class="pkg-details small">zzgl. MwSt.<br><span
+                        class="pkg-details small">Unverbindliches Angebot</span></div>
             <button class="pkg-btn" onclick="openPackageModal('gross')">Mehr erfahren</button>
         </div>
     </div>

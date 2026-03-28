@@ -13,8 +13,8 @@
 ========================================================= */
 :root {
   --color-navigation-bar: #1e1e1e;
-  --color-navigation-links: #fff;
-  --color-navigation-links-hover: #a8a8a8;
+  --color-navigation-links: rgb(236, 156, 80);
+  --color-navigation-links-hover: rgb(226, 142, 64);
   --color-primary: #384150;
   --color-secondary: #c19a6b;
   --color-bg: #fff;
@@ -144,7 +144,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: rgb(206, 101, 3);
   margin-left: 20px;
 }
 
@@ -311,6 +311,16 @@ hr {
   transition:
     opacity var(--transition-smooth),
     transform var(--transition-smooth);
+}
+
+.section-calculator {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  max-width: var(--container-width);
+  width: 100%;
+  align-self: center;
+  margin: 0 auto;
 }
 
 .section-hero,
@@ -549,6 +559,10 @@ hr {
   text-align: start;
 }
 
+.centered-text {
+  text-align: center;
+}
+
 /* =========================================================
    COMPONENTS
 ========================================================= */
@@ -718,7 +732,8 @@ hr {
   color: white;
   text-decoration: none;
   font-size: var(--font-size-small);
-  margin-left: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .footer-links a:hover {
@@ -783,8 +798,9 @@ hr {
    MISSION SECTION
 ========================================================= */
 
-.section-mission {
-  background: white;
+.app-section.section-mission {
+  display: flex;
+  margin: 20px auto;
 }
 
 .mission-text {
@@ -804,8 +820,8 @@ hr {
 }
 
 .review-carousel {
-  width: 100%;
-  max-width: 900px;
+  width: 90dvw;
+  max-width: var(--container-width);
   margin: 0 auto;
   overflow: hidden; /* wichtig */
   position: relative;
@@ -855,6 +871,7 @@ hr {
   background: var(--color-primary);
   color: white;
   border: none;
+  border-radius: 4px;
   padding: 0.6rem 1rem;
   cursor: pointer;
   transition: 0.3s ease;
@@ -1216,7 +1233,7 @@ hr {
   .nav__mobile-menu.show a {
     font-size: 1rem;
     padding: 1rem;
-    color: white;
+    color: var(--color-navigation-links);
     text-decoration: none;
     transition: background var(--transition-fast);
   }
@@ -1237,7 +1254,7 @@ hr {
 
   /* HERO CAROUSEL */
   .hero-carousel {
-    display: none;
+    display: flex;
   }
 
   .hero-checkboard {
@@ -1430,6 +1447,7 @@ hr {
   }
 
   .hero-thumbnails {
+    display: none;
     flex-wrap: wrap;
     overflow-x: auto;
   }

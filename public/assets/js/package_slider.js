@@ -8,11 +8,11 @@ function updateCards() {
 
     // Base offset for peek effect
     if (card.classList.contains("first"))
-      card.style.transform = "translateX(20%)";
-    else if (card.classList.contains("second"))
       card.style.transform = "translateX(15%)";
-    else if (card.classList.contains("third"))
+    else if (card.classList.contains("second"))
       card.style.transform = "translateX(10%)";
+    else if (card.classList.contains("third"))
+      card.style.transform = "translateX(5%)";
     else card.style.transform = "translateX(0)";
 
     card.style.opacity = 0.9;
@@ -29,13 +29,13 @@ function updateCards() {
 
   // Previous card peek
   const previousCard = cards[(currentIndex - 1 + cards.length) % cards.length];
-  previousCard.style.transform = "translateX(-20%)";
+  previousCard.style.transform = "translateX(-15%)";
   previousCard.style.opacity = 0.9;
   previousCard.style.zIndex = 0;
 
   // Next card peek
   const nextCard = cards[(currentIndex + 1) % cards.length];
-  nextCard.style.transform = "translateX(20%)";
+  nextCard.style.transform = "translateX(15%)";
   nextCard.style.opacity = 0.9;
   nextCard.style.zIndex = 0;
 }
