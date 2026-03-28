@@ -15,7 +15,7 @@ unset($_SESSION['form_errors'], $_SESSION['form_success']);
 
 ?>
 
-<div class="hero-form">
+<div class="hero-form" id="contact-form">
     <div class="error-message">
         <?php if (!empty($errors)): ?>
             <div class="alert alert-danger">

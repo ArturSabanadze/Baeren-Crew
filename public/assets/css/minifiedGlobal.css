@@ -13,20 +13,25 @@
 ========================================================= */
 :root {
   --color-navigation-bar: #1e1e1e;
-  --color-navigation-links: rgb(236, 156, 80);
-  --color-navigation-links-hover: rgb(226, 142, 64);
-  --color-primary: #384150;
-  --color-secondary: #c19a6b;
+  --color-footer-bar: #1e1e1e;
+  --color-navigation-links: rgb(196, 95, 0);
+  --color-navigation-links-hover: rgb(209, 106, 10);
+  --color-primary: #bb5415;
+  --color-secondary: #d15f18;
+  --color-promo-card: black;
+  --color-normal-card: black;
   --color-bg: #fff;
   --color-surface: #fff;
   --color-text: #222;
   --color-muted: #777;
 
   --font-main: "Amazon Ember", sans-serif;
+  --font-color-primary: #222;
   --font-size-small: 0.9rem;
   --font-size-base: 18px;
   --font-size-md: 1.2rem;
   --font-size-lg: 2.5rem;
+  --font-size-xxlg: 4rem;
 
   --container-width: 1400px;
   --section-padding: 5rem 2rem;
@@ -57,7 +62,7 @@ body {
   font-family: var(--font-main);
   font-size: var(--font-size-base);
   background: var(--color-bg);
-  color: var(--color-text);
+  color: var(--font-color-primary);
 }
 
 /* =========================================================
@@ -72,7 +77,7 @@ body {
 .app-main {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100dvw;
 }
 
 .container {
@@ -105,7 +110,7 @@ hr {
   z-index: var(--z-header);
   background: var(--color-navigation-bar);
   backdrop-filter: blur(10px);
-  box-shadow: #666666 0px 3px 20px 9px;
+  box-shadow: #1f1303 0px 3px 20px 9px;
   transition:
     transform var(--transition-smooth),
     opacity var(--transition-smooth);
@@ -332,6 +337,7 @@ hr {
 
 .section-hero {
   z-index: 1;
+  padding-bottom: 20px;
 }
 .section-services {
   z-index: 2;
@@ -378,7 +384,7 @@ hr {
 
 .container.hero-grid {
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-primary);
   border-radius: 24px;
 }
 
@@ -396,6 +402,60 @@ hr {
 /* =========================================================
    HERO
 ========================================================= */
+.hero-section-main {
+  background-image: url("/assets/images/hero-bg.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80dvh;
+}
+
+.hero-section-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 14, 13, 0.98);
+  z-index: 1;
+}
+
+.hero-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: rgb(235, 235, 235);
+  z-index: 2;
+  width: 80dvw;
+  max-width: 850px;
+  height: 80dvh;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.hero-new-content {
+  background: rgba(13, 14, 13, 0.678);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-new-content h1 {
+  font-size: var(--font-size-xxlg);
+  line-height: 1.2;
+}
+
+.eyecatcher {
+  color: var(--color-secondary);
+}
+
+.hero-main-cta {
+  gap: 2rem;
+  display: flex;
+  justify-content: start;
+  height: 100%;
+}
+
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -527,6 +587,15 @@ hr {
 /* =========================================================
    SECTION CONTENT
 ========================================================= */
+
+.section-hero-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 12, 12, 0.96);
+  z-index: -1;
+}
+
 .section-content {
   display: flex;
   flex-direction: column;
@@ -617,7 +686,7 @@ hr {
 
 .hero-form label {
   font-size: 0.8rem;
-  color: var(--color-primary);
+  color: var(--font-color-primary);
 }
 
 .hero-form .form-input {
@@ -695,7 +764,7 @@ hr {
   position: relative;
   bottom: 0;
   width: 100%;
-  background: var(--color-primary);
+  background: var(--color-footer-bar);
   color: white;
   padding: 10px !important;
   transform: translateY(100%);
@@ -800,7 +869,8 @@ hr {
 
 .app-section.section-mission {
   display: flex;
-  margin: 20px auto;
+  margin: 0px auto;
+  padding-top: 0px;
 }
 
 .mission-text {
@@ -814,7 +884,7 @@ hr {
 
 .section-reviews {
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   box-sizing: border-box;
   background: var(--color-surface);
 }
@@ -1430,6 +1500,21 @@ hr {
     font-size: 1.8rem;
   }
 
+  .hero-section-main {
+    margin-top: var(--nav-height);
+    position: relative;
+    height: 90dvh;
+    width: 100%;
+  }
+
+  .hero-new-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text {
+    font-size: 0.8rem;
+  }
+
   .review-card {
     flex: 0 0 95%;
     padding: 1.5rem;
@@ -1475,7 +1560,7 @@ hr {
     transform: translateY(0);
     padding: 2rem 1rem;
     width: 100%;
-    background: var(--color-primary);
+    background: var(--color-footer-bar);
     color: white;
   }
 

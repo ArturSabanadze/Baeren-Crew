@@ -15,7 +15,7 @@
 
 .offer-calculator {
   background-color: var(--color-surface, #fff);
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-primary);
   border-radius: 16px;
   padding: 1rem;
   box-shadow: var(--shadow-soft, 0 4px 12px rgba(0, 0, 0, 0.05));
@@ -42,7 +42,7 @@
 .offer-calculator label {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--color-primary, #0077cc);
+  color: var(--font-color-primary, #0077cc);
   display: block;
   margin-bottom: 0.3rem;
 }

@@ -5,38 +5,60 @@
 
 
         <p class="text-base">
-            Wir bieten professionelle Lösungen für Privat und Geschäftskunden.
+            Professionelle Lösungen für Privat und Geschäftskunden.
+        </p>
+        <p class="text-base">
+            Ob einzelne Aufgabe oder komplette Unterstützung – wir sind für Sie da, wenn es anpacken heißt. Die Bären
+            Crew übernimmt Arbeiten, die Zeit, Kraft und Organisation erfordern – schnell, sauber und zuverlässig.
         </p>
 
         <ul class="benefits-list">
-            <li>✔️ <strong>Entrümpelungen</strong> – Haushaltsauflösungen, Keller- und Dachbodenräumungen inklusive
-                fachgerechter Entsorgung.</li>
+            <li>✔️ <strong>Entrümpelungen & Haushaltsauflösungen</strong> – Wir schaffen Platz, wo es nötig ist.
+                Wohnungen, Keller oder Dachböden räumen wir gründlich und fachgerecht – inklusive umweltgerechter
+                Entsorgung.</li>
 
-            <li>✔️ <strong>Kleintransporte</strong> – Schneller und sicherer Transport von Möbeln, Geräten oder
-                einzelnen Gegenständen.</li>
+            <li>✔️ <strong>Kleintransporte & Möbeltaxi</strong> – Ob einzelne Möbelstücke oder komplette Transporte –
+                wir bringen alles sicher und zuverlässig ans Ziel, auch kurzfristig.</li>
 
-            <li>✔️ <strong>Allroundservice</strong> – Flexible Unterstützung bei verschiedensten Arbeiten rund um Haus,
-                Wohnung und Gewerbe.</li>
+            <li>✔️ <strong>Allround-Service & Möbelmontage</strong> – Wir unterstützen Sie bei verschiedensten Arbeiten
+                rund um Haus, Wohnung und Gewerbe – vom Tragen bis zur fachgerechten Montage.</li>
 
-            <li>✔️ <strong>Renovierungen</strong> – Saubere und professionelle Ausführung von Renovierungs- und
-                Instandhaltungsarbeiten.</li>
+            <li>✔️ <strong> Renovierungsarbeiten</strong> – Saubere, zuverlässige Renovierungen und Instandsetzungen –
+                professionell umgesetzt und aus einer Hand.</li>
 
-            <li>✔️ <strong>Bodenverlegung</strong> – Fachgerechtes Verlegen von Böden aller Art.</li>
+            <li>✔️ <strong>Bodenverlegung</strong> – achgerechtes Verlegen von Böden aller Art – präzise, langlebig und
+                optisch sauber.</li>
 
-            <li>✔️ <strong>Messie-Wohnungen</strong> – Diskrete, schnelle und gründliche Räumung.</li>
+            <li>✔️ <strong>Räumung stark belasteter Wohnungen (diskret & professionell)</strong> – In sensiblen
+                Situationen arbeiten wir besonders respektvoll, diskret und gründlich – mit klarer Struktur und ohne
+                zusätzlichen Stress für Sie.</li>
 
-            <li>✔️ <strong>Objektbetreuung</strong> – Zuverlässige Betreuung und Pflege Ihrer Immobilien.</li>
+            <li>✔️ <strong>Objektbetreuung & Hausmeisterservice</strong> – Wir kümmern uns zuverlässig um Ihre Immobilie
+                – flexibel, regelmäßig oder nach Bedarf.
+            </li>
         </ul>
 
-        <p class="text-base">Wir arbeiten termintreu, sauber und kundenorientiert. Egal ob Wohnungswechsel,
-            Büroauflösung, Möbeltransport
-            oder Immobilienbetreuung – wir sind Ihr kompetenter Ansprechpartner in der Region.
 
-            Kontaktieren Sie uns noch heute für ein unverbindliches Angebot – wir beraten Sie gerne persönlich und
-            finden die passende Lösung für Ihr Anliegen.</p>
+
+
     </div>
     <div class="section-media">
-        <img src="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/flyer.webp" alt="Umzugsteam"
-            class="media-image">
+        <!-- Main Hero Carousel start-->
+        <?php include_once __DIR__ . '/../partials/hero_carousel.php'; ?>
+        <!-- Main Hero Carousel end-->
+
     </div>
+</div>
+<div class="container section-grid">
+
+    <div class="section-content section-center">
+        <p class="text-base">Warum Bären Crew?</p>
+        <p class="text-base">Wir arbeiten termintreu, sauber und mit dem Anspruch, dass Sie sich um nichts
+            kümmern
+            müssen.
+            Statt komplizierter Abläufe bekommen Sie bei uns klare Lösungen, feste Ansprechpartner und ein Team,
+            das
+            mitdenkt.</p>
+    </div>
+
 </div>

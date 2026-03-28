@@ -15,19 +15,22 @@
 }
 :root {
   --color-navigation-bar: #1e1e1e;
-  --color-navigation-links: #fff;
-  --color-navigation-links-hover: #a8a8a8;
-  --color-primary: #384150;
-  --color-secondary: #c19a6b;
+  --color-footer-bar: #1e1e1e;
+  --color-navigation-links: rgb(196, 95, 0);
+  --color-navigation-links-hover: rgb(209, 106, 10);
+  --color-primary: #bb5415;
+  --color-secondary: #d15f18;
   --color-bg: #fff;
   --color-surface: #fff;
   --color-text: #222;
   --color-muted: #777;
   --font-main: "Amazon Ember", sans-serif;
+  --font-color-primary: #222;
   --font-size-small: 0.9rem;
   --font-size-base: 18px;
   --font-size-md: 1.2rem;
   --font-size-lg: 2.5rem;
+  --font-size-xxlg: 4rem;
   --container-width: 1400px;
   --section-padding: 5rem 2rem;
   --nav-height: 78px;
@@ -115,7 +118,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
+  color: var(--color-primary);
   margin-left: 20px;
 }
 .nav__logo img {
@@ -242,14 +245,14 @@ hr {
 }
 .app-footer,
 .job-cta .apply-button {
-  background: var(--color-primary);
+  background: var(--color-footer-bar);
   color: #fff;
 }
 .nav__mobile-dropdown.active .nav__dropdown-menu {
   display: flex;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(165, 147, 147, 0.05);
   border-radius: 4px;
   padding-left: 0.5rem;
 }
@@ -497,7 +500,7 @@ hr {
   background: rgba(193, 154, 107, 0.08);
   padding: 1.2rem;
   border-radius: 8px;
-  border-left: 4px solid var(--color-secondary);
+  border-left: 4px solid var(--color-primary);
 }
 .application-info {
   background: #f9f9f9;
