@@ -204,11 +204,24 @@
                     <div class="review-card">
                         <div class="stars">★★★★★</div>
                         <p>
-                            „Den großen Umzug von Oberbayern nach Franken hat die Bären-Crew hervorragend hinbekommen. 
-                            Alle Mitarbeiter waren unglaublich freundlich und entgegenkommend. Die Möbel wurden sehr sorgfältig 
+                            „Den großen Umzug von Oberbayern nach Franken hat die Bären-Crew hervorragend hinbekommen.
+                            Alle Mitarbeiter waren unglaublich freundlich und entgegenkommend. Die Möbel wurden sehr
+                            sorgfältig
                             behandelt.“
                         </p>
                         <span>– Rainer Maier</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „Die Bären-Crew hat ganze Arbeit geleistet. In kürzester Zeit war alles erledigt. Die
+                            Mitarbeiter sind super motiviert, packen richtig an und sind dazu noch total sympathisch.
+                            Alles kam heil an, die Organisation war perfekt. Wer ein zuverlässiges Umzugsunternehmen
+                            sucht, ist hier genau richtig. Absolute Empfehlung und gerne wieder!
+                            “
+                        </p>
+                        <span>– Bernd Li</span>
                     </div>
                 </div>
 

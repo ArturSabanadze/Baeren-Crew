@@ -26,7 +26,7 @@
 
     <div class="hero-main-cta">
         <button onclick="location.href='#rechner'" class="btn btn-primary btn-full">
-            <span class="btn-text">Umzug Kalkulator</span>
+            <span class="btn-text">Umzugskalkulator</span>
         </button>
         <button onclick="location.href='#contact-form'" class="btn btn-primary btn-full">
             <span class="btn-text">Angebot sichern</span>

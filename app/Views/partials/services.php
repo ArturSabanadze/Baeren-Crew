@@ -46,19 +46,24 @@
         <!-- Main Hero Carousel start-->
         <?php include_once __DIR__ . '/../partials/hero_carousel.php'; ?>
         <!-- Main Hero Carousel end-->
+        <div class="section-content section-center">
+            <br>
+            <p class="text-base">Warum Bären Crew?</p>
+            <p class="text-base">Wir arbeiten termintreu, sauber und mit dem Anspruch, dass Sie sich um nichts
+                kümmern
+                müssen.
+                Statt komplizierter Abläufe bekommen Sie bei uns klare Lösungen, feste Ansprechpartner und ein Team,
+                das
+                mitdenkt.</p>
+
+            <div class="btn-info-group">
+                <button onclick="location.href='#contact-form'" class="btn btn-primary btn-full">
+                    <span class="btn-text">Angebot sichern</span>
+                </button>
+                <p class="button-undertext">Kostenlos und unverbindlich</p>
+            </div>
+        </div>
+
 
     </div>
-</div>
-<div class="container section-grid">
-
-    <div class="section-content section-center">
-        <p class="text-base">Warum Bären Crew?</p>
-        <p class="text-base">Wir arbeiten termintreu, sauber und mit dem Anspruch, dass Sie sich um nichts
-            kümmern
-            müssen.
-            Statt komplizierter Abläufe bekommen Sie bei uns klare Lösungen, feste Ansprechpartner und ein Team,
-            das
-            mitdenkt.</p>
-    </div>
-
 </div>

@@ -1,5 +1,5 @@
 <div class="offer-calculator">
-    <h2>Umzugsangebot berechnen</h2>
+    <h2>Umzugskalkulator</h2>
     <hr>
     <form class="offer-form">
         <!-- Hidden fields -->
@@ -8,17 +8,23 @@
         <input type="hidden" name="offer_calculation" value="1">
         <input type="text" name="website" style="display:none" autocomplete="off">
 
-        <label>Von</label>
-        <gmp-place-autocomplete id="from" placeholder="Startadresse"></gmp-place-autocomplete>
 
-        <label>Nach</label>
-        <gmp-place-autocomplete id="to" placeholder="Zieladresse"></gmp-place-autocomplete>
+        <label accesskey="v" for="from">Von</label>
+        <div class="input-wrapper">
+            <gmp-place-autocomplete id="from" placeholder="Startadresse"></gmp-place-autocomplete>
+        </div>
 
-        <label>Wohnfläche (m²)</label>
-        <input type="number" name="wohnflaeche" required min="1" placeholder="z.B. 45m²">
 
-        <label>Möbilierungsgrad</label>
-        <select name="level" required>
+        <label accesskey="n" for="to">Nach</label>
+        <div class="input-wrapper">
+            <gmp-place-autocomplete id="to" placeholder="Zieladresse"></gmp-place-autocomplete>
+        </div>
+
+        <label accesskey="w" for="wohnflaeche">Wohnfläche (m²)</label>
+        <input type="number" name="wohnflaeche" id="wohnflaeche" required min="1" placeholder="z.B. 45m²">
+
+        <label accesskey="m" for="moebel">Möblierungsgrad</label>
+        <select name="level" id="moebel" required>
             <option value="niedrig">Niedrig</option>
             <option value="mittel">Mittel</option>
             <option value="hoch">Hoch</option>
@@ -26,12 +32,13 @@
         <hr>
         <label>Zusatzleistungen</label>
         <div class="extras-group">
-            <label><input type="checkbox" name="extras[]" value="furniture"> Möbelmontage</label>
+            <label for="extras"><input type="checkbox" name="extras[]" value="furniture" id="extras">
+                Möbelmontage</label>
             <label><input type="checkbox" name="extras[]" value="lift"> Klaviertransport</label>
             <label><input type="checkbox" name="extras[]" value="reinigung"> Endreinigung</label>
         </div>
-        <label>Laufweg zur Parkzone</label>
-        <label><input type="number" name="parking" placeholder="z.B. 25m"></label>
+        <label accesskey="p" for="parking">Laufweg zur Parkzone</label>
+        <input type="number" name="parking" id="parking" placeholder="z.B. 25m">
 
         <button type="submit">Angebot berechnen</button>
     </form>

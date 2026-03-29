@@ -47,9 +47,26 @@
   margin-bottom: 0.3rem;
 }
 
+gmp-place-autocomplete {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.input-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px; /* slightly bigger */
+  background: white;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px rgba(202, 99, 39, 0.644);
+}
+
 .offer-calculator input[type="number"],
-.offer-calculator select,
-.offer-calculator gmp-place-autocomplete {
+.offer-calculator select {
   width: 100%;
   padding: 0.25rem 0.45rem;
   font-size: 0.95rem;

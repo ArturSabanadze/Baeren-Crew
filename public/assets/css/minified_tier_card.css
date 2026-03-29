@@ -117,7 +117,7 @@
   right: 3px;
   background: 0 0;
   border: none;
-  font-size: 28px;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 .modal-subtitle {
@@ -137,12 +137,12 @@
   margin-bottom: 6px;
 }
 .modal-price {
-  font-size: 22px;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 5px;
 }
 .modal-price-details {
-  font-size: 16px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: #777;
   margin-bottom: 20px;
   font-weight: 400;

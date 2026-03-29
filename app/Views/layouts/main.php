@@ -17,7 +17,6 @@
     <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h3.webp">
     <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h4.webp">
     <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h5.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/flyer.webp">
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=<?= $env['GOOGLE_MAPS_API_KEY'] ?>&libraries=places&v=beta">
         </script>
@@ -47,6 +46,7 @@
         </section>
         <!-- CALCULATOR -->
         <section class="section-calculator" id="packages">
+            <h2 class="heading-lg">Berechnen Sie Ihr Angebot</h2>
             <div class="offer-calculator-wrapper" id="rechner">
                 <!-- Offer Calculator Start -->
                 <?php include_once __DIR__ . '/../partials/calculation_form.php'; ?>
@@ -104,7 +104,7 @@
 
         <!-- CONTACT -->
         <section class="app-section section-hero" id="section-hero">
-
+            <h2 class="heading-lg-sub">Wir sind für Sie da</h2>
             <div class="container hero-grid">
                 <?php include_once __DIR__ . '/../partials/contact_bottom.php'; ?>
 
@@ -113,10 +113,6 @@
                 <!-- Form End -->
             </div>
         </section>
-
-
-
-
 
     </main>
     <div class="desktop-footer">
