@@ -124,7 +124,19 @@
     <?php include_once __DIR__ . '/../partials/cookie_banner.php'; ?>
     <?php include_once __DIR__ . '/../partials/cookie_modal.php'; ?>
     <?php include_once __DIR__ . '/../partials/product_modal.php'; ?>
+    <script>
+        function setHeaderOffset() {
+            const header = document.getElementById('appHeader');
+            const distancer = document.querySelector('.app-header-distancer');
 
+            if (header && distancer) {
+                distancer.style.height = header.offsetHeight + 'px';
+            }
+        }
+
+        window.addEventListener('load', setHeaderOffset);
+        window.addEventListener('resize', setHeaderOffset);
+    </script>
 </body>
 
 <?php include_once __DIR__ . '/../helpers/scripts_loader.php'; ?>

@@ -98,6 +98,8 @@
     <?php include_once __DIR__ . '/../partials/cookie_banner.php'; ?>
     <?php include_once __DIR__ . '/../partials/cookie_modal.php'; ?>
     <?php include_once __DIR__ . '/../partials/product_modal.php'; ?>
+    
+
 </body>
 <?php include_once __DIR__ . '/../helpers/scripts_loader.php'; ?>
 

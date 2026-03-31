@@ -12,8 +12,8 @@
    GLOBAL VARIABLES
 ========================================================= */
 :root {
-  --color-navigation-bar: #1e1e1e;
-  --color-footer-bar: #1e1e1e;
+  --color-navigation-bar: #000000;
+  --color-footer-bar: #000000;
   --color-navigation-links: rgb(196, 95, 0);
   --color-navigation-links-hover: rgb(209, 106, 10);
   --color-primary: #bb5415;
@@ -1301,7 +1301,8 @@ hr {
   }
 
   .app-header-distancer {
-    display: none;
+    display: block;
+
   }
 
   .section-content,
@@ -1554,7 +1555,9 @@ hr {
   .heading-lg {
     font-size: 1.8rem;
   }
-
+  .hero-new-content {
+    padding: 0px;
+  }
   .hero-main-cta {
     gap: 1rem;
     display: flex;
@@ -1563,9 +1566,8 @@ hr {
     height: 100%;
   }
   .hero-section-main {
-    margin-top: var(--nav-height);
     position: relative;
-    height: 90%;
+    height: 100dvh;
     width: 100%;
   }
 
@@ -1676,5 +1678,22 @@ hr {
   }
   .footer-credits {
     font-size: 0.7rem !important;
+  }
+  .btn{
+    padding: 0.5rem 1.1rem;
+    font-size: 0.9rem;
+  }
+  .cookie-inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: start;
+  }
+  .coockie-buttons {
+    width: 100dvw;
+    justify-content: flex-start;
+  }
+  .cookie-banner button {
+    font-size: 0.9rem !important;
+    width: 100% !important;
   }
 }
