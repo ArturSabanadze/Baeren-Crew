@@ -14,16 +14,17 @@
   font-style: normal;
 }
 :root {
-  --color-navigation-bar: #1e1e1e;
-  --color-footer-bar: #1e1e1e;
   --color-navigation-links: rgb(196, 95, 0);
   --color-navigation-links-hover: rgb(209, 106, 10);
   --color-primary: #bb5415;
   --color-secondary: #d15f18;
+  --color-promo-card: black;
+  --color-normal-card: black;
   --color-bg: #fff;
   --color-surface: #fff;
   --color-text: #222;
   --color-muted: #777;
+
   --font-main: "Amazon Ember", sans-serif;
   --font-color-primary: #222;
   --font-size-small: 0.9rem;
@@ -31,12 +32,16 @@
   --font-size-md: 1.2rem;
   --font-size-lg: 2.5rem;
   --font-size-xxlg: 4rem;
+
   --container-width: 1400px;
   --section-padding: 5rem 2rem;
   --nav-height: 78px;
+
   --transition-fast: 0.25s ease;
   --transition-smooth: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+
   --z-mobile-menu: 1001;
   --z-header: 1000;
   --z-footer: 900;

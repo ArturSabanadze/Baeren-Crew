@@ -23,7 +23,7 @@ class PageController
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
             'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator'],
-            'scripts' => ['app', 'package_slider', 'Big_carousel', 'rates_carousel', 'cookies', 'package_modal'],
+            'scripts' => ['app', 'package_slider', 'Big_carousel', 'rates_carousel', 'cookies', 'package_modal', 'scroll_button'],
             'env' => $env
         ]);
     }
@@ -37,7 +37,7 @@ class PageController
             'meta_description' => ['Unsere Allgemeinen Geschäftsbedingungen (AGB) regeln die Vertragsbeziehung zwischen der Bären Crew und unseren Kunden. Hier finden Sie alle wichtigen Informationen zu unseren Dienstleistungen, Preisen, Haftung und Datenschutz. Bitte lesen Sie unsere AGB sorgfältig durch, um eine transparente und vertrauensvolle Zusammenarbeit zu gewährleisten.'],
             'description' => 'Unsere Allgemeinen Geschäftsbedingungen (AGB) regeln die Vertragsbeziehung zwischen der Bären Crew und unseren Kunden. Hier finden Sie alle wichtigen Informationen zu unseren Dienstleistungen, Preisen, Haftung und Datenschutz. Bitte lesen Sie unsere AGB sorgfältig durch, um eine transparente und vertrauensvolle Zusammenarbeit zu gewährleisten.',
             'styles' => ['minifiedagb'],
-            'scripts' => ['app', 'agb', 'cookies'],
+            'scripts' => ['app', 'agb', 'cookies', 'scroll_button'],
             'env' => $env
         ], 'layouts/agb');
     }
@@ -83,7 +83,7 @@ class PageController
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/index?page=jobs',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
-            'styles' => ['minifiedJob'],
+            'styles' => ['minifiedGlobal','minifiedJob'],
             'scripts' => ['app', 'cookies'],
             'env' => $env
         ], 'layouts/jobs');

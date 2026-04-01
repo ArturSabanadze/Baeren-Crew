@@ -124,6 +124,7 @@
     <?php include_once __DIR__ . '/../partials/cookie_banner.php'; ?>
     <?php include_once __DIR__ . '/../partials/cookie_modal.php'; ?>
     <?php include_once __DIR__ . '/../partials/product_modal.php'; ?>
+    <?php include_once __DIR__ . '/../partials/sticky_scroll_element.php'; ?>
     <script>
         function setHeaderOffset() {
             const header = document.getElementById('appHeader');
