@@ -45,9 +45,9 @@
             <?php include_once __DIR__ . '/../partials/services.php'; ?>
         </section>
         <!-- CALCULATOR -->
-        <section class="section-calculator" id="packages">
+        <section class="section-calculator" id="rechner">
             <h2 class="heading-lg">Berechnen Sie Ihr Angebot</h2>
-            <div class="offer-calculator-wrapper" id="rechner">
+            <div class="offer-calculator-wrapper" id="rechner-cnt">
                 <!-- Offer Calculator Start -->
                 <?php include_once __DIR__ . '/../partials/calculation_form.php'; ?>
                 <!-- Offer Calculator End -->
@@ -125,6 +125,7 @@
     <?php include_once __DIR__ . '/../partials/cookie_modal.php'; ?>
     <?php include_once __DIR__ . '/../partials/product_modal.php'; ?>
     <?php include_once __DIR__ . '/../partials/sticky_scroll_element.php'; ?>
+    <?php include_once __DIR__ . '/../partials/sidebar_sticky.php'; ?>
     <script>
         function setHeaderOffset() {
             const header = document.getElementById('appHeader');

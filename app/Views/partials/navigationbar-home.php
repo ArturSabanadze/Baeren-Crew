@@ -10,13 +10,19 @@
     <div class="nav__links">
         <a href="index.php?page=home#appHeader">Start</a>
         <a href="index.php?page=home#section-services">Leistungen</a>
-        <a href="index.php?page=home#section-pkg">Preise</a>
+        <div class="nav__dropdown">
+            <button class="nav__dropdown-btn">Preise</button>
+            <div class="nav__dropdown-menu">
+                <a href="index.php?page=home#rechner">Kalkulator</a>
+                <a href="index.php?page=home#packages">Umzugspakete</a>
+            </div>
+        </div>
 
         <div class="nav__dropdown">
             <button class="nav__dropdown-btn">Über Uns</button>
             <div class="nav__dropdown-menu">
-                <a href="index.php?page=home#mission">Mission</a>
                 <a href="index.php?page=home#reviews">Bewertungen</a>
+                <a href="index.php?page=home#mission">Mission</a>
             </div>
         </div>
 

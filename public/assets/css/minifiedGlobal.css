@@ -225,7 +225,8 @@ hr {
   position: relative;
   height: 100%;
   display: flex;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
 }
 
 .nav__dropdown-menu {
@@ -238,6 +239,7 @@ hr {
   min-width: 200px;
   display: flex;
   flex-direction: column;
+
   opacity: 0;
   transform: translateY(10px);
   pointer-events: none;
@@ -250,6 +252,8 @@ hr {
 .nav__dropdown-menu a {
   padding: 0.7rem 1.5rem;
   width: 100%;
+  text-align: left;
+  justify-content: flex-start;
 }
 
 .nav__dropdown-menu a:hover {
@@ -1219,8 +1223,10 @@ hr {
   font-size: 1rem;
   cursor: pointer;
 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: opacity 0.3s, transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition:
+    opacity 0.3s,
+    transform 0.2s;
 }
 
 #scrollTopBtn:hover {
@@ -1328,7 +1334,6 @@ hr {
 
   .app-header-distancer {
     display: block;
-
   }
 
   .section-content,
@@ -1705,7 +1710,7 @@ hr {
   .footer-credits {
     font-size: 0.7rem !important;
   }
-  .btn{
+  .btn {
     padding: 0.5rem 1.1rem;
     font-size: 0.9rem;
   }

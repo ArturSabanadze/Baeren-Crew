@@ -22,8 +22,8 @@ class PageController
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
-            'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator'],
-            'scripts' => ['app', 'package_slider', 'Big_carousel', 'rates_carousel', 'cookies', 'package_modal', 'scroll_button'],
+            'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator', 'minifiedSideBar'],
+            'scripts' => ['app', 'package_slider', 'Big_carousel', 'rates_carousel', 'cookies', 'package_modal', 'scroll_button', 'sidebar_sticky'],
             'env' => $env
         ]);
     }
@@ -83,7 +83,7 @@ class PageController
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/index?page=jobs',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
-            'styles' => ['minifiedGlobal','minifiedJob'],
+            'styles' => ['minifiedGlobal', 'minifiedJob'],
             'scripts' => ['app', 'cookies'],
             'env' => $env
         ], 'layouts/jobs');
