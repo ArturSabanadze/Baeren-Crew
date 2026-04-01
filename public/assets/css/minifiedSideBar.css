@@ -1,0 +1,18 @@
+.sb_wrapper {
+  position: fixed;
+  bottom: 50%;
+  right: -2%;
+  z-index: 1000;
+  background-color: #6a6a6a6d;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.3s, transform 0.2s;
+}
+
+.sb_wrapper:hover {
+  background-color: var(--color-secondary);
+  transform: translateX(2%);
+}
