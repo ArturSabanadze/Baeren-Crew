@@ -16,8 +16,8 @@
   --color-footer-bar: #000000;
   --color-navigation-links: rgb(196, 95, 0);
   --color-navigation-links-hover: rgb(209, 106, 10);
-  --color-primary: #bb5415;
-  --color-secondary: #d15f18;
+  --color-primary: #ce6503;
+  --color-secondary: #d86a04;
   --color-promo-card: black;
   --color-normal-card: black;
   --color-bg: #fff;
@@ -466,7 +466,7 @@ hr {
   margin: 0 auto;
 }
 
-.hero-new-content {
+.hero-center-content {
   background: rgba(13, 14, 13, 0.678);
   padding: 20px;
   display: flex;
@@ -474,7 +474,7 @@ hr {
   gap: 1rem;
 }
 
-.hero-new-content h1 {
+.hero-center-content h1 {
   font-size: var(--font-size-xxlg);
   line-height: 1.2;
 }

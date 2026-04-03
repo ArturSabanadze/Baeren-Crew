@@ -89,14 +89,13 @@ gmp-place-autocomplete {
 }
 
 .offer-calculator .extras-group {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .offer-calculator .extras-group label {
-  display: flex;
   align-items: center;
   gap: 0.3rem;
   font-size: 0.9rem;

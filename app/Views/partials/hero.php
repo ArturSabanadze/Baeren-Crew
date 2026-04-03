@@ -1,4 +1,4 @@
-<div class="hero-new-content ">
+<div class="hero-center-content">
 
     <h1 class="hero-title">
         Professionelle <span class="eyecatcher">Umzüge</span>

@@ -1,0 +1,93 @@
+.hero-spl {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.section:hover {
+  transform: translate3d(0, -10px, 0);
+}
+
+.section .content {
+  z-index: 2;
+  padding: 1rem; /* add padding so text doesn't touch edges */
+}
+
+.section h1 {
+  position: absolute;
+  top: 20%;
+  font-size: clamp(0.8rem, 3vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+}
+
+.umzuege {
+  background: #007bff;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 200;
+}
+
+.umzuege h1,
+.umzuege p {
+  left: 3%;
+}
+
+.entrumpelungen {
+  background: #ff4500;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 15% 100%);
+  z-index: 201;
+}
+
+.entrumpelungen h1,
+.entrumpelungen p {
+  left: 23%;
+}
+
+.allround {
+  background: #28a745;
+  clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 45% 100%);
+  z-index: 202;
+}
+
+.allround h1,
+.allround p {
+  left: 53%;
+}
+
+.renovierungen {
+  background: #ffc107;
+  clip-path: polygon(85% 0%, 100% 0%, 100% 100%, 75% 100%);
+  z-index: 204;
+}
+
+.renovierungen h1,
+.renovierungen p {
+  left: 83%;
+}
+
+.umzuege p,
+.allround p,
+.renovierungen p,
+.entrumpelungen p {
+  position: absolute;
+  top: 25%;
+}

@@ -34,11 +34,10 @@
     </div>
 
     <main class="app-main">
+
         <!-- HERO -->
         <section class="hero-section-main">
-            <div class="hero-flex">
-                <?php include_once __DIR__ . '/../partials/hero.php'; ?>
-            </div>
+            <?php include_once __DIR__ . '/../partials/threeD_hero_cards.php'; ?>
         </section>
         <!-- SERVICES -->
         <section class="app-section section-services" id="section-services">

@@ -1,0 +1,137 @@
+/* 3D space */
+
+.wrapper {
+  position: relative;
+  background: radial-gradient(circle at center, #0b2a4a, #071a2d);
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+  width: 100%;
+  min-height: 80dvh;
+  padding: 2rem;
+  z-index: 100;
+}
+
+/* Base card */
+
+.card {
+  position: relative;
+  top: 15dvh;
+  flex: 1 1 280px;
+  max-width: 320px;
+  min-width: 280px;
+  height: 40dvh;
+  padding: 20px;
+  color: white;
+  border-radius: 12px;
+  text-align: left;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+  box-shadow:
+    -20px 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.05) 40%,
+    rgba(0, 0, 0, 0.2)
+  );
+  pointer-events: none;
+}
+
+.blue {
+  transform: rotate3d(0, 4, 0, -15deg) translateX(30px);
+  left: 50px;
+  z-index: 10;
+  min-width: 316px;
+}
+.gray {
+  transform: rotate3d(5, 47, 0, -17deg) translateX(30px);
+  left: 15px;
+  z-index: 9;
+}
+.green {
+  transform: rotate3d(0, 4, 0, -18deg) translateX(30px);
+  left: 10px;
+  z-index: 8;
+}
+
+/* Hover = interactive 3D */
+.card:hover {
+  transform: rotateY(0deg) scale(1.05);
+  z-index: 20;
+}
+
+/* Lighting overlay */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.05) 40%,
+    rgba(0, 0, 0, 0.2)
+  );
+  pointer-events: none;
+}
+
+.card {
+  box-shadow:
+    -20px 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Different colors */
+.blue {
+  background: linear-gradient(145deg, #1b46a8, #0e255a);
+}
+.gray {
+  background: linear-gradient(145deg, #5f6e8a, #242f47);
+}
+.green {
+  background: linear-gradient(145deg, #275715, #093009);
+}
+
+/* Typography */
+h2 {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 8px 0;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    perspective: none;
+  }
+
+  .card {
+    transform: none !important;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .blue,
+  .green,
+  .gray {
+    left: 0px;
+  }
+}

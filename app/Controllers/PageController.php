@@ -22,7 +22,7 @@ class PageController
             'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
-            'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator', 'minifiedSideBar'],
+            'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator', 'minifiedSideBar', 'hero_splited_s3', 'threeD_hero_cards'],
             'scripts' => ['app', 'package_slider', 'Big_carousel', 'rates_carousel', 'cookies', 'package_modal', 'scroll_button', 'sidebar_sticky'],
             'env' => $env
         ]);

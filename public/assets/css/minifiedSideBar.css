@@ -2,95 +2,74 @@
   position: fixed;
   bottom: 50%;
   right: -60px;
-
   display: flex;
   flex-direction: row;
-  align-items: stretch; /* 🔥 KEY FIX */
-
+  align-items: stretch;
   min-width: 80px;
   min-height: 120px;
-
   background-color: var(--color-primary);
   border-radius: 4px 0 0 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-  cursor: pointer;
   z-index: 1000;
-
   transition: transform 0.25s ease;
 }
-
-/* Hover */
 .sb_wrapper:hover {
   transform: translateX(-2px);
 }
-
-/* Active */
 .sb_wrapper.active {
   transform: translateX(-40px);
 }
-
-/* SVG base */
 .sb_wrapper svg {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   stroke: white;
   display: block;
   transition: transform 0.2s ease;
 }
-
-/* ========================= */
-/* ARROW (FULL HEIGHT) */
-/* ========================= */
-
+.sb_arrow svg {
+  width: 18px;
+  height: 18px;
+}
 .sb_arrow {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   border-radius: 4px 0 0 4px;
-  padding: 0 6px;
+  padding-left: 0;
+  padding-right: 4px;
   background-color: var(--color-secondary);
+  cursor: pointer;
 }
-
-/* Toggle arrow */
 .sb_toggle_arrow {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
-
+.sb_toggle_arrow svg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 .sb_toggle_arrow.active svg {
   transform: rotate(180deg);
 }
-
-/* ========================= */
-/* CONTENT */
-/* ========================= */
-
 .sb_outer_container {
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 8px;
 }
-
-/* Elements column */
 .sb_elements {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
-
-/* Items */
 .sb_item {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* Hover effect */
 .sb_item:hover svg {
   transform: scale(1.15);
 }

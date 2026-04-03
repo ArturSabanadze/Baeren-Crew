@@ -9,13 +9,12 @@
         <input type="text" name="website" style="display:none" autocomplete="off">
 
 
-        <label accesskey="v" for="from">Von</label>
+        <label accesskey="v" for="from">Auszugsort:</label>
         <div class="input-wrapper">
             <gmp-place-autocomplete id="from" placeholder="Startadresse"></gmp-place-autocomplete>
         </div>
 
-
-        <label accesskey="n" for="to">Nach</label>
+        <label accesskey="n" for="to">Einzugsort:</label>
         <div class="input-wrapper">
             <gmp-place-autocomplete id="to" placeholder="Zieladresse"></gmp-place-autocomplete>
         </div>
@@ -32,10 +31,27 @@
         <hr>
         <label>Zusatzleistungen</label>
         <div class="extras-group">
-            <label for="extras"><input type="checkbox" name="extras[]" value="furniture" id="extras">
-                Möbelmontage</label>
+            <label><input type="checkbox" name="extras[]" value="einpacken"> Einpacken Umzugskartons</label>
+            <label><input type="checkbox" name="extras[]" value="auspacken"> Auspacken Umzugskartons</label>
             <label><input type="checkbox" name="extras[]" value="lift"> Klaviertransport</label>
             <label><input type="checkbox" name="extras[]" value="reinigung"> Endreinigung</label>
+            <label>Ab/Aufbau von Möbel:<input type="number" name="extras[]" id="möebelbau" value="moebelbau"
+                    placeholder="Anzahl Möbelstücke"> </input>
+
+            </label>
+            <label>Küchenabbau(m):<input type="number" name="extras[]" id="kuechenabbau" value="kuechenlaenge_abbau"
+                    placeholder="Länge (m)"> </input>
+            </label>
+            <label>Küchenaufbau (m):<input type="number" name="extras[]" id="kuechenaufbau" value="kuechenlaenge_aufbau"
+                    placeholder="Länge (m)"> </input>
+            </label>
+            <label>Möbelentsorgung (m³):<input type="number" name="extras[]" id="moebelentsorgung"
+                    value="moebelentsorgung" placeholder="Volumen (m³)"> </input>
+            </label>
+
+
+
+
         </div>
         <label accesskey="p" for="parking">Laufweg zur Parkzone</label>
         <input type="number" name="parking" id="parking" placeholder="z.B. 25m">
