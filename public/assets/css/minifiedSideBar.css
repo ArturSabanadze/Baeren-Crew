@@ -73,3 +73,9 @@
 .sb_item:hover svg {
   transform: scale(1.15);
 }
+
+@media (max-width: 768px) {
+  .sb_wrapper {
+    bottom: 70%;
+  }
+}

@@ -1,14 +1,20 @@
-/* 3D space */
-
-.wrapper {
+.hero-container-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: radial-gradient(circle at center, #0b2a4a, #071a2d);
+  padding: 2rem;
+  z-index: 101;
+  min-height: 80dvh;
+}
+
+.card-wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
-  perspective: 1000px;
+  perspective: clamp(768px, 1000px, 2000px);
   width: 100%;
-  min-height: 80dvh;
-  padding: 2rem;
   z-index: 100;
 }
 
@@ -16,11 +22,11 @@
 
 .card {
   position: relative;
-  top: 15dvh;
+  top: 5dvh;
   flex: 1 1 280px;
   max-width: 320px;
-  min-width: 280px;
-  height: 40dvh;
+  min-width: 150px;
+  height: 50dvh;
   padding: 20px;
   color: white;
   border-radius: 12px;
@@ -48,18 +54,17 @@
 
 .blue {
   transform: rotate3d(0, 4, 0, -15deg) translateX(30px);
-  left: 50px;
+  left: 0px;
   z-index: 10;
-  min-width: 316px;
 }
 .gray {
   transform: rotate3d(5, 47, 0, -17deg) translateX(30px);
-  left: 15px;
+  left: -32px;
   z-index: 9;
 }
 .green {
   transform: rotate3d(0, 4, 0, -18deg) translateX(30px);
-  left: 10px;
+  left: -40px;
   z-index: 8;
 }
 
@@ -102,11 +107,22 @@
 }
 
 /* Typography */
-h2 {
+.hero-container-wrapper h1 {
+  position: relative;
+  color: white;
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  margin-top: 1rem;
+  text-align: center;
+  top: 8dvh;
+}
+
+.card-wrapper h2 {
   margin-bottom: 15px;
+  font-size: clamp(1rem, 1.1vw, 2.5rem);
 }
 
 ul {
+  font-size: clamp(0.7rem, 1vw, 1.1rem);
   list-style: none;
   padding: 0;
 }
@@ -116,9 +132,10 @@ li {
 }
 
 @media (max-width: 768px) {
-  .wrapper {
+  .card-wrapper {
     flex-direction: column;
     perspective: none;
+    align-items: center;
   }
 
   .card {
@@ -129,9 +146,26 @@ li {
     transform: scale(1.03);
   }
 
+  .hero-container-wrapper h1 {
+    top: -25dvh;
+  }
+
   .blue,
-  .green,
+  .green {
+    left: -25px;
+    top: -10px;
+    z-index: 0;
+  }
+
   .gray {
-    left: 0px;
+    left: 5px;
+    top: -200px;
+    z-index: 1;
+  }
+
+  .green {
+    left: 35px;
+    top: -350px;
+    z-index: 2;
   }
 }
