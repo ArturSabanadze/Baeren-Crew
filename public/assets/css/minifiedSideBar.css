@@ -76,6 +76,6 @@
 
 @media (max-width: 768px) {
   .sb_wrapper {
-    bottom: 70%;
+    display: none;
   }
 }

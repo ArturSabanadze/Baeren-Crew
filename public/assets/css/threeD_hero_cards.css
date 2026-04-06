@@ -3,10 +3,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: radial-gradient(circle at center, #0b2a4a, #071a2d);
-  padding: 2rem;
-  z-index: 101;
-  min-height: 80dvh;
+  background-image: url("/assets/images/hero-bg.webp");
+  z-index: 2;
+  height: 80dvh;
+}
+
+.hero-container-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 14, 13, 0.98);
+  z-index: 3;
 }
 
 .card-wrapper {
@@ -16,26 +23,59 @@
   perspective: clamp(768px, 1000px, 2000px);
   width: 100%;
   z-index: 100;
+  height: fit-content;
+  z-index: 4;
 }
 
 /* Base card */
 
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   top: 5dvh;
   flex: 1 1 280px;
   max-width: 320px;
-  min-width: 150px;
-  height: 50dvh;
+  min-width: 250px;
+  height: 20dvh;
   padding: 20px;
   color: white;
+  border: 1px solid var(--color-primary);
   border-radius: 12px;
   text-align: left;
+  white-space: nowrap;
   transform-style: preserve-3d;
   transition: transform 0.4s ease;
   box-shadow:
     -20px 20px 40px rgba(0, 0, 0, 0.6),
     inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.card hr {
+  border: none;
+  border-top: 1px solid var(--color-primary);
+  margin: 0;
+  width: 100%;
+}
+
+.btn.btn-primary.btn-full.hero-cards-btn {
+  width: 100%;
+  margin-top: 5px;
+  padding: clamp(0.5rem, 1vw, 1rem);
+}
+
+.btn.btn-primary.btn-full.hero-cards-btn {
+  background: linear-gradient(
+    145deg,
+    #b33900,
+    #ff8800,
+    #ffdc9a,
+    #ff7300,
+    #b33900
+  );
+  color: black;
+  font-weight: 500;
 }
 
 .card::before {
@@ -55,12 +95,12 @@
 .blue {
   transform: rotate3d(0, 4, 0, -15deg) translateX(30px);
   left: 0px;
-  z-index: 10;
+  z-index: 9;
 }
 .gray {
-  transform: rotate3d(5, 47, 0, -17deg) translateX(30px);
+  transform: rotate3d(0, 4, 0, -17deg) translateX(30px);
   left: -32px;
-  z-index: 9;
+  z-index: 10;
 }
 .green {
   transform: rotate3d(0, 4, 0, -18deg) translateX(30px);
@@ -68,7 +108,6 @@
   z-index: 8;
 }
 
-/* Hover = interactive 3D */
 .card:hover {
   transform: rotateY(0deg) scale(1.05);
   z-index: 20;
@@ -95,25 +134,45 @@
     inset 0 1px 2px rgba(255, 255, 255, 0.3);
 }
 
+.card.blue,
+.card.gray,
+.card.green {
+  min-height: fit-content;
+}
+
 /* Different colors */
-.blue {
-  background: linear-gradient(145deg, #1b46a8, #0e255a);
-}
-.gray {
-  background: linear-gradient(145deg, #5f6e8a, #242f47);
-}
+.blue,
+.gray,
 .green {
-  background: linear-gradient(145deg, #275715, #093009);
+  background: linear-gradient(120deg, #272424, #000000, #000000, #000000);
+  min-height: 100%;
+}
+
+.gray {
+  background: linear-gradient(220deg, #ff5100, #000000, #000000, #000000);
 }
 
 /* Typography */
-.hero-container-wrapper h1 {
+.wrapper-h1 h1,
+.wrapper-h1 hr {
   position: relative;
   color: white;
   font-size: clamp(1.5rem, 2vw, 3rem);
   margin-top: 1rem;
   text-align: center;
   top: 8dvh;
+  z-index: 3;
+}
+
+.wrapper-btn {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 1rem;
+  top: 9dvh;
+  z-index: 3;
 }
 
 .card-wrapper h2 {
@@ -122,7 +181,7 @@
 }
 
 ul {
-  font-size: clamp(0.7rem, 1vw, 1.1rem);
+  font-size: clamp(0.65rem, 0.6vw, 1.1rem);
   list-style: none;
   padding: 0;
 }
@@ -132,40 +191,27 @@ li {
 }
 
 @media (max-width: 768px) {
+  .hero-container-wrapper {
+    justify-content: center; /* ✅ center vertically */
+  }
   .card-wrapper {
-    flex-direction: column;
-    perspective: none;
-    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: block; /* ❗ important */
+    margin: 0 auto; /* center horizontally */
+    perspective: 1000px;
   }
 
   .card {
-    transform: none !important;
+    position: absolute;
+    width: 260px;
+    left: 50%;
+    top: 50%;
   }
 
-  .card:hover {
-    transform: scale(1.03);
-  }
-
-  .hero-container-wrapper h1 {
-    top: -25dvh;
-  }
-
-  .blue,
-  .green {
-    left: -25px;
-    top: -10px;
-    z-index: 0;
-  }
-
-  .gray {
-    left: 5px;
-    top: -200px;
-    z-index: 1;
-  }
-
-  .green {
-    left: 35px;
-    top: -350px;
-    z-index: 2;
+  .wrapper-btn {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }

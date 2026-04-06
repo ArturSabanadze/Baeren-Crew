@@ -9,7 +9,7 @@
   flex-direction: column;
 }
 .container.section-grid.section-pkg {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
   gap: clamp(15px, 2vw, 30px);
   padding: 20px 20px;
   margin: 10px auto;
@@ -196,7 +196,7 @@
 }
 @media (max-width: 768px) {
   .container.section-grid.section-pkg {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 0fr));
+    grid-template-columns: repeat(auto-fit, minmax(248px, 0fr));
   }
   .offer-summary-table {
     font-size: 0.8rem;

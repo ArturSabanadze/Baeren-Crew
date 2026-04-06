@@ -1,42 +1,80 @@
 <div class="hero-container-wrapper">
     <div class="card-wrapper">
-        <div class="card blue">
-            <h2>Umzüge</h2>
-            <ul>
-                <li>✔ Privatumzüge</li>
-                <li>✔ Firmenumzüge</li>
-                <li>✔ Senioren</li>
-                <li>✔ Kleintransporte / Möbeltaxi </li>
-                <li>✔ Montage & Demontage Möbel </li>
-                <li>✔ Küche / Wandmontagen </li>
-                <li>✔ Ein- und Auspackservice </li>
-                <li>✔ Umzugskartons verschiedene größen und varianten </li>
-            </ul>
-        </div>
         <div class="card gray">
-            <h2>Entrümpelungen & Haushaltsauflösungen </h2>
-            <ul>
-                <li>✔ Wohnungsentrümpelung</li>
-                <li>✔ Keller</li>
-                <li>✔ Garage</li>
-                <li>✔ Räumung stark belasteter Wohnungen </li>
-                <li>✔ Dachbodenentrümpelung </li>
-                <li>✔ Nachlass-Entrümpelung </li>
-                <li>✔ Büro- / Gewerbeentrümpelung </li>
-            </ul>
+            <div>
+                <h2>Umzüge</h2>
+                <hr>
+                <ul>
+                    <li><span class="check-icon">✔</span> Privatumzüge</li>
+                    <li><span class="check-icon">✔</span> Firmenumzüge</li>
+                    <li><span class="check-icon">✔</span> Senioren</li>
+                    <li><span class="check-icon">✔</span> Kleintransporte / Möbeltaxi </li>
+                    <li><span class="check-icon">✔</span> Montage & Demontage Möbel </li>
+                    <li><span class="check-icon">✔</span> Küche / Wandmontagen </li>
+                    <li><span class="check-icon">✔</span> Ein-Auspackservice </li>
+                    <li><span class="check-icon">✔</span> Umzugskartons</li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="location.href='#'" class="btn btn-primary btn-full hero-cards-btn">
+                    <span class="btn-text">Mehr erfahren</span>
+                </button>
+            </div>
+        </div>
+        <div class="card blue">
+            <div>
+                <h2>Entrümpelungen</h2>
+                <hr>
+                <ul>
+                    <li><span class="check-icon">✔</span> Wohnungsentrümpelung</li>
+                    <li><span class="check-icon">✔</span> Haushaltsauflösungen</li>
+                    <li><span class="check-icon">✔</span> Keller</li>
+                    <li><span class="check-icon">✔</span> Garage</li>
+                    <li><span class="check-icon">✔</span> Räumung stark belasteter Wohnungen </li>
+                    <li><span class="check-icon">✔</span> Dachbodenentrümpelung </li>
+                    <li><span class="check-icon">✔</span> Nachlass-Entrümpelung </li>
+                    <li><span class="check-icon">✔</span> Büro- / Gewerbeentrümpelung </li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="location.href='#'" class="btn btn-primary btn-full hero-cards-btn">
+                    <span class="btn-text">Mehr erfahren</span>
+                </button>
+            </div>
         </div>
         <div class="card green">
-            <h2>Objektbetreuung / Hausmeisterservice</h2>
-            <ul>
-                <li>✔ Regelmäßige Objektbetreuung</li>
-                <li>✔ Kleinreparaturen & Instandhaltung </li>
-                <li>✔ Renovierungsarbeiten </li>
-                <li>✔ Bodenverlegung (Laminat, Vinyl etc.) </li>
-                <li>✔ Gartenpflege & Außenanlagen </li>
-                <li>✔ Winterdienst </li>
-                <li>✔ Treppenhausreinigung </li>
-            </ul>
+            <div>
+                <h2>Objektbetreuung</h2>
+                <hr>
+                <ul>
+                    <li><span class="check-icon">✔</span> Hausmeisterservice</li>
+                    <li><span class="check-icon">✔</span> Regelmäßige Objektbetreuung</li>
+                    <li><span class="check-icon">✔</span> Kleinreparaturen & Instandhaltung </li>
+                    <li><span class="check-icon">✔</span> Renovierungsarbeiten </li>
+                    <li><span class="check-icon">✔</span> Bodenverlegung (Laminat, Vinyl etc.) </li>
+                    <li><span class="check-icon">✔</span> Gartenpflege & Außenanlagen </li>
+                    <li><span class="check-icon">✔</span> Winterdienst </li>
+                    <li><span class="check-icon">✔</span> Treppenhausreinigung </li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="location.href='#'" class="btn btn-primary btn-full hero-cards-btn">
+                    <span class="btn-text">Mehr erfahren</span>
+                </button>
+            </div>
         </div>
     </div>
-    <h1> Ihr Auftrag – unsere Verantwortung.</h1>
+    <div class="wrapper-h1">
+        <h1> Ihr Auftrag, unsere Verantwortung.</h1>
+    </div>
+    <div class="wrapper-btn">
+        <button onclick="location.href='#section-contact'" class="btn btn-primary btn-full">
+            <span class="btn-text">Bitte Ruf mich an...</span>
+        </button>
+        <button onclick="location.href='tel:+4915561231466'" class="btn btn-primary btn-full">
+            <span class="btn-text">Rufen Sie uns an...Kollega !</span>
+        </button>
+    </div>
+
+
 </div>

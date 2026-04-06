@@ -36,70 +36,22 @@
     <main class="app-main">
 
         <!-- HERO -->
-        <section class="hero-section-main">
+        <section class="">
             <?php include_once __DIR__ . '/../partials/threeD_hero_cards.php'; ?>
         </section>
-        <!-- SERVICES -->
-        <section class="app-section section-services" id="section-services">
-            <?php include_once __DIR__ . '/../partials/services.php'; ?>
-        </section>
-        <!-- CALCULATOR -->
-        <section class="section-calculator" id="rechner">
-            <h2 class="heading-lg">Berechnen Sie Ihr Angebot</h2>
-            <div class="offer-calculator-wrapper" id="rechner-cnt">
-                <!-- Offer Calculator Start -->
-                <?php include_once __DIR__ . '/../partials/calculation_form.php'; ?>
-                <!-- Offer Calculator End -->
-            </div>
-        </section>
-        <!-- PACKAGES & PRICING -->
-        <section class="app-section section-services" id="packages">
-            <!-- PACKAGES & Pricing Start -->
-            <?php include_once __DIR__ . '/../partials/packages.php'; ?>
-            <!-- PACKAGES & Pricing End -->
-        </section>
-        <!-- BEWERTUNGEN -->
-        <?php include_once __DIR__ . '/../partials/reviews.php'; ?>
-        <!-- MISSION -->
-        <section class="app-section section-mission" id="mission">
-
-            <div class="section-content section-center">
-                <h2 class="heading-lg">Unsere Mission</h2>
-
-                <p class="text-base mission-text">
-                    Ein Umzug oder eine größere Veränderung bringt oft mehr mit sich, als man anfangs denkt. Es ist
-                    nicht nur Arbeit – es ist Zeitdruck, Organisation, Verantwortung und die Sorge, dass etwas
-                    schiefgeht. <br>
-                    <br>
-                    Genau hier setzen wir an.<br>
-                    <br>
-                    Die Bären Crew steht für ehrliche Unterstützung, wenn es darauf ankommt. Wir sind kein anonymer
-                    Dienstleister, sondern ein Team, das mitdenkt, anpackt und Verantwortung übernimmt – als wäre es
-                    unser eigener Auftrag.
-                </p>
-
-                <p class="text-base mission-text">
-                    Uns geht es nicht nur darum, Dinge von A nach B zu bringen. Wir sorgen dafür, dass Abläufe
-                    funktionieren, dass nichts liegen bleibt und dass Sie sich auf uns verlassen können – vom ersten
-                    Kontakt bis zum letzten Schritt.<br>
-                    <br>
-                    Klare Absprachen, faire Preise und saubere Arbeit sind für uns selbstverständlich. Was uns wirklich
-                    ausmacht, ist der Anspruch, dass Sie am Ende sagen:<br>
-                    <br>
-                    <strong><em>„Das lief besser, als ich erwartet habe.“</em></strong> <br>
-                    <br>
-
-                    Sie entspannen – wir packen an.
-                </p>
-
-            </div>
-        </section>
-
+        <!-- Warum Wir -->
+        <?php include_once __DIR__ . '/../partials/mission.php'; ?>
+        <!-- CHECKBOARD -->
         <div class="hero-checkboard">
             <!-- Checkboard Start -->
             <?php include_once __DIR__ . '/../partials/checkboard.php'; ?>
             <!-- Checkboard End -->
         </div>
+
+        <!-- BEWERTUNGEN -->
+        <?php include_once __DIR__ . '/../partials/reviews.php'; ?>
+
+
 
         <!-- CONTACT -->
         <section class="app-section section-hero" id="section-hero">
