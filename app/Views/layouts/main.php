@@ -39,6 +39,10 @@
         <section class="">
             <?php include_once __DIR__ . '/../partials/threeD_hero_cards.php'; ?>
         </section>
+        <div class="section-divider">
+            <hr>
+        </div>
+        <?php include_once __DIR__ . '/../partials/checkboard_main.php'; ?>
         <!-- Warum Wir -->
         <?php include_once __DIR__ . '/../partials/mission.php'; ?>
         <!-- CHECKBOARD -->

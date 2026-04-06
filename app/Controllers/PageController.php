@@ -23,7 +23,7 @@ class PageController
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
             'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator', 'minifiedSideBar', 'hero_splited_s3', 'threeD_hero_cards'],
-            'scripts' => ['app', 'Big_carousel', 'rates_carousel', 'cookies', 'scroll_button', 'sidebar_sticky', 'mobile-hero-cards'],
+            'scripts' => ['app', 'rates_carousel', 'cookies', 'scroll_button', 'sidebar_sticky', 'mobile-hero-cards'],
             'env' => $env
         ]);
     }

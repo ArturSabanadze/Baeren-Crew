@@ -65,14 +65,14 @@
         </div>
     </div>
     <div class="wrapper-h1">
-        <h1> Ihr Auftrag, unsere Verantwortung.</h1>
+        <h1> Ihr Auftrag, unsere Verantwortung</h1>
     </div>
     <div class="wrapper-btn">
         <button onclick="location.href='#section-contact'" class="btn btn-primary btn-full">
-            <span class="btn-text">Bitte Ruf mich an...</span>
+            <span class="btn-text">Anschreiben</span>
         </button>
         <button onclick="location.href='tel:+4915561231466'" class="btn btn-primary btn-full">
-            <span class="btn-text">Rufen Sie uns an...Kollega !</span>
+            <span class="btn-text">Anrufen</span>
         </button>
     </div>
 

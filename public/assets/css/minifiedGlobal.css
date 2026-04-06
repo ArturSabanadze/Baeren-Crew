@@ -28,7 +28,7 @@
   --font-main: "Amazon Ember", sans-serif;
   --font-color-primary: #222;
   --font-size-small: 0.9rem;
-  --font-size-base: 18px;
+  --font-size-base: 1rem;
   --font-size-md: 1.2rem;
   --font-size-lg: 2.5rem;
   --font-size-xxlg: 4rem;
@@ -88,13 +88,15 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
-
-hr {
+.section-divider {
+  background-color: #000000;
+}
+.section-divider hr {
   border: none;
   height: 2px;
   width: 90dvw;
-  margin: 2rem auto;
-  background: linear-gradient(to right, transparent, #454444, transparent);
+  margin: 0.1rem auto;
+  background: linear-gradient(to right, transparent, #ec4d03, transparent);
 }
 
 /* =========================================================
@@ -923,9 +925,30 @@ hr {
 ========================================================= */
 
 .app-section.section-mission {
+  background-image: url(/assets/images/mission_bg.webp);
+  background-size: cover;
+  background-position: center;
   display: flex;
-  margin: 0px auto;
-  padding-top: 0px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  height: 100%;
+  margin: 0;
+  padding: 0px;
+}
+
+.section-content.section-center.mission p,
+.section-content.section-center.mission h2 {
+  position: relative;
+  font-size: clamp(1rem, 1vw, var(--font-size-md));
+  color: rgb(235, 235, 235) !important;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.878);
+  border-radius: 8px;
+}
+
+.eye-catcher-text {
+  color: var(--color-secondary);
 }
 
 .mission-text {
@@ -1257,6 +1280,10 @@ hr {
   cursor: pointer;
 }
 
+.btn-text {
+  font-weight: 600;
+}
+
 /* ===================== MODAL ===================== */
 
 .cookie-modal {
@@ -1333,6 +1360,18 @@ hr {
   .text-base,
   .benefits-list {
     font-size: clamp(0.9rem, 2vw, var(--font-size-md));
+  }
+
+  .section-content.section-center.mission p {
+    font-size: clamp(0.85rem, 1vw, var(--font-size-md));
+    color: rgb(235, 235, 235) !important;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.678);
+    border-radius: 8px;
+  }
+
+  .btn-text {
+    font-size: 0.7rem;
   }
 
   .app-section.section-pricing {
