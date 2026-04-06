@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("/assets/images/hero-bg.webp");
+  background-image: url("/assets/images/hero_bg_1.webp");
+  /* background: linear-gradient(130deg,black, black, black,black,black, rgba(255, 140, 0),black,black); */
   z-index: 2;
   height: 80dvh;
 }
@@ -12,7 +13,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(13, 14, 13, 0.98);
+  background: rgba(13, 14, 13, 0.28);
   z-index: 3;
 }
 
@@ -99,12 +100,12 @@
 }
 .gray {
   transform: rotate3d(0, 4, 0, -17deg) translateX(30px);
-  left: -32px;
+  left: 32px;
   z-index: 10;
 }
 .green {
   transform: rotate3d(0, 4, 0, -18deg) translateX(30px);
-  left: -40px;
+  left: -10px;
   z-index: 8;
 }
 
