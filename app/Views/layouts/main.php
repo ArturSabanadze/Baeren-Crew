@@ -12,11 +12,6 @@
 
     <?php include_once __DIR__ . '/../helpers/styles_loader.php'; ?>
     <link rel="icon" href="/favicon.ico">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h1.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h2.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h3.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h4.webp">
-    <link rel="preload" as="image" href="<?= $env['DIR_PATH'] ?>/assets/images/website_dummy_img/h5.webp">
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=<?= $env['GOOGLE_MAPS_API_KEY'] ?>&libraries=places&v=beta">
         </script>
@@ -42,18 +37,19 @@
         <div class="section-divider">
             <hr>
         </div>
-        <?php include_once __DIR__ . '/../partials/checkboard_main.php'; ?>
-        <!-- Warum Wir -->
-        <?php include_once __DIR__ . '/../partials/mission.php'; ?>
         <!-- CHECKBOARD -->
-        <div class="hero-checkboard">
-            <!-- Checkboard Start -->
-            <?php include_once __DIR__ . '/../partials/checkboard.php'; ?>
-            <!-- Checkboard End -->
+        <?php include_once __DIR__ . '/../partials/checkboard_main.php'; ?>
+        <div class="section-divider">
+            <hr>
         </div>
+        <!-- WARUM WIR -->
+        <?php include_once __DIR__ . '/../partials/mission.php'; ?>
 
         <!-- BEWERTUNGEN -->
         <?php include_once __DIR__ . '/../partials/reviews.php'; ?>
+
+        <!-- ÜBER UNS -->
+        <?php include_once __DIR__ . '/../partials/ueber_uns.php'; ?>
 
 
 
@@ -64,7 +60,7 @@
                 <?php include_once __DIR__ . '/../partials/contact_bottom.php'; ?>
 
                 <!-- Form Start-->
-                <?php include_once __DIR__ . '/../partials/contact_form.php'; ?>
+                <?php include_once __DIR__ . '/../partials/contact_form_simple.php'; ?>
                 <!-- Form End -->
             </div>
         </section>

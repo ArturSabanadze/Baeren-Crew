@@ -7,12 +7,18 @@ class PageController
 {
     public function home()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['offer_calculation'])) {
-            require_once __DIR__ . '/../Helpers/API_Handler.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['action'] ?? '') === 'simple_contact_form') {
+            require_once __DIR__ . '/../Helpers/API_Simple_Form.php';
             exit;
         }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['offer_calculation'])) {
             require_once __DIR__ . '/../Helpers/API_Offer.php';
+            exit;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once __DIR__ . '/../Helpers/API_Handler.php';
             exit;
         }
         $env = parse_ini_file(__DIR__ . '/../../config/.env');

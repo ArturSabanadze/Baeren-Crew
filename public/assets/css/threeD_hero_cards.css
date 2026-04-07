@@ -182,6 +182,20 @@
   z-index: 3;
 }
 
+.wrapper-btn button {
+  background: linear-gradient(180deg, #ff5100, #000000, #000000, #000000);
+  padding: clamp(0.5rem, 1vw, 1rem);
+  box-shadow:
+    -20px 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.wrapper-btn button:hover {
+  background: linear-gradient(180deg, #ff7300, #000000, #000000, #000000);
+  transform: scale(1.05);
+}
+
 .card-wrapper h2 {
   margin-bottom: 15px;
   font-size: clamp(1rem, 1.1vw, 2.5rem);

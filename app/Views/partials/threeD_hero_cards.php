@@ -69,10 +69,7 @@
     </div>
     <div class="wrapper-btn">
         <button onclick="location.href='#section-contact'" class="btn btn-primary btn-full">
-            <span class="btn-text">Anschreiben</span>
-        </button>
-        <button onclick="location.href='tel:+4915561231466'" class="btn btn-primary btn-full">
-            <span class="btn-text">Anrufen</span>
+            <span class="btn-text">ANGEBOT ANFRAGEN</span>
         </button>
     </div>
 

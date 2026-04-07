@@ -1,7 +1,7 @@
 <section class="app-section section-mission " id="mission">
-
+    <h2 class="heading-lg-sub"><span class="eye-catcher-text">Warum</span> Wir?</h2>
     <div class="section-content section-center mission">
-        <h2 class="heading-lg-sub">Warum Wir?</h2>
+
 
 
         <p class="text-base mission-text">

@@ -91,11 +91,28 @@ body {
 .section-divider {
   background-color: #000000;
 }
+
 .section-divider hr {
   border: none;
   height: 2px;
   width: 90dvw;
   margin: 0.1rem auto;
+  background: linear-gradient(to right, transparent, #ec4d03, transparent);
+}
+
+.checkbox-divider {
+  background-color: #000000;
+  margin: 0.2rem auto;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ec4d03, transparent);
+}
+
+.section-title-divider {
+  background-color: #000000;
+  margin: 0.5rem auto 1.5rem auto;
+  width: 20%;
+  height: 2px;
   background: linear-gradient(to right, transparent, #ec4d03, transparent);
 }
 
@@ -546,14 +563,33 @@ body {
   margin: 1rem auto 0 auto;
 }
 
-.check-item {
+.checkbox-main {
+  /* background: linear-gradient(120deg, #000000, #ffffff, #ececec, #ececec); */
   display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 20px;
+}
+.check-item {
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex: 1;
+  min-width: 20%;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.check-item svg {
+  width: 12dvw;
+  height: 12dvw;
+  margin-right: 0.5rem;
 }
 
 .check-item span img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin-right: 0.5rem;
 }
 
@@ -656,6 +692,7 @@ body {
 }
 
 .heading-lg {
+  color: white;
   font-size: var(--font-size-lg);
   margin-bottom: 1.5rem;
 }
@@ -930,11 +967,25 @@ body {
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   margin: 0;
   padding: 0px;
+}
+
+.app-section.section-mission h2 {
+  padding: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-content.section-center.mission {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
 }
 
 .section-content.section-center.mission p,
@@ -947,13 +998,53 @@ body {
   border-radius: 8px;
 }
 
+.app-section.section-ueber-uns {
+  background-image: url(/assets/images/ueber_uns_bg.webp);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-height: 70dvh;
+  margin: 0;
+  padding: 0px;
+}
+
+.app-section.section-ueber-uns h2 {
+  padding: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-content.section-center.ueber-uns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 50px;
+}
+
+.section-content.section-center.ueber-uns p,
+.section-content.section-center.ueber-uns h2 {
+  position: relative;
+  font-size: clamp(1rem, 1vw, var(--font-size-md));
+  color: rgb(235, 235, 235) !important;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.878);
+  border-radius: 8px;
+}
+
 .eye-catcher-text {
   color: var(--color-secondary);
 }
 
+.ueber-uns-text {
+  max-width: 30dvw;
+}
+
 .mission-text {
-  max-width: 800px;
-  margin: 0 auto 1.5rem auto;
+  max-width: 30dvw;
 }
 
 /* =========================================================
@@ -964,7 +1055,6 @@ body {
   width: 100%;
   padding: 1rem 1rem;
   box-sizing: border-box;
-  background: var(--color-surface);
 }
 
 .review-carousel {
@@ -984,8 +1074,11 @@ body {
 .review-card {
   flex: 0 0 100%; /* Jede Karte exakt 100% */
   max-width: 100%;
-  background: rgb(236, 236, 236);
+  background: url(/assets/images/rating_bg.webp);
+  background-size: cover;
+  background-position: center;
   padding: 3rem;
+  color: white;
   box-sizing: border-box;
   border-radius: 8px;
   text-align: center;
@@ -998,11 +1091,13 @@ body {
 
 .review-card span {
   font-size: var(--font-size-small);
-  color: var(--color-muted);
+  color: rgb(219, 219, 219);
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .stars {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--color-secondary);
 }
 
@@ -1241,15 +1336,33 @@ body {
   bottom: 20%;
   right: 1%;
   z-index: 1000;
+  display: none; /* hidden by default */
+  background-color: #000000d6;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition:
+    opacity 0.3s,
+    transform 0.2s;
+}
 
+#scrollTopBtn:hover {
+  transform: scale(1.01);
+}
+
+#scrollBottomBtn {
+  position: fixed;
+  bottom: 20%;
+  right: 1%;
+  z-index: 1000;
   display: none; /* hidden by default */
   background-color: #000000d6;
   color: #fff;
   border: none;
   outline: none;
-
-  padding: 12px 18px;
-  border-radius: 50%;
+  border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
 
@@ -1259,9 +1372,8 @@ body {
     transform 0.2s;
 }
 
-#scrollTopBtn:hover {
-  background-color: var(--color-secondary);
-  transform: scale(1.05);
+#scrollBottomBtn:hover {
+  transform: scale(1.01);
 }
 
 .cookie-banner button {
@@ -1374,6 +1486,10 @@ body {
     font-size: 0.7rem;
   }
 
+  .check-item p {
+    font-size: clamp(0.8rem, 1vw, var(--font-size-sm));
+  }
+
   .app-section.section-pricing {
     padding: 1rem 1rem;
   }
@@ -1385,6 +1501,14 @@ body {
   .section-content,
   .section-media {
     width: 100%;
+  }
+
+  .ueber-uns-text {
+    max-width: 90dvw;
+  }
+
+  .mission-text {
+    max-width: 90dvw;
   }
 
   .container {
@@ -1630,10 +1754,14 @@ body {
     width: 100dvw;
   }
   .heading-lg {
+    color: white;
     font-size: clamp(1.5rem, 5vw, var(--font-size-lg));
   }
   h3 {
     font-size: clamp(1rem, 4vw, var(--font-size-lg));
+  }
+  .check-item p {
+    font-size: clamp(0.8rem, 1vw, 2vw);
   }
   .hero-new-content {
     padding: 0px;
