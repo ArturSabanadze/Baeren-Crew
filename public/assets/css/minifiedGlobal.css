@@ -692,7 +692,7 @@ body {
 }
 
 .heading-lg {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: var(--font-size-lg);
   margin-bottom: 1.5rem;
 }
@@ -998,6 +998,14 @@ body {
   border-radius: 8px;
 }
 
+.mission-text {
+  max-width: 30dvw;
+}
+
+/* =========================================================
+   ÜBER UNS SECTION
+========================================================= */
+
 .app-section.section-ueber-uns {
   background-image: url(/assets/images/ueber_uns_bg.webp);
   background-size: cover;
@@ -1043,8 +1051,56 @@ body {
   max-width: 30dvw;
 }
 
-.mission-text {
+/* =========================================================
+   LEISTUNGEN SECTION
+========================================================= */
+
+.app-section.section-leistungen {
+  background-image: url(/assets/images/leistungen_bg.webp);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0px;
+}
+
+.app-section.section-leistungen h2 {
+  padding: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section-content.section-center.leistungen {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.section-content.section-center.leistungen p,
+.section-content.section-center.leistungen h2 {
+  position: relative;
+  font-size: clamp(1rem, 1vw, var(--font-size-md));
+  color: rgb(235, 235, 235) !important;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.878);
+  border-radius: 8px;
+}
+
+.leistungen-text {
   max-width: 30dvw;
+}
+
+.leistungen-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 /* =========================================================
@@ -1473,6 +1529,12 @@ body {
   .benefits-list {
     font-size: clamp(0.9rem, 2vw, var(--font-size-md));
   }
+  .text-base.leistungen-text.center {
+    max-width: 90dvw;
+  }
+  .leistungen-text {
+    max-width: 70dvw;
+  }
 
   .section-content.section-center.mission p {
     font-size: clamp(0.85rem, 1vw, var(--font-size-md));
@@ -1484,6 +1546,11 @@ body {
 
   .btn-text {
     font-size: 0.7rem;
+  }
+
+  .btn-text.btn-section {
+    font-size: 1rem;
+    font-weight: 600;
   }
 
   .check-item p {

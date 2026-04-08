@@ -37,7 +37,7 @@
         <div class="section-divider">
             <hr>
         </div>
-        <!-- CHECKBOARD -->
+        <!-- CHECKBOARD_MAIN-->
         <?php include_once __DIR__ . '/../partials/checkboard_main.php'; ?>
         <div class="section-divider">
             <hr>
@@ -50,6 +50,12 @@
 
         <!-- ÜBER UNS -->
         <?php include_once __DIR__ . '/../partials/ueber_uns.php'; ?>
+
+        <!-- CHECKBOARD_SECONDARY -->
+        <?php include_once __DIR__ . '/../partials/checkboard_secondary.php'; ?>
+
+        <!-- UNSERE LEISTUNGEN -->
+        <?php include_once __DIR__ . '/../partials/leistungen.php'; ?>
 
 
 
