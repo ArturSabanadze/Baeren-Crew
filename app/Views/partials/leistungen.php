@@ -81,9 +81,8 @@
                     <span class="btn-text btn-section">Strukturiert geplant. Sauber umgesetzt. Verlässlich
                         erledigt.</span>
                 </button>
-
             </p>
 
-        </div><br>
+        </div>
     </div>
 </section>

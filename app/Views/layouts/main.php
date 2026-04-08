@@ -63,11 +63,12 @@
         <section class="app-section section-hero" id="section-hero">
             <h2 class="heading-lg-sub">Wir sind für Sie da</h2>
             <div class="container hero-grid">
-                <?php include_once __DIR__ . '/../partials/contact_bottom.php'; ?>
+
 
                 <!-- Form Start-->
                 <?php include_once __DIR__ . '/../partials/contact_form_simple.php'; ?>
                 <!-- Form End -->
+                <?php include_once __DIR__ . '/../partials/contact_bottom.php'; ?>
             </div>
         </section>
 
