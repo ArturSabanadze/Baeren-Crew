@@ -1104,6 +1104,101 @@ body {
 }
 
 /* =========================================================
+   ABLAUF SECTION
+========================================================= */
+
+.app-section.section-ablauf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* centers title + subtitle */
+  padding: 40px 20px;
+}
+
+/* Titles */
+.app-section.section-ablauf h2,
+.app-section.section-ablauf h3 {
+  max-width: 800px;
+  margin: 10px auto 10px auto;
+}
+
+/* Wrapper */
+.ablauf-cards-wrapper {
+  width: 100%;
+  max-width: 80vw;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.ablauf-card {
+  flex: 1 1 0;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(90deg, #272424, #000000);
+  border-radius: 16px;
+  border: 1px solid #ec4d03;
+  box-shadow:
+    -10px 10px 20px rgba(255, 136, 0, 0.404),
+    inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.ablauf-card > * {
+  flex-shrink: 0;
+}
+
+.ablauf-card h2,
+.ablauf-card h3,
+.ablauf-card p {
+  color: white !important;
+}
+
+.ablauf-card p {
+  font-size: clamp(0.9rem, 1vw, var(--font-size-md));
+  line-height: 1.5;
+}
+
+.ablauf-card h2,
+.ablauf-card h3 {
+  font-size: clamp(0.9rem, 1vw, var(--font-size-md));
+}
+
+.ablauf-card hr {
+  width: 50%;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ec4d03, transparent);
+  margin: 1rem auto;
+}
+
+.ablauf-arrow {
+  display: flex;
+  align-items: center;
+}
+
+.ablauf-bottom-card {
+  width: 100%;
+  max-width: 80vw;
+  margin-top: 2rem;
+  padding: 20px;
+  background: linear-gradient(90deg, #272424, #000000);
+  color: white;
+  border-radius: 16px;
+  border: 1px solid #ec4d03;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    -10px 10px 20px rgba(255, 136, 0, 0.404),
+    inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================================
    REVIEWS SECTION – CLEAN VERSION
 ========================================================= */
 

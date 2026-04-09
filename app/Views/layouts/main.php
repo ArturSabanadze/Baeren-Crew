@@ -34,14 +34,10 @@
         <section class="">
             <?php include_once __DIR__ . '/../partials/threeD_hero_cards.php'; ?>
         </section>
-        <div class="section-divider">
-            <hr>
-        </div>
+
         <!-- CHECKBOARD_MAIN-->
         <?php include_once __DIR__ . '/../partials/checkboard_main.php'; ?>
-        <div class="section-divider">
-            <hr>
-        </div>
+
         <!-- WARUM WIR -->
         <?php include_once __DIR__ . '/../partials/mission.php'; ?>
 
@@ -56,6 +52,9 @@
 
         <!-- UNSERE LEISTUNGEN -->
         <?php include_once __DIR__ . '/../partials/leistungen.php'; ?>
+
+        <!-- ABLAUF -->
+        <?php include_once __DIR__ . '/../partials/ablauf.php'; ?>
 
 
 
