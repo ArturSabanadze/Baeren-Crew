@@ -8,25 +8,30 @@
 
     <!-- Desktop links -->
     <div class="nav__links">
-        <a href="index.php?page=home#appHeader">Start</a>
-        <a href="index.php?page=home#section-services">Leistungen</a>
+        <a href="index.php?page=home#start">Start</a>
         <div class="nav__dropdown">
-            <button class="nav__dropdown-btn">Preise</button>
+            <button class="nav__dropdown-btn">Dienstleistungen</button>
             <div class="nav__dropdown-menu">
-                <a href="index.php?page=home#rechner">Kalkulator</a>
-                <a href="index.php?page=home#packages">Umzugspakete</a>
+                <a href="index.php?page=umzuege">Umzüge</a>
+                <a href="index.php?page=home#packages">Entrümpelungen</a>
+                <a href="index.php?page=home#packages">Objektbetreuung</a>
             </div>
         </div>
 
         <div class="nav__dropdown">
             <button class="nav__dropdown-btn">Über Uns</button>
             <div class="nav__dropdown-menu">
-                <a href="index.php?page=home#reviews">Bewertungen</a>
                 <a href="index.php?page=home#mission">Mission</a>
+                <a href="index.php?page=home#reviews">Bewertungen</a>
+                <a href="index.php?page=home#ueber-uns">Wer wir sind</a>
+                <a href="index.php?page=home#leistungen">Leistungen</a>
+                <a href="index.php?page=home#ablauf">Ablauf</a>
+                <a href="index.php?page=home#region">Regionen</a>
+                <a href="index.php?page=jobs">Karriere</a>
             </div>
         </div>
 
-        <a href="index.php?page=jobs">Karriere</a>
+        <a href="#section-contact">Kontakt</a>
         <div class="tel-btn-nav">
             <a href="tel:+4915561231466">
                 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 122.88 122.88"

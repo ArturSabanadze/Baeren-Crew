@@ -8,7 +8,9 @@ switch ($page) {
     case 'home':
         (new PageController())->home();
         break;
-
+    case 'umzuege':
+        (new PageController())->umzuege();
+        break;
     case 'agb':
         (new PageController())->agb();
         break;

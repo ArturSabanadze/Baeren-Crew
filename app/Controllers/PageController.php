@@ -12,6 +12,22 @@ class PageController
             exit;
         }
 
+        $env = parse_ini_file(__DIR__ . '/../../config/.env');
+
+        View::render('home', [
+            'title' => 'Bären-Crew – Professionelle Umzüge stressfrei & effizient',
+            'description' => 'Umzüge, Entrümpelungen & Hausmeisterservice aus einer Hand. Privat- und Firmenumzüge, Möbelmontage, Wohnungsauflösungen, Renovierung, Gartenpflege & Winterdienst. Schnell, zuverlässig & transparent – jetzt anfragen!',
+            'canonical' => $env['APP_URL'] . '/',
+            'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
+            'styles' => ['minifiedGlobal', 'minifiedSideBar', 'threeD_hero_cards'],
+            'scripts' => ['app', 'cookies', 'scroll_button', 'sidebar_sticky', 'mobile-hero-cards'],
+            'env' => $env
+        ]);
+    }
+
+    public function umzuege()
+    {
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['offer_calculation'])) {
             require_once __DIR__ . '/../Helpers/API_Offer.php';
             exit;
@@ -23,15 +39,15 @@ class PageController
         }
         $env = parse_ini_file(__DIR__ . '/../../config/.env');
 
-        View::render('home', [
+        View::render('umzuege', [
             'title' => 'Bären-Crew – Professionelle Umzüge stressfrei & effizient',
-            'description' => 'Professionelle Umzugsfirma für stressfreie, schnelle und sichere Umzüge. Transparente Preise, erfahrenes Team & individuelle Lösungen. Jetzt unverbindlich anfragen!',
+            'description' => 'Umzüge, Entrümpelungen & Hausmeisterservice aus einer Hand. Privat- und Firmenumzüge, Möbelmontage, Wohnungsauflösungen, Renovierung, Gartenpflege & Winterdienst. Schnell, zuverlässig & transparent – jetzt anfragen!',
             'canonical' => $env['APP_URL'] . '/',
             'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
             'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator', 'minifiedSideBar', 'hero_splited_s3', 'threeD_hero_cards'],
             'scripts' => ['app', 'rates_carousel', 'cookies', 'scroll_button', 'sidebar_sticky', 'mobile-hero-cards'],
             'env' => $env
-        ]);
+        ], 'layouts/umzuege');
     }
 
     public function agb()

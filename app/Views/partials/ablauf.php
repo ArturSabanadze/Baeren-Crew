@@ -67,6 +67,30 @@
             </svg>
 
         </div>
+        <div class="ablauf-arrow-mobile">
+            <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_172_343)">
+                    <rect x="28" y="1.22392e-06" width="29" height="28" rx="8" transform="rotate(90 28 1.22392e-06)"
+                        fill="url(#paint0_linear_172_343)" />
+                    <rect x="27.5" y="0.500001" width="28" height="27" rx="7.5" transform="rotate(90 27.5 0.500001)"
+                        stroke="#FF8400" />
+                    <path
+                        d="M13.2929 22.7071C13.6834 23.0976 14.3166 23.0976 14.7071 22.7071L21.0711 16.3431C21.4616 15.9526 21.4616 15.3195 21.0711 14.9289C20.6805 14.5384 20.0474 14.5384 19.6569 14.9289L14 20.5858L8.34315 14.9289C7.95262 14.5384 7.31946 14.5384 6.92893 14.9289C6.53841 15.3195 6.53841 15.9526 6.92893 16.3431L13.2929 22.7071ZM14 6L13 6L13 22L14 22L15 22L15 6L14 6Z"
+                        fill="#FF7700" />
+                </g>
+                <defs>
+                    <linearGradient id="paint0_linear_172_343" x1="28" y1="14" x2="57" y2="14"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#313131" />
+                        <stop offset="1" />
+                    </linearGradient>
+                    <clipPath id="clip0_172_343">
+                        <rect x="28" y="1.22392e-06" width="29" height="28" rx="8" transform="rotate(90 28 1.22392e-06)"
+                            fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
         <div class="ablauf-card">
             <div>
                 <svg width="125" height="122" viewBox="0 0 125 122" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,6 +144,30 @@
                     </linearGradient>
                     <clipPath id="clip0_163_250">
                         <rect width="29" height="28" rx="8" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <div class="ablauf-arrow-mobile">
+            <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_172_343)">
+                    <rect x="28" y="1.22392e-06" width="29" height="28" rx="8" transform="rotate(90 28 1.22392e-06)"
+                        fill="url(#paint0_linear_172_343)" />
+                    <rect x="27.5" y="0.500001" width="28" height="27" rx="7.5" transform="rotate(90 27.5 0.500001)"
+                        stroke="#FF8400" />
+                    <path
+                        d="M13.2929 22.7071C13.6834 23.0976 14.3166 23.0976 14.7071 22.7071L21.0711 16.3431C21.4616 15.9526 21.4616 15.3195 21.0711 14.9289C20.6805 14.5384 20.0474 14.5384 19.6569 14.9289L14 20.5858L8.34315 14.9289C7.95262 14.5384 7.31946 14.5384 6.92893 14.9289C6.53841 15.3195 6.53841 15.9526 6.92893 16.3431L13.2929 22.7071ZM14 6L13 6L13 22L14 22L15 22L15 6L14 6Z"
+                        fill="#FF7700" />
+                </g>
+                <defs>
+                    <linearGradient id="paint0_linear_172_343" x1="28" y1="14" x2="57" y2="14"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#313131" />
+                        <stop offset="1" />
+                    </linearGradient>
+                    <clipPath id="clip0_172_343">
+                        <rect x="28" y="1.22392e-06" width="29" height="28" rx="8" transform="rotate(90 28 1.22392e-06)"
+                            fill="white" />
                     </clipPath>
                 </defs>
             </svg>
@@ -180,6 +228,30 @@
                 </defs>
             </svg>
 
+        </div>
+        <div class="ablauf-arrow-mobile">
+            <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_172_343)">
+                    <rect x="28" y="1.22392e-06" width="29" height="28" rx="8" transform="rotate(90 28 1.22392e-06)"
+                        fill="url(#paint0_linear_172_343)" />
+                    <rect x="27.5" y="0.500001" width="28" height="27" rx="7.5" transform="rotate(90 27.5 0.500001)"
+                        stroke="#FF8400" />
+                    <path
+                        d="M13.2929 22.7071C13.6834 23.0976 14.3166 23.0976 14.7071 22.7071L21.0711 16.3431C21.4616 15.9526 21.4616 15.3195 21.0711 14.9289C20.6805 14.5384 20.0474 14.5384 19.6569 14.9289L14 20.5858L8.34315 14.9289C7.95262 14.5384 7.31946 14.5384 6.92893 14.9289C6.53841 15.3195 6.53841 15.9526 6.92893 16.3431L13.2929 22.7071ZM14 6L13 6L13 22L14 22L15 22L15 6L14 6Z"
+                        fill="#FF7700" />
+                </g>
+                <defs>
+                    <linearGradient id="paint0_linear_172_343" x1="28" y1="14" x2="57" y2="14"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#313131" />
+                        <stop offset="1" />
+                    </linearGradient>
+                    <clipPath id="clip0_172_343">
+                        <rect x="28" y="1.22392e-06" width="29" height="28" rx="8" transform="rotate(90 28 1.22392e-06)"
+                            fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
         </div>
         <div class="ablauf-card">
             <div>
