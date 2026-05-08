@@ -223,6 +223,79 @@
                         </p>
                         <span>– Bernd Li</span>
                     </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „Ich habe meinen Transport durch die Bären Crew erledigen lassen. Sie waren kompetent,
+                            zuverlässig und sehr freundlich. Einfach top👍🏻
+
+                            “
+                        </p>
+                        <span>– Christine Wenig</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „Alex und die Bären-Crew, EINFACH SPITZE, wir haben erst in letzter Minute erfahren wann
+                            unsere Lieferung aus Amsterdam ankommt, in Windeseile war die Bären- Crew da und hat und
+                            professional und weltmeisterlich die Ladung in die Praxis transportiert. Danke nochmal für
+                            alles. M.f.G Praxis für Sporttherapie und Familien Chiropraktik, Kraiburg
+                            “
+                        </p>
+                        <span>– Manfred Reichart</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „Zuverlässig, flott und absolut sympathisch. Gerne wieder!
+                            “
+                        </p>
+                        <span>– Michelle Wille</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „Kann man nur ein Lob aussprechen, sehr fleißige und wirklich äußerst freundliche
+                            Mitarbeiter genauso der Chef. Haben mir trotz spontaner Meldung wirklich sehr schnell
+                            geholfen und sind perfekt auf jede Situation und Gegebenheit vorbereitet. Nächster Umzug ist
+                            mit euch, steht außer Frage. 💪🏻
+                            “
+                        </p>
+                        <span>– Julian</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „In einer Zeit, in der man eigentlich keine großen Erwartungen mehr hat, haben die Jungs
+                            echt alle Wünsche übertroffen. Wir sind schon oft umgezogen, aber hier haben wir zum ersten
+                            Mal gesehen, wie es richtig läuft. Es gab eine Besichtigung von beiden Standorten, Genaue
+                            Planung und Empfehlungen für das Verpacken, Material, Kartons und sogar Kartons für hängende
+                            Kleidung wie Anzüge, damit nichts gefaltet werden muss. Am Tag des Umzugs waren alle
+                            überpünktlich und bevor ich überhaupt gedanklich durchgehen konnte, was wir am besten
+                            gemacht wird, war die Hälfte schon im LKW. 😄 Unsere außergewöhnliche Küche mit teils 400KG
+                            schweren Steinplatten, war kein Problem und es wurde überraschenderweise wirklich nichts
+                            beschädigt. Kurz und Knapp. Alles wie ich es mir gewünscht habe, aber nie erwartet hätte.
+                            “
+                        </p>
+                        <span>– Valentin Catrici</span>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>
+                            „Die Bären-Crew hat auch eine Bärenpower. Mein Umzug lief absolut reibungslos und ohne
+                            Probleme. Sie waren sehr vorsichtig mit den Möbeln und auch der Wohnung - es gibt weder
+                            Kratzer noch spuren oder Beschädigungen. Absolut Empfehlenswert.... ich hoffe zwar ich zieh
+                            nicht so bald wieder um aber wenn, dann nur mit den Bären.
+                            “
+                        </p>
+                        <span>– Swana Kopton</span>
+                    </div>
                 </div>
 
                 <div class="review-controls">
