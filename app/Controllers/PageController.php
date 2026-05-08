@@ -50,6 +50,56 @@ class PageController
         ], 'layouts/umzuege');
     }
 
+    public function entrumpelungen()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['offer_calculation'])) {
+            require_once __DIR__ . '/../Helpers/API_Offer.php';
+            exit;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once __DIR__ . '/../Helpers/API_Handler.php';
+            exit;
+        }
+        $env = parse_ini_file(__DIR__ . '/../../config/.env');
+
+        View::render('entrumpelungen', [
+            'title' => 'Bären-Crew – Professionelle Entrümpelungen stressfrei & effizient',
+            'description' => 'Umzüge, Entrümpelungen & Hausmeisterservice aus einer Hand. Privat- und Firmenumzüge, Möbelmontage, Wohnungsauflösungen, Renovierung, Gartenpflege & Winterdienst. Schnell, zuverlässig & transparent – jetzt anfragen!',
+            'canonical' => $env['APP_URL'] . '/',
+            'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
+            'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator', 'minifiedSideBar', 'hero_splited_s3', 'threeD_hero_cards'],
+            'scripts' => ['app', 'rates_carousel', 'cookies', 'scroll_button', 'sidebar_sticky', 'mobile-hero-cards'],
+            'env' => $env
+        ], 'layouts/entrumpelungen');
+    }
+
+    public function objektbetreuung()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['offer_calculation'])) {
+            require_once __DIR__ . '/../Helpers/API_Offer.php';
+            exit;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require_once __DIR__ . '/../Helpers/API_Handler.php';
+            exit;
+        }
+        $env = parse_ini_file(__DIR__ . '/../../config/.env');
+
+        View::render('objektbetreuung', [
+            'title' => 'Bären-Crew – Professionelle Objektbetreuung stressfrei & effizient',
+            'description' => 'Umzüge, Entrümpelungen & Hausmeisterservice aus einer Hand. Privat- und Firmenumzüge, Möbelmontage, Wohnungsauflösungen, Renovierung, Gartenpflege & Winterdienst. Schnell, zuverlässig & transparent – jetzt anfragen!',
+            'canonical' => $env['APP_URL'] . '/',
+            'og_image' => $env['APP_URL'] . '/assets/images/og-image.jpg',
+            'styles' => ['minifiedGlobal', 'minified_tier_card', 'offer_calculator', 'minifiedSideBar', 'hero_splited_s3', 'threeD_hero_cards'],
+            'scripts' => ['app', 'rates_carousel', 'cookies', 'scroll_button', 'sidebar_sticky', 'mobile-hero-cards'],
+            'env' => $env
+        ], 'layouts/objektbetreuung');
+    }
+
     public function agb()
     {
         $env = parse_ini_file(__DIR__ . '/../../config/.env');

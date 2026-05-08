@@ -81,3 +81,68 @@ Stack trace:
 #1 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
 #2 {main}
   thrown in C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php on line 50
+[08-May-2026 12:24:58 UTC] PHP Fatal error:  Uncaught Exception: View not found: entrumpelungen in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(67): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(15): App\Controllers\PageController->entrumpelungen()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16
+[08-May-2026 12:25:05 UTC] PHP Fatal error:  Uncaught Exception: View not found: entrumpelungen in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(67): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(15): App\Controllers\PageController->entrumpelungen()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16
+[08-May-2026 12:25:52 UTC] PHP Fatal error:  Uncaught Exception: View not found: entrumpelungen in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(67): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(15): App\Controllers\PageController->entrumpelungen()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16
+[08-May-2026 12:25:56 UTC] PHP Fatal error:  Uncaught Exception: View not found: entrumpelungen in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(67): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(15): App\Controllers\PageController->entrumpelungen()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16
+[08-May-2026 12:28:25 UTC] PHP Fatal error:  Uncaught Exception: View not found: entrumpelungen in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(67): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(15): App\Controllers\PageController->entrumpelungen()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16
+[08-May-2026 12:28:40 UTC] PHP Fatal error:  Uncaught Exception: View not found: entrumpelungen in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(67): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(15): App\Controllers\PageController->entrumpelungen()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16
+[08-May-2026 12:28:50 UTC] PHP Fatal error:  Uncaught Exception: View not found: entrumpelungen in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(67): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(15): App\Controllers\PageController->entrumpelungen()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16
+[08-May-2026 12:28:55 UTC] PHP Fatal error:  Uncaught Exception: View not found: entrumpelungen in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(67): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(15): App\Controllers\PageController->entrumpelungen()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16
+[08-May-2026 12:32:54 UTC] PHP Warning:  include_once(C:\VSC Projects\Baeren-Crew\app\Views\layouts/../partials/hero.php): Failed to open stream: No such file or directory in C:\VSC Projects\Baeren-Crew\app\Views\layouts\entrumpelungen.php on line 42
+[08-May-2026 12:32:54 UTC] PHP Warning:  include_once(): Failed opening 'C:\VSC Projects\Baeren-Crew\app\Views\layouts/../partials/hero.php' for inclusion (include_path='.;C:\php\pear') in C:\VSC Projects\Baeren-Crew\app\Views\layouts\entrumpelungen.php on line 42
+[08-May-2026 12:39:03 UTC] PHP Fatal error:  Uncaught Exception: View not found: objektbetreuung in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php:16
+Stack trace:
+#0 C:\VSC Projects\Baeren-Crew\app\Controllers\PageController.php(92): App\Helpers\View::render()
+#1 C:\VSC Projects\Baeren-Crew\routes\web.php(18): App\Controllers\PageController->objektbetreuung()
+#2 C:\VSC Projects\Baeren-Crew\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\VSC Projects\Baeren-Crew\app\Helpers\View.php on line 16

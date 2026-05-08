@@ -210,7 +210,7 @@
   font-size: clamp(1rem, 1.1vw, 2.5rem);
 }
 
-ul {
+.card-wrapper ul {
   font-size: clamp(0.65rem, 0.6vw, 1.1rem);
   list-style: none;
   padding: 0;

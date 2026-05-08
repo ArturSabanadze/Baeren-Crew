@@ -21,7 +21,8 @@
                 </ul>
             </div>
             <div>
-                <button onclick="location.href='#'" class="btn btn-primary btn-full hero-cards-btn">
+                <button onclick="location.href='index.php?page=umzuege'"
+                    class="btn btn-primary btn-full hero-cards-btn">
                     <span class="btn-text">Mehr erfahren</span>
                 </button>
             </div>
@@ -42,7 +43,8 @@
                 </ul>
             </div>
             <div>
-                <button onclick="location.href='#'" class="btn btn-primary btn-full hero-cards-btn">
+                <button onclick="location.href='index.php?page=entrumpelungen'"
+                    class="btn btn-primary btn-full hero-cards-btn">
                     <span class="btn-text">Mehr erfahren</span>
                 </button>
             </div>
@@ -63,7 +65,8 @@
                 </ul>
             </div>
             <div>
-                <button onclick="location.href='#'" class="btn btn-primary btn-full hero-cards-btn">
+                <button onclick="location.href='index.php?page=objektbetreuung'"
+                    class="btn btn-primary btn-full hero-cards-btn">
                     <span class="btn-text">Mehr erfahren</span>
                 </button>
             </div>

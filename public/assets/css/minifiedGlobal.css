@@ -463,6 +463,7 @@ body {
    HERO
 ========================================================= */
 .hero-section-main {
+  position: relative;
   background-image: url("/assets/images/hero-bg.webp");
   background-position: center center;
   background-repeat: no-repeat;

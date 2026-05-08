@@ -13,7 +13,7 @@
             <button class="nav__dropdown-btn">Dienstleistungen</button>
             <div class="nav__dropdown-menu">
                 <a href="index.php?page=umzuege">Umzüge</a>
-                <a href="index.php?page=home#packages">Entrümpelungen</a>
+                <a href="index.php?page=entrumpelungen">Entrümpelungen</a>
                 <a href="index.php?page=home#packages">Objektbetreuung</a>
             </div>
         </div>

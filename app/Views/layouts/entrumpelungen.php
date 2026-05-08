@@ -39,7 +39,7 @@
         <!-- HERO -->
         <section class="hero-section-main">
             <div class="hero-flex">
-                <?php include_once __DIR__ . '/../partials/hero_umzuege.php'; ?>
+                <?php include_once __DIR__ . '/../partials/hero_entruempelungen.php'; ?>
             </div>
         </section>
         <!-- CALCULATOR -->

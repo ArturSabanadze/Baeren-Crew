@@ -11,6 +11,12 @@ switch ($page) {
     case 'umzuege':
         (new PageController())->umzuege();
         break;
+    case 'entrumpelungen':
+        (new PageController())->entrumpelungen();
+        break;
+    case 'objektbetreuung':
+        (new PageController())->objektbetreuung();
+        break;
     case 'agb':
         (new PageController())->agb();
         break;
